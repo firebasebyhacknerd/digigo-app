@@ -20,6 +20,8 @@ export function Navbar() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
 
   useEffect(() => {
+    // Close mobile drawer when route changes
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpen(false);
   }, [pathname]);
 
