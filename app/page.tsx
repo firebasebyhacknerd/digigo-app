@@ -163,6 +163,47 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl space-y-6 px-4">
+        <div className="flex flex-col gap-2 md:flex-row md:items-start md:gap-8">
+          <div className="md:w-1/2 space-y-3">
+            <h2 className="text-3xl font-semibold text-white">3D Explainer: How E‑SOFT Works</h2>
+            <p className="text-white/70">
+              A non-invasive antenna coil wraps around the pipe. A programmed controller drives low-frequency, modulated signals that alter how
+              calcium and magnesium crystals form—so they stay suspended instead of sticking.
+            </p>
+            <ol className="space-y-2 text-sm text-white/80 list-decimal list-inside">
+              <li>Controller computes waveform f(t) tuned to flow and hardness.</li>
+              <li>Induction coil couples the signal into the moving water—no pipe cutting.</li>
+              <li>Crystal habit shifts to rounded ~0.5 μm particles with low adhesion.</li>
+              <li>Existing scale loosens gradually; new scale can’t anchor to surfaces.</li>
+            </ol>
+            <div className="flex gap-3 pt-2">
+              <Button asChild>
+                <Link href="/technology">Deep dive: Technology</Link>
+              </Button>
+              <Button asChild variant="outline">
+                <Link href="/technology#comparison">See comparisons</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <div className="relative overflow-hidden rounded-2xl border border-neon/25 bg-gradient-to-br from-[#0a1120] via-[#0d182c] to-[#08101c] p-6 shadow-soft-glow">
+              <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-neon/15 blur-3xl" aria-hidden />
+              <div className="absolute -right-12 -bottom-16 h-48 w-48 rounded-full bg-neon-ice/12 blur-3xl" aria-hidden />
+              <div className="space-y-3">
+                <div className="text-sm uppercase tracking-[0.12em] text-neon">Interactive 3D Placeholder</div>
+                <div className="aspect-[4/3] w-full rounded-xl border border-white/10 bg-black/40 flex items-center justify-center text-white/60 text-center p-6">
+                  Future-ready slot for a lightweight 3D model / WebGL canvas showing coil, pipe, signal pulses, and crystal transformation.
+                </div>
+                <p className="text-xs text-white/60">
+                  Until the 3D asset is uploaded, this frame explains the signal path visually. Replace with your GLB/three.js scene when ready.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="border-y border-white/10 bg-white/5 py-12">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 px-4 md:grid-cols-2">
           <div className="space-y-3">
