@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+import { Space_Grotesk, Inter } from "next/font/google";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { FloatingCTA } from "@/components/floating-cta";
+
+const space = Space_Grotesk({
+  variable: "--font-space",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const title =
+  "DIGIGO Technology | E-SOFT Electro Hydro Enhancer – Industrial-Grade Electronic Water Conditioning";
+const description =
+  "DIGIGO Technology Pvt. Ltd. (founded 2012, HQ Ahmedabad) builds E-SOFT, a 6th-generation electronic water conditioning system: salt-free, chemical-free, zero water waste, 30+ year design life.";
+const url = "https://www.digigo.example.com";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  applicationName: "DIGIGO Technology",
+  metadataBase: new URL(url),
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: "DIGIGO Technology",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${space.variable} ${inter.variable} bg-[#05070c] text-white antialiased`}
+      >
+        <Navbar />
+        {children}
+        <FloatingCTA />
+        <Footer />
+        {/* Google Analytics / GTM placeholder */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `// Insert GA4 / GTM snippet here`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "DIGIGO Technology Pvt. Ltd.",
+              url,
+              logo: `${url}/logo.png`,
+              description: description,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Basil Skyline, S.P. Ring Road",
+                addressLocality: "Ahmedabad",
+                addressRegion: "Gujarat",
+                addressCountry: "IN",
+              },
+              foundingDate: "2012-01-01",
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+91-99999-99999",
+                  contactType: "sales",
+                  areaServed: "IN",
+                },
+              ],
+            }),
+          }}
+        />
+      </body>
+    </html>
+  );
+}
