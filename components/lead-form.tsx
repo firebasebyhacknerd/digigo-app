@@ -13,9 +13,15 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const isOffline = !process.env.NEXT_PUBLIC_LEADS_ENABLED;
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (isOffline) {
+      window.location.href =
+        "mailto:connect@digigo.in?subject=DIGIGO%20Site%20Evaluation&body=Please%20share%20your%20water%20details%20(city%2C%20sector%2C%20pipe%20size%2C%20flow%2C%20challenges).";
+      return;
+    }
     setLoading(true);
     setSuccess(null);
     setError(null);
@@ -111,13 +117,13 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         />
       </div>
       <Button type="submit" disabled={loading} className="w-full">
-        {loading ? "Submitting..." : "Request Site Evaluation"}
+        {isOffline ? "Email Us (leads offline)" : loading ? "Submitting..." : "Request Site Evaluation"}
       </Button>
       {success && <p className="text-xs text-neon">{success}</p>}
       {error && <p className="text-xs text-red-300">{error}</p>}
       <p className="text-[11px] text-white/50">
         By submitting, you agree to be contacted by DIGIGO Technology. Data is
-        stored in Firebase (India / preferred region) for lead response only.
+        stored in Firebase (India / preferred region) for lead response only when enabled.
       </p>
     </form>
   );

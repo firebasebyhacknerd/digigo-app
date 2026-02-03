@@ -5,7 +5,15 @@ import { getDb } from "@/lib/firebase";
 // Basic in-memory rate limit placeholder
 const recent: Record<string, number> = {};
 
+const leadsEnabled = process.env.LEADS_ENABLED === "true" || process.env.NEXT_PUBLIC_LEADS_ENABLED === "true";
+
 export async function POST(req: Request) {
+  if (!leadsEnabled) {
+    return NextResponse.json(
+      { ok: false, error: "Lead capture disabled" },
+      { status: 503 }
+    );
+  }
   const ip = req.headers.get("x-forwarded-for") || "anon";
   const now = Date.now();
   if (recent[ip] && now - recent[ip] < 5000) {
