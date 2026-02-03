@@ -4,6 +4,16 @@ import { LeadForm } from "@/components/lead-form";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, ArrowUpRight, Shield, Droplets, Factory, Sprout } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+
+const Explainer3D = dynamic(() => import("@/components/explainer-3d").then((m) => m.Explainer3D), {
+  ssr: false,
+  loading: () => (
+    <div className="aspect-[4/3] w-full rounded-2xl border border-white/10 bg-black/40 flex items-center justify-center text-white/60">
+      Loading 3D…
+    </div>
+  ),
+});
 
 const trust = [
   "10,000+ happy customers",
@@ -187,19 +197,7 @@ export default function Home() {
             </div>
           </div>
           <div className="md:w-1/2">
-            <div className="relative overflow-hidden rounded-2xl border border-neon/25 bg-gradient-to-br from-[#0a1120] via-[#0d182c] to-[#08101c] p-6 shadow-soft-glow">
-              <div className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-neon/15 blur-3xl" aria-hidden />
-              <div className="absolute -right-12 -bottom-16 h-48 w-48 rounded-full bg-neon-ice/12 blur-3xl" aria-hidden />
-              <div className="space-y-3">
-                <div className="text-sm uppercase tracking-[0.12em] text-neon">Interactive 3D Placeholder</div>
-                <div className="aspect-[4/3] w-full rounded-xl border border-white/10 bg-black/40 flex items-center justify-center text-white/60 text-center p-6">
-                  Future-ready slot for a lightweight 3D model / WebGL canvas showing coil, pipe, signal pulses, and crystal transformation.
-                </div>
-                <p className="text-xs text-white/60">
-                  Until the 3D asset is uploaded, this frame explains the signal path visually. Replace with your GLB/three.js scene when ready.
-                </p>
-              </div>
-            </div>
+            <Explainer3D />
           </div>
         </div>
       </section>
