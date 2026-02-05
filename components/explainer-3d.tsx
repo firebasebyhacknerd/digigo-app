@@ -48,7 +48,7 @@ function Pulses() {
   return (
     <points position={[0, 0, 0]}>
       <bufferGeometry>
-        <bufferAttribute attach="attributes-position" array={positions} count={positions.length / 3} itemSize={3} />
+        <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
       <pointsMaterial color="#7DF2FF" size={0.04} sizeAttenuation depthWrite={false} />
     </points>

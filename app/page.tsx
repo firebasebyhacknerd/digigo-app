@@ -1,19 +1,11 @@
-import { Button } from "@/components/ui/button";
+﻿import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LeadForm } from "@/components/lead-form";
 import { Badge } from "@/components/ui/badge";
+import { Explainer3D } from "@/components/explainer-3d";
+import { Chatbot } from "@/components/chatbot";
 import { CheckCircle2, ArrowUpRight, Shield, Droplets, Factory, Sprout } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-
-const Explainer3D = dynamic(() => import("@/components/explainer-3d").then((m) => m.Explainer3D), {
-  ssr: false,
-  loading: () => (
-    <div className="aspect-[4/3] w-full rounded-2xl border border-white/10 bg-black/40 flex items-center justify-center text-white/60">
-      Loading 3D…
-    </div>
-  ),
-});
 
 const trust = [
   "10,000+ happy customers",
@@ -24,34 +16,34 @@ const trust = [
 
 const pillars = [
   {
-    title: "Savings",
-    desc: "Reduce descaling shutdowns, detergent use, and energy penalty from scale.",
+    title: "Scale Control",
+    desc: "Stops fresh scale, softens existing deposits, protects boilers, chillers, RO, and fixtures.",
   },
   {
-    title: "Sustainability",
-    desc: "Zero water waste, zero salt discharge. Keeps healthy minerals intact.",
+    title: "Water Stewardship",
+    desc: "Zero brine, zero backwash, zero resin. Keeps potable TDS intact and saves thousands of liters monthly.",
   },
   {
-    title: "Soft Water Comfort",
-    desc: "Gentle on skin & hair; protects fittings, glass, tiles, and appliances.",
+    title: "Service Friendly",
+    desc: "No consumables, no media replacement, minimal site visits. Remote-friendly checks for partners.",
   },
 ];
 
 const applications = [
-  { title: "Residential", desc: "Protect showers, geysers, RO, taps, tiles.", icon: Droplets, href: "/applications/residential" },
-  { title: "Commercial", desc: "Hotels, hospitals, malls, campuses—hygiene-first water.", icon: Shield, href: "/applications/commercial" },
-  { title: "Industrial", desc: "Boilers, chillers, heat exchangers—preserve heat transfer.", icon: Factory, href: "/applications/industrial" },
-  { title: "Agriculture", desc: "Improve irrigation behavior and nutrient availability.", icon: Sprout, href: "/applications/agriculture" },
+  { title: 'Residential', desc: 'Protect showers, geysers, RO, taps, tiles.', icon: Droplets, href: '/applications/residential' },
+  { title: 'Commercial', desc: 'Hotels, hospitals, malls, campuses — hygiene-first soft water without brine.', icon: Shield, href: '/applications/commercial' },
+  { title: 'Industrial', desc: 'Boilers, chillers, heat exchangers — preserve heat transfer and uptime.', icon: Factory, href: '/applications/industrial' },
+  { title: 'Agriculture', desc: 'Improve irrigation behavior and nutrient availability.', icon: Sprout, href: '/applications/agriculture' },
 ];
 
 export const metadata = {
-  title: "DIGIGO | India’s Most Advanced Electronic Water Conditioning System",
+  title: "DIGIGO | Electronic Water Conditioning for Hard Water & Scale Control",
   description:
-    "E-SOFT Electro Hydro Enhancer by DIGIGO: salt-free, chemical-free, zero water waste, zero maintenance, 30-year design life. Residential, commercial, industrial, agriculture.",
+    "E-SOFT Electro Hydro Enhancer by DIGIGO: the water softener alternative that is salt-free, chemical-free, zero reject water, zero maintenance. Built for residential, commercial, industrial, and agri hard water control.",
   openGraph: {
-    title: "DIGIGO | India’s Most Advanced Electronic Water Conditioning System",
+    title: "DIGIGO | Electronic Water Conditioning for Hard Water & Scale Control",
     description:
-      "Experience soft-water behavior without salt, chemicals, or maintenance. DIGIGO E-SOFT protects homes, industries, farms, and campuses across India.",
+      "Experience soft-water behavior without salt, resin, or backwash. DIGIGO E-SOFT keeps pipelines, heat exchangers, and bathrooms scale-free while retaining minerals.",
     url: "https://www.digigo.example.com",
     type: "website",
   },
@@ -67,10 +59,10 @@ export default function Home() {
             <div className="space-y-3">
               <p className="text-xs uppercase tracking-[0.16em] text-neon">6th-Generation Electronic Water Conditioning</p>
               <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
-                India’s Most Advanced Electronic Water Conditioning System
+                Hard Water Control Built for Water Softener Pros
               </h1>
               <p className="text-lg text-white/70">
-                Experience soft-water behavior without salt, chemicals, or maintenance. E-SOFT (Electro Hydro Enhancer) is engineered for Indian water conditions—residential to heavy industry.
+                Deliver soft-water behavior without salt, resin, or backwash. E-SOFT (Electro Hydro Enhancer) is tuned for Indian hard water—ideal for softener OEMs, facility teams, and service partners.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -99,16 +91,16 @@ export default function Home() {
             <CardHeader>
               <CardTitle>How E-SOFT Works</CardTitle>
               <p className="text-sm text-white/70">
-                Computerized, low-frequency modulated signals are induced via an external antenna coil—no pipe cutting, no chemicals.
+                Computerized, low-frequency modulated signals are induced via an external antenna coil—no pipe cutting, no brine, no chemicals.
               </p>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="rounded-xl border border-dashed border-white/12 bg-white/5 p-6 text-white/80">
                 <ul className="space-y-2 text-sm">
-                  <li>• Digitally programmed controller drives an induction coil wrapped on the pipe.</li>
-                  <li>• Signals alter crystallization behavior of calcium & magnesium (no mineral removal).</li>
-                  <li>• Scale can no longer adhere; existing deposits loosen gradually.</li>
-                  <li>• Zero salt, zero resin, zero water waste, zero consumables.</li>
+                  <li>- Digitally programmed controller drives an induction coil wrapped on the pipe.</li>
+                  <li>- Signals alter crystallization behavior of calcium & magnesium (no mineral removal).</li>
+                  <li>- Scale can no longer adhere; existing deposits loosen gradually.</li>
+                  <li>- Zero salt, zero resin, zero water waste, zero consumables.</li>
                 </ul>
               </div>
               <div className="flex flex-wrap gap-2 text-xs text-white/60">
@@ -126,7 +118,7 @@ export default function Home() {
         <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-3xl font-semibold text-white">Three Pillars of Value</h2>
-            <p className="text-white/70">Savings • Sustainability • Soft Water Comfort</p>
+            <p className="text-white/70">Scale Control | Water Stewardship | Service Friendly</p>
           </div>
           <Button asChild variant="outline">
             <Link href="/pricing">See sizing & pricing logic</Link>
@@ -176,7 +168,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl space-y-6 px-4">
         <div className="flex flex-col gap-2 md:flex-row md:items-start md:gap-8">
           <div className="md:w-1/2 space-y-3">
-            <h2 className="text-3xl font-semibold text-white">3D Explainer: How E‑SOFT Works</h2>
+            <h2 className="text-3xl font-semibold text-white">3D Explainer: How E-SOFT Works</h2>
             <p className="text-white/70">
               A non-invasive antenna coil wraps around the pipe. A programmed controller drives low-frequency, modulated signals that alter how
               calcium and magnesium crystals form—so they stay suspended instead of sticking.
@@ -184,8 +176,8 @@ export default function Home() {
             <ol className="space-y-2 text-sm text-white/80 list-decimal list-inside">
               <li>Controller computes waveform f(t) tuned to flow and hardness.</li>
               <li>Induction coil couples the signal into the moving water—no pipe cutting.</li>
-              <li>Crystal habit shifts to rounded ~0.5 μm particles with low adhesion.</li>
-              <li>Existing scale loosens gradually; new scale can’t anchor to surfaces.</li>
+              <li>Crystal habit shifts to rounded ~0.5 um particles with low adhesion.</li>
+              <li>Existing scale loosens gradually; new scale cannot anchor to surfaces.</li>
             </ol>
             <div className="flex gap-3 pt-2">
               <Button asChild>
@@ -240,7 +232,7 @@ export default function Home() {
             <Card key={site}>
               <CardHeader>
                 <CardTitle>{site}</CardTitle>
-                <p className="text-sm text-white/70">E-SOFT installed • zero backwash • maintenance-light.</p>
+                <p className="text-sm text-white/70">E-SOFT installed | zero backwash | maintenance-light.</p>
               </CardHeader>
             </Card>
           ))}
@@ -275,6 +267,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Chatbot />
     </main>
   );
 }
+
+
+
