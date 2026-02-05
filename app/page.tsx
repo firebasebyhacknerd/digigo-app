@@ -34,7 +34,7 @@ const applications = [
   { title: "Agriculture", href: "/applications/agriculture", icon: Wheat },
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-surface">
       {/* Hero */}

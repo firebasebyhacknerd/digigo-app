@@ -1,5 +1,3 @@
-"use client";
-
 import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -10,7 +8,7 @@ export const metadata = {
   description: "Scale-free steam, laundry, and sterilization lines with zero salt or chemicals. Protect autoclaves, boilers, and laundry equipment.",
 };
 
-export default function Hospitals() {
+export default function HospitalsPage() {
   return (
     <main className="pb-16">
       <PageHero
