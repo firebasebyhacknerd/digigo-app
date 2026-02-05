@@ -24,16 +24,16 @@ export default function ResidentialPage() {
           <CardHeader>
             <CardTitle>Problem → Why it happens</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
-            <p><strong>Problem:</strong> Scale on showerheads, geyser coils, faucets, tiles; dry skin/hair; white spotting on glass.</p>
-            <p><strong>Why:</strong> Calcium & magnesium crystallize as hard, adhesive calcite/aragonite and stick to hot surfaces; soaps react with Ca/Mg creating residues.</p>
+          <CardContent className="space-y-3 text-sm text-muted">
+            <p><strong className="text-ink">Problem:</strong> Scale on showerheads, geyser coils, faucets, tiles; dry skin/hair; white spotting on glass.</p>
+            <p><strong className="text-ink">Why:</strong> Calcium & magnesium crystallize as hard, adhesive calcite/aragonite and stick to hot surfaces; soaps react with Ca/Mg creating residues.</p>
           </CardContent>
         </Card>
         <Card>
           <CardHeader>
             <CardTitle>Quick Outcomes</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm text-white/80">
+          <CardContent className="space-y-2 text-sm text-muted">
             <p>Lower spotting on glass/tiles.</p>
             <p>Smoother rinse feel for many users (varies by skin type).</p>
             <p>Protect geysers & fixtures from scale.</p>
@@ -47,7 +47,7 @@ export default function ResidentialPage() {
           <CardHeader>
             <CardTitle>How E-SOFT Helps</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
+          <CardContent className="space-y-3 text-sm text-muted">
             <p>Signal-based conditioning converts Ca/Mg to fine, rounded micro-crystals that do not adhere to hot surfaces.</p>
             <p>TDS stays unchanged; essential minerals remain.</p>
             <p>Non-invasive install: coil wraps the pipe; no cutting.</p>
@@ -57,7 +57,7 @@ export default function ResidentialPage() {
           <CardHeader>
             <CardTitle>Expected Outcomes</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm text-white/80">
+          <CardContent className="space-y-2 text-sm text-muted">
             <p>Scale reduction is typically visible within weeks on active surfaces; legacy scale loosens gradually over months.</p>
             <p>Reduced maintenance and descaling visits.</p>
             <p>Energy efficiency maintained for geysers and instant heaters.</p>
@@ -67,9 +67,9 @@ export default function ResidentialPage() {
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-semibold text-white">Book Free Consultation</h3>
-            <p className="text-sm text-white/70">Share city, hardness source, family size, number of bathrooms, and flow rate.</p>
+          <div className="rounded-2xl border border-border bg-surface-2/40 p-6">
+            <h3 className="text-xl font-semibold text-ink">Book Free Consultation</h3>
+            <p className="text-sm text-muted">Share city, hardness source, family size, number of bathrooms, and flow rate.</p>
             <div className="mt-4">
               <LeadForm />
             </div>
@@ -78,11 +78,11 @@ export default function ResidentialPage() {
             <CardHeader>
               <CardTitle>Talk to a Technical Expert</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm text-white/80">
+            <CardContent className="space-y-3 text-sm text-muted">
               <p>We map your flow profile and recommend the right controller without over-sizing.</p>
               <p>Includes installation notes for plumber/contractor.</p>
-              <Button asChild>
-                <Link href="https://wa.me/919999999999?text=Residential%20E-SOFT%20consultation">WhatsApp Now</Link>
+              <Button asChild className="btn-primary">
+                <Link href="/contact">Schedule Consultation</Link>
               </Button>
             </CardContent>
           </Card>

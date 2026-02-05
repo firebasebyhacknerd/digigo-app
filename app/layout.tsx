@@ -1,27 +1,14 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 
-const space = Space_Grotesk({
-  variable: "--font-space",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 const title =
   "DIGIGO Technology | E-SOFT Electro Hydro Enhancer – Industrial-Grade Electronic Water Conditioning";
 const description =
   "DIGIGO Technology Pvt. Ltd. (founded 2012, HQ Ahmedabad) builds E-SOFT, a 6th-generation electronic water conditioning system: salt-free, chemical-free, zero water waste, 30+ year design life.";
-const url = "https://www.digigo.example.com";
+const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   title,
@@ -49,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${space.variable} ${inter.variable} bg-[#05070c] text-white antialiased`}
-      >
+      <body className="bg-surface text-ink antialiased">
         <Navbar />
         {children}
         <FloatingCTA />

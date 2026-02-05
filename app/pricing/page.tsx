@@ -55,9 +55,9 @@ export default function PricingPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-12">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-glow">
-          <h3 className="text-2xl font-semibold text-white">Request a Quote</h3>
-          <p className="text-sm text-white/70">Share the basics; we respond with configuration and investment range.</p>
+        <div className="rounded-2xl border border-border bg-surface-2/40 p-6 shadow-card-glow">
+          <h3 className="text-2xl font-semibold text-ink">Request a Quote</h3>
+          <p className="text-sm text-muted">Share the basics; we respond with configuration and investment range.</p>
           <div className="mt-4">
             <LeadForm />
           </div>
@@ -66,7 +66,7 @@ export default function PricingPage() {
               <Link href="/contact">Talk to a Technical Expert</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href="https://wa.me/919999999999?text=Need%20a%20quote%20for%20E-SOFT">WhatsApp for Quick Quote</Link>
+              <Link href="/get-quote">Get Quote</Link>
             </Button>
           </div>
         </div>

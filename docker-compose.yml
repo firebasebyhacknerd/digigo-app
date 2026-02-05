@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      # Fallbacks so container still boots if envs are missing
+      FIREBASE_API_KEY: ${FIREBASE_API_KEY:-dummy}
+      FIREBASE_AUTH_DOMAIN: ${FIREBASE_AUTH_DOMAIN:-dummy.firebaseapp.com}
+      FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:-dummy-project}
+      FIREBASE_STORAGE_BUCKET: ${FIREBASE_STORAGE_BUCKET:-dummy.appspot.com}
+      FIREBASE_MESSAGING_SENDER_ID: ${FIREBASE_MESSAGING_SENDER_ID:-1234567890}
+      FIREBASE_APP_ID: ${FIREBASE_APP_ID:-1:1234567890:web:abcdef123456}
+      LEADS_ENABLED: ${LEADS_ENABLED:-false}
+      NEXT_PUBLIC_LEADS_ENABLED: ${NEXT_PUBLIC_LEADS_ENABLED:-false}

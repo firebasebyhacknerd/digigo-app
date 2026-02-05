@@ -4,21 +4,21 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-neon disabled:opacity-60 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center gap-2 rounded-2xl text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-neon disabled:opacity-60 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-b from-[#3bf7a6]/30 to-[#3bf7a6]/12 text-white border border-white/10 shadow-soft-glow hover:border-neon/70 hover:-translate-y-[1px]",
+          "bg-gradient-to-br from-neon to-neon-bright text-surface border border-neon/30 shadow-neon-glow hover:shadow-hover-glow hover:-translate-y-[2px]",
         outline:
-          "border border-white/14 bg-white/5 text-white hover:border-neon/70 hover:-translate-y-[1px]",
+          "border border-neon/30 bg-surface-2/50 text-neon hover:bg-neon/10 hover:border-neon/50 hover:-translate-y-[1px]",
         ghost:
-          "border border-transparent text-white hover:border-white/14 hover:bg-white/4",
+          "border border-transparent text-muted hover:text-ink hover:bg-surface-2/30",
       },
       size: {
-        default: "px-5 py-3",
-        sm: "px-3.5 py-2 text-xs",
-        lg: "px-6 py-3.5 text-base",
+        default: "px-6 py-3",
+        sm: "px-4 py-2 text-xs",
+        lg: "px-8 py-4 text-base",
       },
     },
     defaultVariants: {

@@ -8,7 +8,7 @@ export const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "glass rounded-xl border border-white/8 bg-gradient-to-b from-[#0f172a]/90 to-[#0a0f1c]/90 shadow-glow",
+      "glass rounded-2xl border border-border bg-gradient-to-b from-surface-3/90 to-surface-2/90 shadow-card-glow",
       className
     )}
     {...props}
@@ -20,7 +20,7 @@ export const CardHeader = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={cn("flex flex-col gap-2 p-6", className)} {...props} />
+  <div className={cn("flex flex-col gap-3 p-6", className)} {...props} />
 );
 
 export const CardTitle = ({
@@ -28,7 +28,7 @@ export const CardTitle = ({
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) => (
   <h3
-    className={cn("text-lg font-semibold tracking-tight text-white", className)}
+    className={cn("text-xl font-semibold tracking-tight text-ink", className)}
     {...props}
   />
 );
@@ -37,7 +37,7 @@ export const CardDescription = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLParagraphElement>) => (
-  <p className={cn("text-sm text-white/70", className)} {...props} />
+  <p className={cn("text-sm text-muted", className)} {...props} />
 );
 
 export const CardContent = ({

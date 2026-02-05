@@ -18,8 +18,8 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (isOffline) {
-      window.location.href =
-        "mailto:connect@digigo.in?subject=DIGIGO%20Site%20Evaluation&body=Please%20share%20your%20water%20details%20(city%2C%20sector%2C%20pipe%20size%2C%20flow%2C%20challenges).";
+      setSuccess(null);
+      setError("Lead submission is temporarily offline. Please call +91 63563 11101 or email info.digigo@gmail.com.");
       return;
     }
     setLoading(true);
@@ -52,7 +52,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   return (
     <form
       onSubmit={onSubmit}
-      className="space-y-3 rounded-2xl border border-white/10 bg-white/5 p-4"
+      className="space-y-3 rounded-2xl border border-border bg-surface-2/40 p-4"
     >
       <input
         type="text"
@@ -117,11 +117,11 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         />
       </div>
       <Button type="submit" disabled={loading} className="w-full">
-        {isOffline ? "Email Us (leads offline)" : loading ? "Submitting..." : "Request Site Evaluation"}
+        {isOffline ? "Contact Us (leads offline)" : loading ? "Submitting..." : "Request Site Evaluation"}
       </Button>
       {success && <p className="text-xs text-neon">{success}</p>}
       {error && <p className="text-xs text-red-300">{error}</p>}
-      <p className="text-[11px] text-white/50">
+      <p className="text-[11px] text-muted">
         By submitting, you agree to be contacted by DIGIGO Technology. Data is
         stored in Firebase (India / preferred region) for lead response only when enabled.
       </p>

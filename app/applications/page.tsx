@@ -48,21 +48,21 @@ export default function ApplicationsPage() {
         title="Engineered for Homes, Buildings, Plants, and Farms"
         subtitle="One platform, tuned by pipe size and duty: the same science serves villas, hotels, hospitals, factories, and irrigation."
       />
-      <section className="mx-auto max-w-6xl px-4 py-12">
+      <section className="mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-5 md:grid-cols-2">
           {items.map(({ title, href, problem, outcome, icon: Icon }) => (
             <Card key={title}>
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <div className="rounded-lg border border-white/10 bg-white/5 p-2">
+                  <div className="rounded-2xl border border-border bg-surface-3/50 p-3">
                     <Icon className="h-5 w-5 text-neon" />
                   </div>
-                  <CardTitle>{title}</CardTitle>
+                  <CardTitle className="text-ink">{title}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 text-sm text-white/80">
-                <p><strong>Problem:</strong> {problem}</p>
-                <p><strong>Outcome:</strong> {outcome}</p>
+              <CardContent className="space-y-3 text-sm text-muted">
+                <p><strong className="text-ink">Problem:</strong> {problem}</p>
+                <p><strong className="text-ink">Outcome:</strong> {outcome}</p>
                 <Button asChild variant="outline" size="sm">
                   <Link href={href}>View {title}</Link>
                 </Button>

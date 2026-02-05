@@ -36,15 +36,15 @@ export default function CaseStudiesPage() {
         subtitle="Real installations across government, healthcare, hospitality, industry. Downloadable PDFs for technical teams."
       />
 
-      <section className="mx-auto max-w-6xl grid gap-5 px-4 py-12 md:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl gap-5 px-4 py-12 md:grid-cols-3">
         {cases.map((c) => (
           <Card key={c.title}>
             <CardHeader>
-              <CardTitle>{c.title}</CardTitle>
+              <CardTitle className="text-ink">{c.title}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm text-white/80">
-              <p>{c.summary}</p>
-              <Button asChild variant="outline">
+            <CardContent className="space-y-3 text-sm text-muted">
+              <p className="text-muted">{c.summary}</p>
+              <Button asChild variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
                 <Link href={c.pdf} download>
                   Download PDF
                 </Link>

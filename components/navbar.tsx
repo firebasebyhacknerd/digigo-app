@@ -7,17 +7,18 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const solutions = [
-  { name: "Residential", href: "/applications/residential" },
+const applications = [
   { name: "Agriculture", href: "/applications/agriculture" },
+  { name: "Residential", href: "/applications/residential" },
   { name: "Commercial", href: "/applications/commercial" },
   { name: "Industrial", href: "/applications/industrial" },
+  { name: "Hospitals", href: "/applications/hospitals" },
 ];
 
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [appsOpen, setAppsOpen] = useState(false);
 
   useEffect(() => {
     // Close mobile drawer when route changes
@@ -28,44 +29,46 @@ export function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#05070c]/90 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="rounded-lg bg-gradient-to-br from-neon/30 to-neon-ice/20 px-3 py-2 text-xs font-black tracking-[0.18em] text-white">
+    <header className="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur-xl">
+      <div className="bg-surface-2 text-xs text-muted border-b border-border">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+          <div className="flex gap-6">
+            <span>Call: <Link className="text-neon hover:text-neon-bright transition-colors" href="tel:+916356311101">+91 63563 11101</Link></span>
+            <span>Email: <Link className="text-neon hover:text-neon-bright transition-colors" href="mailto:info.digigo@gmail.com">info.digigo@gmail.com</Link></span>
+          </div>
+          <Link className="text-neon hover:text-neon-bright transition-colors font-medium" href="/pricing">Pricing</Link>
+        </div>
+      </div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+        <Link href="/" className="flex items-center gap-4 group">
+          <div className="rounded-2xl bg-gradient-to-br from-neon/20 to-neon/10 px-4 py-3 text-sm font-black tracking-[0.18em] text-neon group-hover:scale-105 transition-transform">
             DIGIGO
           </div>
-          <div className="text-sm text-white/70 leading-tight">
+          <div className="text-sm text-muted leading-tight">
             Technology Pvt. Ltd.
-            <div className="text-[11px] text-neon uppercase tracking-[0.16em]">
+            <div className="text-xs text-neon uppercase tracking-[0.16em] font-medium">
               E-SOFT Electro Hydro Enhancer
             </div>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm text-white/80 md:flex">
-          <Link className={cn("hover:text-white", isActive("/") && "text-white")} href="/">
-            Home
-          </Link>
-          <Link
-            className={cn("hover:text-white", isActive("/technology") && "text-white")}
-            href="/technology"
-          >
-            Technology
-          </Link>
+        <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
+          <Link className={cn("hover:text-ink transition-colors", isActive("/"))} href="/">Home</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/technology") && "text-ink")} href="/technology">Technology</Link>
           <div className="relative">
             <button
-              onClick={() => setSolutionsOpen((v) => !v)}
-              className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-white/80 hover:border-neon/50 hover:text-white"
+              onClick={() => setAppsOpen((v) => !v)}
+              className="flex items-center gap-2 rounded-full border border-border px-4 py-2 text-muted hover:border-neon/50 hover:text-ink transition-all"
             >
               Applications <ChevronDown className="h-4 w-4" />
             </button>
-            {solutionsOpen && (
-              <div className="absolute right-0 mt-2 min-w-[220px] rounded-xl border border-white/10 bg-[#0b111d] p-2 shadow-glow">
-                {solutions.map((item) => (
+            {appsOpen && (
+              <div className="absolute right-0 mt-2 min-w-[240px] rounded-2xl border border-border bg-surface-2 p-2 shadow-card-glow animate-fade-in">
+                {applications.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-lg px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white"
+                    className="block rounded-xl px-4 py-3 text-sm text-muted hover:bg-surface-3 hover:text-ink transition-all"
                   >
                     {item.name}
                   </Link>
@@ -73,28 +76,26 @@ export function Navbar() {
               </div>
             )}
           </div>
-          <Link className={cn("hover:text-white", pathname.startsWith("/pricing") && "text-white")} href="/pricing">
-            Pricing
-          </Link>
-          <Link className={cn("hover:text-white", pathname.startsWith("/case-studies") && "text-white")} href="/case-studies">
-            Case Studies
-          </Link>
-          <Link className={cn("hover:text-white", pathname.startsWith("/about") && "text-white")} href="/about">
-            About
-          </Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/projects") && "text-ink")} href="/projects">Projects</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/government-projects") && "text-ink")} href="/government-projects">Government Projects</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/clients") && "text-ink")} href="/clients">Clients</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/impact") || pathname.startsWith("/impact-savings") ? "text-ink" : "")} href="/impact">Impact & Savings</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/faq") && "text-ink")} href="/faq">FAQ</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/contact") && "text-ink")} href="/contact">Contact</Link>
+          <Link className={cn("hover:text-ink transition-colors", pathname.startsWith("/get-quote") && "text-ink")} href="/get-quote">Get Quote</Link>
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
-          <Button asChild size="sm" variant="outline">
-            <Link href="/contact">Request Consultation</Link>
+        <div className="hidden md:flex items-center gap-4">
+          <Button asChild size="sm" variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
+            <Link href="/contact">Get Quote</Link>
           </Button>
-          <Button asChild size="sm">
-            <Link href="/technology">Download Tech Brief</Link>
+          <Button asChild size="sm" className="btn-primary">
+            <Link href="/contact">Schedule Consultation</Link>
           </Button>
         </div>
 
         <button
-          className="inline-flex items-center justify-center rounded-full border border-white/10 p-2 text-white md:hidden"
+          className="inline-flex items-center justify-center rounded-2xl border border-border p-3 text-muted hover:text-ink hover:border-neon/50 transition-all md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle navigation"
         >
@@ -102,25 +103,31 @@ export function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="border-t border-white/10 bg-[#05070c] px-4 pb-4 md:hidden">
-          <div className="flex flex-col gap-3 py-3 text-white/80">
-            <Link href="/">Home</Link>
-            <Link href="/technology">Technology</Link>
+        <div className="border-t border-border bg-surface px-4 pb-4 md:hidden">
+          <div className="flex flex-col gap-4 py-4 text-muted">
+            <Link href="/" className="hover:text-ink transition-colors">Home</Link>
+            <Link href="/technology" className="hover:text-ink transition-colors">Technology</Link>
             <div>
-              <div className="text-white/60">Applications</div>
+              <div className="text-muted/60 mb-2">Applications</div>
               <div className="mt-2 flex flex-col gap-2">
-                {solutions.map((item) => (
-                  <Link key={item.href} href={item.href}>
+                {applications.map((item) => (
+                  <Link key={item.href} href={item.href} className="hover:text-ink transition-colors">
                     {item.name}
                   </Link>
                 ))}
               </div>
             </div>
-            <Link href="/pricing">Pricing</Link>
-            <Link href="/case-studies">Case Studies</Link>
-            <Link href="/about">About</Link>
-            <Button asChild className="w-full">
-              <Link href="/contact">Request Consultation</Link>
+            <Link href="/projects" className="hover:text-ink transition-colors">Projects</Link>
+            <Link href="/government-projects" className="hover:text-ink transition-colors">Government Projects</Link>
+            <Link href="/clients" className="hover:text-ink transition-colors">Clients</Link>
+            <Link href="/impact" className="hover:text-ink transition-colors">Impact & Savings</Link>
+            <Link href="/faq" className="hover:text-ink transition-colors">FAQ</Link>
+            <Link href="/contact" className="hover:text-ink transition-colors">Contact</Link>
+            <Button asChild className="w-full btn-primary">
+              <Link href="/contact">Get Quote</Link>
+            </Button>
+            <Button asChild className="w-full" variant="outline">
+              <Link href="/contact">Schedule Consultation</Link>
             </Button>
           </div>
         </div>

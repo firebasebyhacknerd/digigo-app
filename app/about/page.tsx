@@ -21,7 +21,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle>Mission</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm text-white/80">
+          <CardContent className="text-sm text-muted">
             Treat water intelligently, not chemically—delivering scale-free performance with zero discharge and zero consumables.
           </CardContent>
         </Card>
@@ -29,7 +29,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle>Vision</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm text-white/80">
+          <CardContent className="text-sm text-muted">
             Make electronic conditioning the default for buildings, industry, and agriculture across India and emerging markets.
           </CardContent>
         </Card>
@@ -37,7 +37,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle>Sustainability</CardTitle>
           </CardHeader>
-          <CardContent className="text-sm text-white/80">
+          <CardContent className="text-sm text-muted">
             Zero backwash water, zero salt discharge, minimal embodied consumables—engineered for 30+ year service life.
           </CardContent>
         </Card>
@@ -48,7 +48,7 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle>Engineering Ethos</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
+          <CardContent className="space-y-3 text-sm text-muted">
             <p>Electronics designed for harsh electrical environments common in India.</p>
             <p>Non-invasive installation; retrofit friendly for existing plants and residences.</p>
             <p>Documentation-first: installation SOPs, monitoring checklists, and validation methods.</p>
@@ -58,9 +58,9 @@ export default function AboutPage() {
           <CardHeader>
             <CardTitle>Leadership</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
-            <p><strong>CEO:</strong> Rekha Sethiya – oversees manufacturing and customer programs.</p>
-            <p><strong>CTO:</strong> Chief Technical Officer – technology authority for signal design and product roadmap.</p>
+          <CardContent className="space-y-3 text-sm text-muted">
+            <p><strong className="text-ink">CEO:</strong> Rekha Sethiya – oversees manufacturing and customer programs.</p>
+            <p><strong className="text-ink">CTO:</strong> Chief Technical Officer – technology authority for signal design and product roadmap.</p>
             <p>Founder-managed manufacturing with in-house R&D and QA.</p>
           </CardContent>
         </Card>
