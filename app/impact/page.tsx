@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
@@ -21,10 +21,10 @@ export default function Impact() {
             <p className="text-muted">Illustrative numbers for understanding (not a guarantee).</p>
           </CardHeader>
           <CardContent className="space-y-2 text-sm text-muted">
-            <div><span className="text-ink font-medium">Soap/Detergent:</span> ₹12,000 → ₹6,000</div>
-            <div><span className="text-ink font-medium">Energy Bills:</span> ₹24,000 → ₹15,600</div>
-            <div><span className="text-ink font-medium">Repairs:</span> ₹8,000 → ₹2,000</div>
-            <div className="text-neon font-semibold">Total Annual Savings: ₹20,400</div>
+            <div><span className="text-ink font-medium">Soap/Detergent:</span> INR 12,000 to INR 6,000</div>
+            <div><span className="text-ink font-medium">Energy Bills:</span> INR 24,000 to INR 15,600</div>
+            <div><span className="text-ink font-medium">Repairs:</span> INR 8,000 to INR 2,000</div>
+            <div className="text-neon font-semibold">Total Annual Savings: INR 20,400</div>
           </CardContent>
         </Card>
 

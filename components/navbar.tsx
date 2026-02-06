@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -30,7 +31,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur-xl">
-      <div className="bg-surface-2 text-xs text-muted border-b border-border">
+      <div className="bg-surface-3/80 text-xs text-muted border-b border-border">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
           <div className="flex gap-6">
             <span>Call: <Link className="text-neon hover:text-neon-bright transition-colors" href="tel:+916356311101">+91 63563 11101</Link></span>
@@ -40,13 +41,18 @@ export function Navbar() {
         </div>
       </div>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-4 group">
-          <div className="rounded-2xl bg-gradient-to-br from-neon/20 to-neon/10 px-4 py-3 text-sm font-black tracking-[0.18em] text-neon group-hover:scale-105 transition-transform">
-            DIGIGO
-          </div>
-          <div className="text-sm text-muted leading-tight">
+        <Link href="/" className="flex items-center gap-3 group">
+          <Image
+            src="/logo.svg"
+            alt="DIGIGO Technology"
+            width={170}
+            height={48}
+            className="h-10 w-auto"
+            priority
+          />
+          <div className="hidden sm:block text-xs text-muted leading-tight">
             Technology Pvt. Ltd.
-            <div className="text-xs text-neon uppercase tracking-[0.16em] font-medium">
+            <div className="text-[11px] text-neon uppercase tracking-[0.16em] font-semibold">
               E-SOFT Electro Hydro Enhancer
             </div>
           </div>
@@ -87,7 +93,7 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center gap-4">
           <Button asChild size="sm" variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
-            <Link href="/contact">Get Quote</Link>
+            <Link href="/get-quote">Get Quote</Link>
           </Button>
           <Button asChild size="sm" className="btn-primary">
             <Link href="/contact">Schedule Consultation</Link>
@@ -124,7 +130,7 @@ export function Navbar() {
             <Link href="/faq" className="hover:text-ink transition-colors">FAQ</Link>
             <Link href="/contact" className="hover:text-ink transition-colors">Contact</Link>
             <Button asChild className="w-full btn-primary">
-              <Link href="/contact">Get Quote</Link>
+              <Link href="/get-quote">Get Quote</Link>
             </Button>
             <Button asChild className="w-full" variant="outline">
               <Link href="/contact">Schedule Consultation</Link>

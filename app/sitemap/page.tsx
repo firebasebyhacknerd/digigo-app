@@ -24,8 +24,8 @@ const links = [
 export default function Sitemap() {
   return (
     <main className="mx-auto max-w-4xl space-y-4 px-4 py-12">
-      <h1 className="text-3xl font-semibold text-white">Sitemap</h1>
-      <ul className="grid gap-2 sm:grid-cols-2 text-sm text-white/80">
+      <h1 className="text-3xl font-semibold text-slate-900">Sitemap</h1>
+      <ul className="grid gap-2 sm:grid-cols-2 text-sm text-slate-600">
         {links.map((href) => (
           <li key={href}>
             <a className="text-neon" href={href}>{href}</a>

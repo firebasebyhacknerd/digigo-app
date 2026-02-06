@@ -1,5 +1,48 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 import animate from "tailwindcss-animate";
+
+const brandBlue = {
+  50: "#F6F4FF",
+  100: "#E9E5FF",
+  200: "#D3CCFF",
+  300: "#B2A8FF",
+  400: "#8C7EF6",
+  500: "#695BE0",
+  600: "#5045B5",
+  700: "#3B388E",
+  800: "#2F2B6E",
+  900: "#231F53",
+  950: "#171437",
+};
+
+const brandCyan = {
+  50: "#FFF8ED",
+  100: "#FFECD2",
+  200: "#FFD7A6",
+  300: "#FFB76A",
+  400: "#F5C518",
+  500: "#F36B2A",
+  600: "#E0521C",
+  700: "#B73E16",
+  800: "#8E3118",
+  900: "#6E2817",
+  950: "#3C130A",
+};
+
+const brandSlate = {
+  50: "#FFFBF7",
+  100: "#FFF5EC",
+  200: "#F1E4D8",
+  300: "#D8C5B7",
+  400: "#B69E8D",
+  500: "#8B776A",
+  600: "#6B5A50",
+  700: "#4C3F38",
+  800: "#332A26",
+  900: "#221B17",
+  950: "#130E0B",
+};
 
 const config: Config = {
   darkMode: ["class"],
@@ -9,34 +52,40 @@ const config: Config = {
     "./content/**/*.{md,mdx}",
   ],
   theme: {
+    colors: {
+      ...colors,
+      blue: brandBlue,
+      cyan: brandCyan,
+      slate: brandSlate,
+    },
     extend: {
       colors: {
-        surface: "#0a0b0f",
-        "surface-2": "#141521",
-        "surface-3": "#1a1d2e",
-        "surface-4": "#222538",
-        ink: "#f8fafc",
-        "ink-secondary": "#e2e8f0",
-        muted: "#94a3b8",
-        accent: "#22d3ee",
-        primary: "#06b6d4",
-        "primary-dark": "#0891b2",
-        neon: "#10b981",
-        "neon-bright": "#34d399",
-        "neon-ice": "#7dd3fc",
-        "neon-purple": "#a78bfa",
-        "neon-pink": "#f472b6",
-        border: "rgba(255,255,255,0.06)",
-        "border-light": "rgba(255,255,255,0.1)",
-        glass: "rgba(255,255,255,0.03)",
+        surface: "#FFF8F3",
+        "surface-2": "#FFFFFF",
+        "surface-3": "#FFF1E8",
+        "surface-4": "#F9E8DA",
+        ink: "#221826",
+        "ink-secondary": "#392E3C",
+        muted: "#6E6373",
+        accent: "#E86A2A",
+        primary: "#3B388E",
+        "primary-dark": "#2F2B6E",
+        neon: "#3B388E",
+        "neon-bright": "#F36B2A",
+        "neon-ice": "#F5C518",
+        "neon-purple": "#6A3A8A",
+        "neon-pink": "#D9576A",
+        border: "rgba(34,24,40,0.12)",
+        "border-light": "rgba(34,24,40,0.08)",
+        glass: "rgba(255,255,255,0.75)",
       },
       boxShadow: {
-        glow: "0 25px 80px rgba(0,0,0,0.45)",
-        "soft-glow": "0 20px 70px rgba(16,185,129,0.12)",
-        "neon-glow": "0 0 40px rgba(16,185,129,0.3)",
-        "accent-glow": "0 0 30px rgba(34,211,238,0.25)",
-        "card-glow": "0 8px 32px rgba(0,0,0,0.3)",
-        "hover-glow": "0 12px 48px rgba(16,185,129,0.2)",
+        glow: "0 30px 90px rgba(33,24,40,0.12)",
+        "soft-glow": "0 20px 50px rgba(59,56,142,0.18)",
+        "neon-glow": "0 0 40px rgba(59,56,142,0.25)",
+        "accent-glow": "0 0 30px rgba(232,106,42,0.25)",
+        "card-glow": "0 12px 30px rgba(33,24,40,0.08)",
+        "hover-glow": "0 16px 40px rgba(59,56,142,0.2)",
       },
       borderRadius: {
         lg: "14px",
@@ -44,8 +93,8 @@ const config: Config = {
         "2xl": "22px",
       },
       fontFamily: {
-        display: ["var(--font-space)", "Inter", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       keyframes: {
         pulseLine: {

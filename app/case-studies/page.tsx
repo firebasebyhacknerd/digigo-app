@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -11,17 +11,17 @@ export const metadata = {
 
 const cases = [
   {
-    title: "Rajbhavan Gandhinagar – Central Utilities",
+    title: "Rajbhavan Gandhinagar - Central Utilities",
     summary: "Conditioned make-up and domestic water to arrest scale in geysers and cooling circuits.",
     pdf: "/case-study-rajbhavan.pdf",
   },
   {
-    title: "Civil Hospital Ahmedabad – Steam & Hot Water",
+    title: "Civil Hospital Ahmedabad - Steam & Hot Water",
     summary: "Reduced scale in steam generators and hot water lines; improved maintenance intervals.",
     pdf: "/case-study-civil-hospital.pdf",
   },
   {
-    title: "Hospitality Cluster – Guest Bathrooms & Laundry",
+    title: "Hospitality Cluster - Guest Bathrooms & Laundry",
     summary: "Lower spotting, reduced detergent use, stable housekeeping KPIs across 4 properties.",
     pdf: "/case-study-hospitality.pdf",
   },

@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const items = [
     title: "Industrial",
     icon: Factory,
     href: "/applications/industrial",
-    problem: "Boilers, chillers, RO pre-treatment suffer scale → energy penalty & downtime.",
+    problem: "Boilers, chillers, RO pre-treatment suffer scale -> energy penalty & downtime.",
     outcome: "Lower approach temperature, fewer shutdowns, longer RO membrane life.",
   },
   {

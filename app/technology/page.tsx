@@ -1,9 +1,8 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Shield, Zap, Leaf, Sparkles, Droplets, Factory, Home, Building, Wheat, ArrowRight, CheckCircle2, TrendingUp, Users, Award, Clock, Wrench } from "lucide-react";
+import { Shield, Zap, Droplets, ArrowRight, CheckCircle2, Wrench } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -36,7 +35,7 @@ const comparisonTable = [
 const faqs = [
   {
     q: "Does it reduce TDS?",
-    a: "No. E‑SOFT does not remove minerals. It changes the way calcium and magnesium crystallize so they remain suspended and non‑adherent.",
+    a: "No. E-SOFT does not remove minerals. It changes the way calcium and magnesium crystallize so they remain suspended and non-adherent.",
   },
   {
     q: "Is it safe for drinking water?",
@@ -48,29 +47,29 @@ const faqs = [
   },
   {
     q: "What is the lifespan?",
-    a: "Hardware is designed for 30+ years with industrial‑grade electronics. No resin, no media to replace.",
+    a: "Hardware is designed for 30+ years with industrial-grade electronics. No resin, no media to replace.",
   },
   {
     q: "Will it work on my water hardness?",
-    a: "E‑SOFT is sized based on pipe size, flow rate, and hardness/TDS range. Share your details and we will confirm suitability.",
+    a: "E-SOFT is sized based on pipe size, flow rate, and hardness/TDS range. Share your details and we will confirm suitability.",
   },
   {
     q: "How is it different from a salt softener?",
-    a: "Salt softeners replace hardness minerals with sodium and waste water in regeneration. E‑SOFT keeps minerals, adds no sodium, and wastes no water.",
+    a: "Salt softeners replace hardness minerals with sodium and waste water in regeneration. E-SOFT keeps minerals, adds no sodium, and wastes no water.",
   },
   {
     q: "Can I install it myself?",
-    a: "Installation is non‑invasive (coil wraps) pipe, but we recommend a technician to ensure correct placement and power setup.",
+    a: "Installation is non-invasive (coil wraps) pipe, but we recommend a technician to ensure correct placement and power setup.",
   },
   {
-    q: "What if I don’t see results?",
-    a: "Results are gradual: reduced new scale and gradual loosening of existing deposits. If you’re unsure, we can provide a monitoring checklist and support.",
+    q: "What if I don't see results?",
+    a: "Results are gradual: reduced new scale and gradual loosening of existing deposits. If you're unsure, we can provide a monitoring checklist and support.",
   },
 ];
 
 export default function TechnologyPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <main className="min-h-screen">
       <PageHero
         kicker="Technology"
         title="E-SOFT | Electro Hydro Enhancer"
@@ -82,18 +81,18 @@ export default function TechnologyPage() {
           <div className="grid gap-12 lg:grid-cols-2">
             {/* Machine Visual */}
             <div className="space-y-6">
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 p-8 shadow-2xl border border-slate-200">
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
+              <div className="relative overflow-hidden rounded-3xl bg-surface-2 p-8 shadow-2xl border border-border">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/60 to-transparent" />
                 <div className="relative aspect-[4/3] w-full">
                   <Image
-                    src="/esoft-machine.webp"
+                    src="/machine-hero.webp"
                     alt="DIGIGO E-SOFT controller and induction coil mounted on a pipeline"
                     fill
                     className="object-contain"
                   />
                 </div>
-                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-lg border border-slate-200">
-                  <p className="text-xs font-medium text-slate-700">E‑SOFT System: Controller + Induction Coil</p>
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/80 backdrop-blur p-3 shadow-lg border border-slate-200">
+                  <p className="text-xs font-medium text-slate-700">E-SOFT System: Controller + Induction Coil</p>
                 </div>
               </div>
             </div>
@@ -107,15 +106,15 @@ export default function TechnologyPage() {
               
               <div className="grid gap-3 sm:grid-cols-2">
                 {features.map((feature) => (
-                  <div key={feature} className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-lg border border-slate-200">
-                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-green-500" />
+                  <div key={feature} className="flex items-center gap-3 rounded-2xl bg-surface-2 p-4 shadow-lg border border-border">
+                    <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-neon" />
                     <p className="text-slate-700">{feature}</p>
                   </div>
                 ))}
               </div>
 
               <div className="pt-4">
-                <Button asChild size="lg" className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+                <Button asChild size="lg" className="w-full">
                   <Link href="/get-quote" className="flex items-center justify-center gap-2">
                     Get Quote <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -127,7 +126,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-2">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl font-bold text-slate-900">How It Works</h2>
@@ -137,7 +136,7 @@ export default function TechnologyPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="border-0 bg-gradient-to-br from-blue-50 to-white shadow-lg">
+            <Card className="border-0 bg-surface-2 shadow-lg">
               <CardHeader>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
                   <Zap className="h-6 w-6" />
@@ -149,7 +148,7 @@ export default function TechnologyPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-gradient-to-br from-blue-50 to-white shadow-lg">
+            <Card className="border-0 bg-surface-2 shadow-lg">
               <CardHeader>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
                   <Droplets className="h-6 w-6" />
@@ -161,7 +160,7 @@ export default function TechnologyPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-gradient-to-br from-blue-50 to-white shadow-lg">
+            <Card className="border-0 bg-surface-2 shadow-lg">
               <CardHeader>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
                   <Shield className="h-6 w-6" />
@@ -173,7 +172,7 @@ export default function TechnologyPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-gradient-to-br from-blue-50 to-white shadow-lg">
+            <Card className="border-0 bg-surface-2 shadow-lg">
               <CardHeader>
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
                   <Wrench className="h-6 w-6" />
@@ -208,7 +207,7 @@ export default function TechnologyPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+      <section className="py-20 bg-surface-3">
         <div className="mx-auto max-w-7xl px-4">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl font-bold text-slate-900">Comparison Table</h2>
@@ -217,7 +216,7 @@ export default function TechnologyPage() {
             </p>
           </div>
 
-          <Card className="border-0 bg-white shadow-xl">
+          <Card className="border-0 bg-surface-2 shadow-xl">
             <CardContent className="p-6">
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[720px] text-left">
@@ -247,16 +246,16 @@ export default function TechnologyPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface-2">
         <div className="mx-auto max-w-4xl px-4">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-4xl font-bold text-slate-900">Frequently Asked Questions</h2>
-            <p className="text-xl text-slate-600">Quick answers to common doubts about E‑SOFT technology.</p>
+            <p className="text-xl text-slate-600">Quick answers to common doubts about E-SOFT technology.</p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-0 bg-gradient-to-br from-slate-50 to-white shadow-lg">
+              <AccordionItem key={i} value={`faq-${i}`} className="border-0 bg-surface-2 shadow-lg">
                 <AccordionTrigger className="text-left text-slate-900 hover:text-blue-600 px-6 py-4">
                   {f.q}
                 </AccordionTrigger>
@@ -268,12 +267,12 @@ export default function TechnologyPage() {
           </Accordion>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+            <Button asChild size="lg">
               <Link href="/get-quote" className="flex items-center gap-2">
                 Get Quote <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+            <Button asChild size="lg" variant="outline">
               <Link href="/contact">Talk to Expert</Link>
             </Button>
           </div>

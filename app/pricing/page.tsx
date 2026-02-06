@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LeadForm } from "@/components/lead-form";
 import { Button } from "@/components/ui/button";
@@ -24,7 +24,7 @@ export default function PricingPage() {
           <CardHeader>
             <CardTitle>What Drives Pricing</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
+          <CardContent className="space-y-3 text-sm text-slate-600">
             <p>Pipe size and metallurgy.</p>
             <p>Flow rate (peak / average) and daily consumption.</p>
             <p>Inlet hardness / TDS and temperature profile.</p>
@@ -33,9 +33,9 @@ export default function PricingPage() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>What’s Included</CardTitle>
+            <CardTitle>What(TM)s Included</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
+          <CardContent className="space-y-3 text-sm text-slate-600">
             <p>Site assessment + sizing.</p>
             <p>Controller + induction coil + mounting hardware.</p>
             <p>Installation guidance (non-invasive wrap-around).</p>
@@ -46,7 +46,7 @@ export default function PricingPage() {
           <CardHeader>
             <CardTitle>Lead Options</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/80">
+          <CardContent className="space-y-3 text-sm text-slate-600">
             <p>Request quotation (standard).</p>
             <p>Book site evaluation (recommended for complex plants).</p>
             <p>Download technology brief for internal approval.</p>

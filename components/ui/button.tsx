@@ -4,16 +4,16 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-2xl text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-neon disabled:opacity-60 disabled:cursor-not-allowed",
+  "inline-flex items-center justify-center gap-2 rounded-2xl text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-neon/50 disabled:opacity-60 disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
         default:
-          "bg-gradient-to-br from-neon to-neon-bright text-surface border border-neon/30 shadow-neon-glow hover:shadow-hover-glow hover:-translate-y-[2px]",
+          "bg-gradient-to-r from-neon to-neon-bright text-white border border-neon/20 shadow-neon-glow hover:shadow-hover-glow hover:-translate-y-[2px]",
         outline:
-          "border border-neon/30 bg-surface-2/50 text-neon hover:bg-neon/10 hover:border-neon/50 hover:-translate-y-[1px]",
+          "border border-neon/30 bg-surface-2 text-neon hover:bg-neon/10 hover:border-neon/40 hover:-translate-y-[1px]",
         ghost:
-          "border border-transparent text-muted hover:text-ink hover:bg-surface-2/30",
+          "border border-transparent text-muted hover:text-ink hover:bg-surface-3/60",
       },
       size: {
         default: "px-6 py-3",

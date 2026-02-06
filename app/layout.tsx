@@ -1,11 +1,24 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
+import { Manrope, Sora } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 
+const display = Sora({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-display",
+});
+
+const body = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
+});
+
 const title =
-  "DIGIGO Technology | E-SOFT Electro Hydro Enhancer – Industrial-Grade Electronic Water Conditioning";
+  "DIGIGO Technology | E-SOFT Electro Hydro Enhancer - Industrial-Grade Electronic Water Conditioning";
 const description =
   "DIGIGO Technology Pvt. Ltd. (founded 2012, HQ Ahmedabad) builds E-SOFT, a 6th-generation electronic water conditioning system: salt-free, chemical-free, zero water waste, 30+ year design life.";
 const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
@@ -35,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="bg-surface text-ink antialiased">
         <Navbar />
         {children}
@@ -55,7 +68,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "DIGIGO Technology Pvt. Ltd.",
               url,
-              logo: `${url}/logo.png`,
+              logo: `${url}/logo.svg`,
               description: description,
               address: {
                 "@type": "PostalAddress",

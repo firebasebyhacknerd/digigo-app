@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -101,7 +101,7 @@ export function GetQuoteForm() {
             <div className="flex flex-wrap gap-3">
               <Button type="submit" className="btn-primary" disabled={status === "sending"}>
                 {status === "sent"
-                  ? "Submitted — we will contact you"
+                  ? "Submitted - we will contact you"
                   : status === "sending"
                     ? "Submitting..."
                     : "Submit"}
@@ -114,7 +114,7 @@ export function GetQuoteForm() {
               </Button>
             </div>
 
-            {error && <p className="text-sm text-red-300">{error}</p>}
+            {error && <p className="text-sm text-red-600">{error}</p>}
             {status === "sent" && <p className="text-sm text-neon">Submitted. Our technical desk will contact you soon.</p>}
 
             <p className="text-[11px] text-muted">

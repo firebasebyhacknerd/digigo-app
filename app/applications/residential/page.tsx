@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LeadForm } from "@/components/lead-form";
 import { Button } from "@/components/ui/button";
@@ -16,13 +16,13 @@ export default function ResidentialPage() {
       <PageHero
         kicker="Residential"
         title="Soft-Water Comfort Without Salt or Resin"
-        subtitle="Protect bathrooms, kitchens, glass, and appliances. Gentle feel on skin and hair—no bags of salt, no water wastage."
+        subtitle="Protect bathrooms, kitchens, glass, and appliances. Gentle feel on skin and hair - no bags of salt, no water wastage."
       />
 
       <section className="mx-auto max-w-6xl grid gap-6 px-4 py-12 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
-            <CardTitle>Problem → Why it happens</CardTitle>
+            <CardTitle>Problem - Why it happens</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-sm text-muted">
             <p><strong className="text-ink">Problem:</strong> Scale on showerheads, geyser coils, faucets, tiles; dry skin/hair; white spotting on glass.</p>
@@ -37,7 +37,7 @@ export default function ResidentialPage() {
             <p>Lower spotting on glass/tiles.</p>
             <p>Smoother rinse feel for many users (varies by skin type).</p>
             <p>Protect geysers & fixtures from scale.</p>
-            <p>Reduce soap/shampoo use by 10–25% (depends on water chemistry).</p>
+            <p>Reduce soap/shampoo use by 10-25% (depends on water chemistry).</p>
           </CardContent>
         </Card>
       </section>

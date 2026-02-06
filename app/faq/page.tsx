@@ -1,9 +1,9 @@
-import { PageHero } from "@/components/page-hero";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+﻿import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, HelpCircle, Shield, Droplets, Zap } from "lucide-react";
 import Link from "next/link";
+import React from "react";
 
 export const metadata = {
   title: "FAQ | DIGIGO E-SOFT",
@@ -13,7 +13,7 @@ export const metadata = {
 const faqs = [
   {
     q: "Does it reduce TDS?",
-    a: "No. E‑SOFT does not remove minerals. It changes the way calcium and magnesium crystallize so they remain suspended and non‑adherent.",
+    a: "No. E-SOFT does not remove minerals. It changes the way calcium and magnesium crystallize so they remain suspended and non-adherent.",
   },
   {
     q: "Is it safe for drinking water?",
@@ -25,31 +25,31 @@ const faqs = [
   },
   {
     q: "What is the lifespan?",
-    a: "Hardware is designed for 30+ years with industrial‑grade electronics. No resin, no media to replace.",
+    a: "Hardware is designed for 30+ years with industrial-grade electronics. No resin, no media to replace.",
   },
   {
     q: "Will it work on my water hardness?",
-    a: "E‑SOFT is sized based on pipe size, flow rate, and hardness/TDS range. Share your details and we will confirm suitability.",
+    a: "E-SOFT is sized based on pipe size, flow rate, and hardness/TDS range. Share your details and we will confirm suitability.",
   },
   {
     q: "How is it different from a salt softener?",
-    a: "Salt softeners replace hardness minerals with sodium and waste water in regeneration. E‑SOFT keeps minerals, adds no sodium, and wastes no water.",
+    a: "Salt softeners replace hardness minerals with sodium and waste water in regeneration. E-SOFT keeps minerals, adds no sodium, and wastes no water.",
   },
   {
     q: "Can I install it myself?",
-    a: "Installation is non‑invasive (coil wraps) pipe, but we recommend a technician to ensure correct placement and power setup.",
+    a: "Installation is non-invasive (coil wraps) pipe, but we recommend a technician to ensure correct placement and power setup.",
   },
   {
-    q: "What if I don’t see results?",
-    a: "Results are gradual: reduced new scale and gradual loosening of existing deposits. If you’re unsure, we can provide a monitoring checklist and support.",
+    q: "What if I don't see results?",
+    a: "Results are gradual: reduced new scale and gradual loosening of existing deposits. If you're unsure, we can provide a monitoring checklist and support.",
   },
   {
     q: "Does it work with existing RO systems?",
-    a: "Yes. E‑SOFT works as pre-treatment to protect RO membranes and extend their life. It does not replace RO for drinking water purification.",
+    a: "Yes. E-SOFT works as pre-treatment to protect RO membranes and extend their life. It does not replace RO for drinking water purification.",
   },
   {
     q: "What about iron or manganese in water?",
-    a: "E‑SOFT primarily targets calcium and magnesium scale. For high iron/manganese, additional filtration may be recommended.",
+    a: "E-SOFT primarily targets calcium and magnesium scale. For high iron/manganese, additional filtration may be recommended.",
   },
   {
     q: "Is there a warranty?",
@@ -59,9 +59,9 @@ const faqs = [
 
 const categories = [
   { name: "General", icon: HelpCircle, color: "from-blue-100 to-cyan-100" },
-  { name: "Installation", icon: Shield, color: "from-green-100 to-emerald-100" },
-  { name: "Performance", icon: Zap, color: "from-purple-100 to-pink-100" },
-  { name: "Compatibility", icon: Droplets, color: "from-orange-100 to-yellow-100" },
+  { name: "Installation", icon: Shield, color: "from-blue-50 to-cyan-100" },
+  { name: "Performance", icon: Zap, color: "from-blue-100 to-cyan-200" },
+  { name: "Compatibility", icon: Droplets, color: "from-blue-50 to-cyan-200" },
 ];
 
 const faqSchema = {
@@ -81,11 +81,11 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <main className="min-h-screen">
         <PageHero
           kicker="FAQ"
           title="Doubts, Answered"
-          subtitle="Clear answers for homeowners, facility managers, and engineers—TDS, salt, installation, performance, and sizing."
+          subtitle="Clear answers for homeowners, facility managers, and engineers - TDS, salt, installation, performance, and sizing."
         />
 
         <section className="py-20">
@@ -93,7 +93,7 @@ export default function FAQPage() {
             <div className="text-center space-y-4 mb-12">
               <h2 className="text-4xl font-bold text-slate-900">Quick Answers</h2>
               <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                Find what you need to know about E‑SOFT technology, installation, and results.
+                Find what you need to know about E-SOFT technology, installation, and results.
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export default function FAQPage() {
                     {faqs
                       .filter((_, i) => i % 4 === categories.indexOf(category))
                       .map((f, i) => (
-                        <div key={i} className="rounded-2xl bg-white p-4 shadow-lg border border-slate-200">
+                        <div key={i} className="rounded-2xl bg-surface-2 p-4 shadow-lg border border-border">
                           <p className="font-medium text-slate-900 mb-2">{f.q}</p>
                           <p className="text-slate-600">{f.a}</p>
                         </div>
@@ -121,16 +121,16 @@ export default function FAQPage() {
             </div>
 
             <div className="mt-12 text-center">
-              <Badge className="mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white border-0 shadow-lg">
+              <Badge className="mb-6 bg-gradient-to-r from-blue-700 to-cyan-500 text-white border-0 shadow-lg">
                 Still have questions?
               </Badge>
               <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+                <Button asChild size="lg">
                   <Link href="/get-quote" className="flex items-center gap-2">
                     Get Free Quote <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+                <Button asChild size="lg" variant="outline">
                   <Link href="/contact">Talk to Expert</Link>
                 </Button>
               </div>

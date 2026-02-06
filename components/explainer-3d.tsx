@@ -22,7 +22,7 @@ function Coil() {
 
   return (
     <mesh geometry={tube}>
-      <meshStandardMaterial color="#3BF7A6" emissive="#1de5c0" emissiveIntensity={0.8} roughness={0.2} metalness={0.4} />
+      <meshStandardMaterial color="#F36B2A" emissive="#F5C518" emissiveIntensity={0.75} roughness={0.2} metalness={0.35} />
     </mesh>
   );
 }
@@ -50,20 +50,20 @@ function Pulses() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#7DF2FF" size={0.04} sizeAttenuation depthWrite={false} />
+      <pointsMaterial color="#F5C518" size={0.04} sizeAttenuation depthWrite={false} />
     </points>
   );
 }
 
 export function Explainer3D() {
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neon/30 bg-gradient-to-br from-[#060b15] via-[#0a1324] to-[#040811] shadow-soft-glow">
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neon/30 bg-gradient-to-br from-[#2b2452] via-[#1e193b] to-[#120f24] shadow-soft-glow">
       <Suspense fallback={<div className="flex h-full w-full items-center justify-center text-white/60">Loading 3D...</div>}>
         <Canvas dpr={[1, 1.8]}>
-          <color attach="background" args={["#060b15"]} />
+          <color attach="background" args={["#1a1632"]} />
           <ambientLight intensity={0.35} />
-          <pointLight position={[4, 4, 2]} intensity={12} color="#3BF7A6" />
-          <pointLight position={[-5, -4, -2]} intensity={6} color="#7DF2FF" />
+          <pointLight position={[4, 4, 2]} intensity={10} color="#F36B2A" />
+          <pointLight position={[-5, -4, -2]} intensity={6} color="#6A3A8A" />
           <PerspectiveCamera makeDefault position={[3, 1.2, 3]} fov={50} />
           <Float speed={1.4} rotationIntensity={0.4} floatIntensity={0.5}>
             <group position={[0, 0, 0]}>

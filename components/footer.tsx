@@ -1,4 +1,5 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -6,7 +7,13 @@ export function Footer() {
     <footer className="border-t border-border bg-surface/95">
       <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-16 md:flex-row md:justify-between">
         <div className="max-w-sm space-y-6">
-          <div className="text-2xl font-black tracking-[0.14em] gradient-text">DIGIGO</div>
+          <Image
+            src="/logo.svg"
+            alt="DIGIGO Technology"
+            width={170}
+            height={48}
+            className="h-10 w-auto"
+          />
           <p className="text-muted leading-relaxed">
             Leading provider of advanced hard water treatment solutions with E-SOFT technology. Designed and manufactured in India for Indian water conditions.
           </p>
@@ -67,7 +74,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border bg-surface-2 py-6">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 text-center text-sm text-muted md:flex-row md:justify-between md:text-left">
-          <p>© {year} DIGIGO Technology Pvt. Ltd. All rights reserved.</p>
+          <p>(c) {year} DIGIGO Technology Pvt. Ltd. All rights reserved.</p>
           <div className="flex gap-6 justify-center">
             <Link href="/privacy" className="hover:text-neon transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-neon transition-colors">Terms</Link>

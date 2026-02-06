@@ -1,5 +1,5 @@
-import { PageHero } from "@/components/page-hero";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+﻿import { PageHero } from "@/components/page-hero";
+import { CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { posts } from "@/content/knowledge/posts";
 import Link from "next/link";
 
@@ -14,7 +14,7 @@ export default function KnowledgePage() {
       <PageHero
         kicker="Knowledge"
         title="Technical Articles"
-        subtitle="Engineering-grade articles for facility managers, consultants, and homeowners. Understand scale behavior, evaluation methods, and E‑SOFT technology."
+        subtitle="Engineering-grade articles for facility managers, consultants, and homeowners. Understand scale behavior, evaluation methods, and E-SOFT technology."
       />
 
       <section className="mx-auto max-w-6xl grid gap-4 px-4 py-12 md:grid-cols-2">

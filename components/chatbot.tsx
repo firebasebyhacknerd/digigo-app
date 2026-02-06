@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useState } from "react";
 import { MessageCircle, X, Send } from "lucide-react";
@@ -24,7 +24,7 @@ const faqPairs = [
   },
   {
     q: "installation",
-    a: "The coil wraps on the existing pipe—no cutting. Typical install takes under 60 minutes with power nearby.",
+    a: "The coil wraps on the existing pipe-no cutting. Typical install takes under 60 minutes with power nearby.",
   },
   {
     q: "industrial",
@@ -81,7 +81,7 @@ export function Chatbot() {
     <div className="fixed bottom-4 right-4 z-50">
       {!isOpen && (
         <button
-          className="flex items-center gap-2 rounded-full bg-neon px-4 py-2 text-sm font-semibold text-black shadow-soft-glow transition hover:translate-y-[-1px] hover:shadow-lg"
+          className="flex items-center gap-2 rounded-full bg-gradient-to-r from-neon to-neon-bright px-4 py-2 text-sm font-semibold text-white shadow-soft-glow transition hover:translate-y-[-1px] hover:shadow-lg"
           onClick={() => setOpen(true)}
           aria-label="Open chat"
         >
@@ -91,14 +91,14 @@ export function Chatbot() {
       )}
 
       {isOpen && (
-        <div className="w-80 overflow-hidden rounded-2xl border border-white/10 bg-[#0a0f1a] shadow-2xl backdrop-blur">
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+        <div className="w-80 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl backdrop-blur">
+          <div className="flex items-center justify-between border-b border-slate-200 bg-surface-3 px-4 py-3">
             <div>
-              <p className="text-sm font-semibold text-white">DIGIGO Assistant</p>
-              <p className="text-xs text-white/60">Water softener queries answered</p>
+              <p className="text-sm font-semibold text-slate-900">DIGIGO Assistant</p>
+              <p className="text-xs text-slate-600">Water softener queries answered</p>
             </div>
             <button
-              className="text-white/60 transition hover:text-white"
+              className="text-slate-500 transition hover:text-slate-800"
               onClick={() => setOpen(false)}
               aria-label="Close chat"
             >
@@ -113,8 +113,8 @@ export function Chatbot() {
                 className={cn(
                   "max-w-[90%] rounded-2xl px-3 py-2 leading-snug",
                   m.sender === "bot"
-                    ? "self-start bg-white/6 text-white"
-                    : "self-end bg-neon/20 text-neon border border-neon/30"
+                    ? "self-start bg-surface-3 text-slate-700"
+                    : "self-end bg-neon/10 text-neon border border-neon/30"
                 )}
               >
                 {m.text}
@@ -122,24 +122,24 @@ export function Chatbot() {
             ))}
           </div>
 
-          <div className="border-t border-white/10 px-3 py-2">
-            <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+          <div className="border-t border-slate-200 px-3 py-2">
+            <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
               <input
-                className="w-full bg-transparent text-sm text-white placeholder:text-white/50 focus:outline-none"
+                className="w-full bg-transparent text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none"
                 placeholder="Ask about salt, sizing, install..."
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
               />
               <button
-                className="rounded-full bg-neon px-2 py-2 text-black transition hover:translate-y-[-1px] hover:shadow-soft-glow"
+                className="rounded-full bg-gradient-to-r from-neon to-neon-bright px-2 py-2 text-white transition hover:translate-y-[-1px] hover:shadow-soft-glow"
                 onClick={handleSend}
                 aria-label="Send message"
               >
                 <Send className="h-4 w-4" />
               </button>
             </div>
-            <p className="pt-1 text-[11px] text-white/50">Need a quote? Type your city, flow, and phone.</p>
+            <p className="pt-1 text-[11px] text-slate-500">Need a quote? Type your city, flow, and phone.</p>
           </div>
         </div>
       )}

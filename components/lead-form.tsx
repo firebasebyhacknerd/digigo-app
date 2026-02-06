@@ -120,7 +120,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
         {isOffline ? "Contact Us (leads offline)" : loading ? "Submitting..." : "Request Site Evaluation"}
       </Button>
       {success && <p className="text-xs text-neon">{success}</p>}
-      {error && <p className="text-xs text-red-300">{error}</p>}
+      {error && <p className="text-xs text-red-600">{error}</p>}
       <p className="text-[11px] text-muted">
         By submitting, you agree to be contacted by DIGIGO Technology. Data is
         stored in Firebase (India / preferred region) for lead response only when enabled.

@@ -21,10 +21,10 @@ export default function KnowledgeArticle({ params }: Props) {
   if (!post) return notFound();
   return (
     <main className="mx-auto max-w-4xl space-y-6 px-4 py-12">
-      <h1 className="text-3xl font-semibold text-white">{post.title}</h1>
-      <p className="text-white/60">{post.summary}</p>
+      <h1 className="text-3xl font-semibold text-slate-900">{post.title}</h1>
+      <p className="text-slate-600">{post.summary}</p>
       <article
-        className="space-y-4 text-white/80 text-base leading-7"
+        className="space-y-4 text-slate-700 text-base leading-7"
         dangerouslySetInnerHTML={{ __html: post.body }}
       />
     </main>

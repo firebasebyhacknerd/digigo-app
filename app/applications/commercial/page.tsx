@@ -1,4 +1,4 @@
-import { PageHero } from "@/components/page-hero";
+﻿import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { LeadForm } from "@/components/lead-form";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,7 @@ export default function CommercialPage() {
       <section className="mx-auto max-w-6xl grid gap-6 px-4 py-12 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
-            <CardTitle>Problem → Why it happens</CardTitle>
+            <CardTitle>Problem - Why it happens</CardTitle>
           </CardHeader>
           <CardContent className="space-y-3 text-sm text-muted">
             <p><strong className="text-ink">Problem:</strong> White spots on glass/steel, clogged fixtures, higher detergent use, guest complaints.</p>
