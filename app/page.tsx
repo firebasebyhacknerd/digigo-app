@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Zap, Leaf, Sparkles, Droplets, Factory, Home, Building, Wheat } from "lucide-react";
+import { Shield, Zap, Leaf, Sparkles, Droplets, Factory, Home, Building, Wheat, ArrowRight, CheckCircle2, TrendingUp, Users, Award } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
   title: "DIGIGO | Electronic Water Conditioning for Hard Water & Scale Control",
   description:
-    "E-SOFT Electro Hydro Enhancer by DIGIGO: the water softener alternative that is salt-free, chemical-free, zero reject water, zero maintenance. Built for residential, commercial, industrial, and agri hard water control.",
+    "E-SOFT Electro Hydro Enhancer by DIGIGO: the water softener alternative that is salt-free, chemical-free, zero reject water, zero maintenance. Built for residential, commercial, industrial, and agricultural hard water control.",
   openGraph: {
     title: "DIGIGO | Electronic Water Conditioning for Hard Water & Scale Control",
     description:
@@ -19,76 +19,92 @@ export const metadata = {
 };
 
 const highlights = [
-  { title: "Chemical-Free", desc: "Zero salt, zero resin, zero reject water. Minerals stay in.", icon: Leaf },
-  { title: "Energy Efficient", desc: "Up to 30% energy reduction by keeping heat transfer surfaces clean.", icon: Zap },
-  { title: "Zero Maintenance", desc: "No consumables or backwash; set-and-forget electronics.", icon: Shield },
-  { title: "ROI in 12–18 Months", desc: "Savings in soap, energy, and repairs recover the cost fast.", icon: Sparkles },
+  { title: "Zero Salt & Chemicals", desc: "No salt bags, no resin, no wastewater. Essential minerals stay in water.", icon: Leaf },
+  { title: "Energy Efficient", desc: "Up to 30% energy savings by keeping heat transfer surfaces clean.", icon: Zap },
+  { title: "Zero Maintenance", desc: "Set-and-forget electronics. No consumables or backwash cycles.", icon: Shield },
+  { title: "Fast ROI", desc: "Payback in 12–18 months via soap, energy, and repair savings.", icon: TrendingUp },
 ];
 
-const trust = ["500+ happy clients", "15+ years experience", "50+ government projects", "99% retention"];
+const trust = [
+  { label: "500+ Happy Clients", icon: Users },
+  { label: "15+ Years Experience", icon: Award },
+  { label: "50+ Government Projects", icon: Building },
+  { label: "99% Retention Rate", icon: TrendingUp },
+];
 
 const applications = [
-  { title: "Residential", href: "/applications/residential", icon: Home },
-  { title: "Commercial", href: "/applications/commercial", icon: Building },
-  { title: "Industrial", href: "/applications/industrial", icon: Factory },
-  { title: "Agriculture", href: "/applications/agriculture", icon: Wheat },
+  { title: "Residential", href: "/applications/residential", icon: Home, desc: "Villas, apartments, and homes" },
+  { title: "Commercial", href: "/applications/commercial", icon: Building, desc: "Hotels, malls, offices" },
+  { title: "Industrial", href: "/applications/industrial", icon: Factory, desc: "Boilers, chillers, RO pre-treatment" },
+  { title: "Agriculture", href: "/applications/agriculture", icon: Wheat, desc: "Irrigation, greenhouses, livestock" },
+];
+
+const benefits = [
+  "Prevents new scale adhesion on pipes and equipment",
+  "Gradually loosens existing scale deposits",
+  "Maintains essential minerals in water",
+  "Zero water waste—no backwash or regeneration",
+  "Reduces soap and detergent usage",
+  "Extends equipment lifespan",
+  "Lowers energy consumption",
+  "Safe for drinking and cooking",
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-surface">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       {/* Hero */}
-      <section className="relative overflow-hidden border-b border-border bg-surface-2 py-20">
-        <div className="absolute inset-0 bg-grid opacity-20" aria-hidden />
-        <div className="absolute -left-40 -top-32 h-96 w-96 rounded-full bg-neon/10 blur-3xl animate-pulse" aria-hidden />
-        <div className="absolute -right-40 -bottom-32 h-80 w-80 rounded-full bg-neon-ice/8 blur-3xl" aria-hidden />
-
-        <div className="relative mx-auto max-w-7xl px-4">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div className="space-y-6">
-              <Badge className="border-neon/20 bg-neon/10 text-neon">Salt-Free • Chemical-Free • Zero Water Waste</Badge>
-              <h1 className="text-4xl font-semibold leading-tight text-ink md:text-5xl">
-                Hard Water, No Scale.
-                <br />
-                <span className="text-neon">Zero Salt, Zero Chemicals.</span>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-cyan-50 opacity-50" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" />
+        
+        <div className="relative mx-auto max-w-7xl px-4 py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="space-y-8">
+              <Badge className="w-fit bg-gradient-to-r from-blue-600 to-cyan-600 text-white border-0 shadow-lg">
+                Salt-Free • Chemical-Free • Zero Water Waste
+              </Badge>
+              <h1 className="text-5xl font-bold tracking-tight text-slate-900 lg:text-6xl">
+                Hard Water,
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
+                  Zero Scale.
+                </span>
+                <span className="block text-2xl font-normal text-slate-600 lg:text-3xl">
+                  Zero Salt. Zero Chemicals.
+                </span>
               </h1>
-              <p className="text-lg text-muted">
-                DIGIGO E‑SOFT uses programmable electronic signals to keep minerals from sticking to pipes and equipment.
-                <br />
-                No salt bags, no resin, no backwash. Just clean water flow.
+              <p className="text-xl text-slate-600 leading-relaxed max-w-2xl">
+                DIGIGO E‑SOFT uses programmed electronic signals to keep minerals from sticking to pipes and equipment. 
+                No salt bags, no resin, no backwash. Just clean, efficient water flow.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild className="btn-primary">
-                  <Link href="/get-quote">Get Quote</Link>
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+                  <Link href="/get-quote" className="flex items-center gap-2">
+                    Get Free Quote <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
+                <Button asChild size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
                   <Link href="/technology">How It Works</Link>
                 </Button>
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-border bg-surface-3 shadow-card-glow neon-border">
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-surface to-surface-3">
-                <Image
-                  src="/esoft-machine.webp"
-                  alt="DIGIGO E-SOFT Electro Hydro Enhancer controller and induction coil installed on pipeline"
-                  fill
-                  className="object-contain p-6"
-                  priority
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-surface via-surface/60 to-transparent pointer-events-none" />
-              <div className="absolute inset-0 flex flex-col justify-between p-6">
-                <div className="flex items-center gap-2 rounded-full bg-surface-2/80 backdrop-blur px-4 py-2 text-xs text-neon border border-neon/20">
-                  <Droplets className="h-3 w-3" /> Live System Footage
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-100 to-slate-200 p-8 shadow-2xl border border-slate-200">
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/esoft-machine.webp"
+                    alt="DIGIGO E-SOFT Electro Hydro Enhancer controller and induction coil installed on pipeline"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
-                <div className="space-y-3">
-                  <p className="text-sm text-muted">E-SOFT in action: no chemicals, no salt, no maintenance.</p>
-                  <div className="flex flex-wrap gap-2 text-xs">
-                    <span className="rounded-full border border-border bg-surface-2/60 px-3 py-1 text-muted">Non-invasive coil</span>
-                    <span className="rounded-full border border-border bg-surface-2/60 px-3 py-1 text-muted">3K–33K modulation</span>
-                    <span className="rounded-full border border-border bg-surface-2/60 px-3 py-1 text-muted">Zero brine</span>
-                  </div>
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl bg-white/90 backdrop-blur p-3 shadow-lg border border-slate-200">
+                  <p className="text-xs font-medium text-slate-700">E‑SOFT System: Controller + Induction Coil</p>
                 </div>
               </div>
             </div>
@@ -96,105 +112,146 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why E-SOFT */}
-      <section className="mx-auto max-w-7xl space-y-8 px-4 py-16">
-        <div className="text-center space-y-3">
-          <h2 className="text-3xl font-semibold text-ink">Why E‑SOFT Wins Over Salt Softeners</h2>
-          <p className="text-muted max-w-2xl mx-auto">
-            No salt bags, no wastewater, no chemicals. Keep essential minerals and avoid maintenance. Ideal for homes, hotels, hospitals, factories, and farms.
-          </p>
+      {/* Trust Indicators */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {trust.map((item) => (
+              <div key={item.label} className="text-center space-y-3">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
+                  {React.createElement(item.icon, { className: "h-8 w-8" })}
+                </div>
+                <p className="text-lg font-semibold text-slate-900">{item.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-4">
-          {highlights.map(({ title, desc, icon: Icon }) => (
-            <Card key={title} className="border-border bg-surface-2/40">
-              <CardHeader>
-                <Icon className="h-8 w-8 text-neon" />
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <CardTitle className="text-ink">{title}</CardTitle>
-                <p className="text-sm text-muted">{desc}</p>
-              </CardContent>
-            </Card>
-          ))}
+      </section>
+
+      {/* Key Benefits */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-white">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-bold text-slate-900">Why E‑SOFT Wins</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Superior performance without the environmental and maintenance costs of traditional softeners
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {highlights.map(({ title, desc, icon: Icon }) => (
+              <Card key={title} className="border-0 bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <CardHeader>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <CardTitle className="text-slate-900">{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600">{desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Applications */}
-      <section className="mx-auto max-w-7xl space-y-8 px-4 py-16">
-        <div className="text-center space-y-3">
-          <h2 className="text-3xl font-semibold text-ink">Built for Every Application</h2>
-          <p className="text-muted max-w-2xl mx-auto">One platform, tuned by pipe size and duty: the same science serves villas, hotels, hospitals, factories, and irrigation.</p>
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-bold text-slate-900">Built for Every Application</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              One platform, tuned by pipe size and duty: the same science serves villas, hotels, hospitals, factories, and farms
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {applications.map(({ title, href, icon: Icon, desc }) => (
+              <Card key={title} className="border-0 bg-gradient-to-br from-slate-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <CardHeader>
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 text-blue-600 group-hover:scale-110 transition-transform">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-slate-900">{title}</CardTitle>
+                      <p className="text-sm text-slate-600">{desc}</p>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <Button asChild className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+                    <Link href={href}>Explore {title}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {applications.map(({ title, href, icon: Icon }) => (
-            <Card key={title} className="border-border bg-surface-2/40 hover:border-neon/30 transition-colors">
-              <CardHeader>
-                <Icon className="h-8 w-8 text-neon" />
-                <CardTitle className="text-ink">{title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <Button asChild variant="outline" size="sm" className="border-neon/30 text-neon hover:bg-neon/10">
-                  <Link href={href}>Explore {title}</Link>
+      </section>
+
+      {/* Benefits List */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="text-center space-y-4">
+            <h2 className="text-4xl font-bold text-slate-900">Complete Benefits</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Everything you need for scale-free water without the drawbacks of traditional systems
+            </p>
+          </div>
+          
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {benefits.map((benefit) => (
+              <div key={benefit} className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-lg">
+                <CheckCircle2 className="h-5 w-5 flex-shrink-0 text-green-500" />
+                <p className="text-slate-700">{benefit}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-4xl px-4">
+          <div className="rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-600 p-12 text-center shadow-2xl">
+            <h2 className="text-3xl font-bold text-white mb-4">Ready to Go Salt-Free?</h2>
+            <p className="text-xl text-blue-50 mb-8 max-w-2xl mx-auto">
+              Talk to our technical team for a free consultation, sizing, and ROI analysis
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50 shadow-xl">
+                <Link href="/get-quote" className="flex items-center gap-2">
+                  Get Free Quote <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Link href="/contact">Talk to Expert</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Bar */}
+      <section className="py-12 bg-slate-900">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="rounded-2xl bg-slate-800 p-8 border border-slate-700">
+            <div className="grid gap-8 md:grid-cols-2 md:items-center">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-white">Talk to Us</h3>
+                <div className="space-y-2 text-slate-300">
+                  <p>Email: <Link href="mailto:info.digigo@gmail.com" className="text-blue-400 hover:text-blue-300">info.digigo@gmail.com</Link></p>
+                  <p>Phone: <Link href="tel:+916356311101" className="text-blue-400 hover:text-blue-300">+91 63563 11101</Link></p>
+                </div>
+              </div>
+              <div className="flex justify-center md:justify-end">
+                <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+                  <Link href="/get-quote">Get Quote</Link>
                 </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Trust */}
-      <section className="mx-auto max-w-7xl space-y-8 px-4 py-16">
-        <div className="text-center space-y-3">
-          <h2 className="text-3xl font-semibold text-ink">Trusted Across India</h2>
-          <p className="text-muted max-w-2xl mx-auto">15+ years, 500+ installations, 50+ government projects, 99% retention.</p>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {trust.map((t) => (
-            <div key={t} className="rounded-2xl border border-border bg-surface-3/50 px-4 py-3 text-center">
-              <span className="text-ink font-medium">{t}</span>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl space-y-6 px-4 py-16">
-        <div className="rounded-2xl border border-neon/30 bg-gradient-to-r from-neon/10 to-neon-ice/10 p-6 shadow-soft-glow">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.14em] text-neon">Next Step</p>
-              <h3 className="text-2xl font-semibold text-ink">Talk to a Technical Expert</h3>
-              <p className="text-muted">
-                Share your water source, flow profile, and application. We propose configuration, installation notes, and ROI logic.
-              </p>
-            </div>
-            <div className="flex gap-3">
-              <Button asChild className="btn-primary">
-                <Link href="/get-quote">Get Free Consultation</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
-                <Link href="/faq">View FAQ</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="mx-auto max-w-7xl space-y-3 px-4 pb-16 text-sm text-muted">
-        <div className="rounded-2xl border border-border bg-surface-2/40 p-4 flex flex-wrap gap-4 md:items-center md:justify-between">
-          <div className="space-y-1">
-            <p className="text-ink font-semibold">Talk to us</p>
-            <p>Email: <Link className="text-neon" href="mailto:info.digigo@gmail.com">info.digigo@gmail.com</Link></p>
-            <p>Phone: 6356311101 / 02 / 03 / 04 / 05</p>
-          </div>
-          <div className="flex gap-2">
-            <Button asChild size="sm">
-              <Link href="/get-quote">Get Quote</Link>
-            </Button>
-            <Button asChild size="sm" variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
-              <Link href="/projects">See Projects</Link>
-            </Button>
           </div>
         </div>
       </section>

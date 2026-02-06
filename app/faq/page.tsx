@@ -1,6 +1,8 @@
 import { PageHero } from "@/components/page-hero";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowRight, HelpCircle, Shield, Droplets, Zap } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
@@ -35,12 +37,31 @@ const faqs = [
   },
   {
     q: "Can I install it myself?",
-    a: "Installation is non‑invasive (coil wraps the pipe), but we recommend a technician to ensure correct placement and power setup.",
+    a: "Installation is non‑invasive (coil wraps) pipe, but we recommend a technician to ensure correct placement and power setup.",
   },
   {
     q: "What if I don’t see results?",
     a: "Results are gradual: reduced new scale and gradual loosening of existing deposits. If you’re unsure, we can provide a monitoring checklist and support.",
   },
+  {
+    q: "Does it work with existing RO systems?",
+    a: "Yes. E‑SOFT works as pre-treatment to protect RO membranes and extend their life. It does not replace RO for drinking water purification.",
+  },
+  {
+    q: "What about iron or manganese in water?",
+    a: "E‑SOFT primarily targets calcium and magnesium scale. For high iron/manganese, additional filtration may be recommended.",
+  },
+  {
+    q: "Is there a warranty?",
+    a: "Yes. We offer comprehensive warranty on electronics and workmanship. Specific terms depend on application and installation.",
+  },
+];
+
+const categories = [
+  { name: "General", icon: HelpCircle, color: "from-blue-100 to-cyan-100" },
+  { name: "Installation", icon: Shield, color: "from-green-100 to-emerald-100" },
+  { name: "Performance", icon: Zap, color: "from-purple-100 to-pink-100" },
+  { name: "Compatibility", icon: Droplets, color: "from-orange-100 to-yellow-100" },
 ];
 
 const faqSchema = {
@@ -60,33 +81,60 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="pb-16">
+      <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <PageHero
           kicker="FAQ"
           title="Doubts, Answered"
           subtitle="Clear answers for homeowners, facility managers, and engineers—TDS, salt, installation, performance, and sizing."
         />
 
-        <section className="mx-auto max-w-4xl space-y-4 px-4 py-12">
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((f, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-border bg-surface-2/40">
-                <AccordionTrigger className="text-ink hover:text-neon">{f.q}</AccordionTrigger>
-                <AccordionContent className="text-muted">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <section className="py-20">
+          <div className="mx-auto max-w-4xl px-4">
+            <div className="text-center space-y-4 mb-12">
+              <h2 className="text-4xl font-bold text-slate-900">Quick Answers</h2>
+              <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                Find what you need to know about E‑SOFT technology, installation, and results.
+              </p>
+            </div>
 
-          <div className="flex flex-wrap gap-3 pt-6">
-            <Button asChild className="btn-primary">
-              <Link href="/get-quote">Get Quote</Link>
-            </Button>
-            <Button asChild variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
-              <Link href="/technology">How It Works</Link>
-            </Button>
-            <Button asChild variant="outline" className="border-neon/30 text-neon hover:bg-neon/10">
-              <Link href="/contact">Talk to Expert</Link>
-            </Button>
+            <div className="grid gap-6 md:grid-cols-2">
+              {categories.map((category) => (
+                <div key={category.name} className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${category.color} text-slate-700`}>
+                      {React.createElement(category.icon, { className: "h-5 w-5" })}
+                    </div>
+                    <h3 className="text-xl font-semibold text-slate-900">{category.name}</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {faqs
+                      .filter((_, i) => i % 4 === categories.indexOf(category))
+                      .map((f, i) => (
+                        <div key={i} className="rounded-2xl bg-white p-4 shadow-lg border border-slate-200">
+                          <p className="font-medium text-slate-900 mb-2">{f.q}</p>
+                          <p className="text-slate-600">{f.a}</p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Badge className="mb-6 bg-gradient-to-r from-blue-600 to-cyan-600 text-white border-0 shadow-lg">
+                Still have questions?
+              </Badge>
+              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+                <Button asChild size="lg" className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white shadow-xl">
+                  <Link href="/get-quote" className="flex items-center gap-2">
+                    Get Free Quote <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-blue-200 text-blue-700 hover:bg-blue-50">
+                  <Link href="/contact">Talk to Expert</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
