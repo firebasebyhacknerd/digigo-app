@@ -39,7 +39,7 @@ export function QuickQuoteForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: name || "Website Quick Quote",
+          name: name || "Quick Quote Lead",
           phone,
           sector,
           usage: problem,

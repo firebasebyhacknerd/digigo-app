@@ -1,84 +1,127 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+
+const solutionLinks = [
+  { label: "For Homes", href: "/for-homes" },
+  { label: "For Businesses", href: "/for-businesses" },
+  { label: "For Factories", href: "/for-factories" },
+  { label: "For Farms", href: "/for-farms" },
+];
+
+const resourceLinks = [
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Technology", href: "/technology" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Warranty", href: "/warranty" },
+];
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-14">
-        <div className="mb-10 rounded-2xl border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50 p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
-                Need Help Choosing?
-              </p>
-              <h2 className="mt-1 text-2xl font-bold text-slate-900">
-                Talk to a Water Treatment Expert
-              </h2>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="tel:+916356311101"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
-              >
-                <Phone className="h-4 w-4" />
-                Call Now
-              </Link>
-              <Link
-                href="https://wa.me/916356311101"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-600 px-5 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50"
-              >
-                <MessageCircle className="h-4 w-4" />
-                WhatsApp
-              </Link>
-            </div>
+      <div className="border-b border-slate-200 bg-gradient-to-r from-slate-950 via-blue-950 to-cyan-900 text-white">
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">
+              DIGIGO E-SOFT
+            </p>
+            <h2 className="mt-1 text-2xl font-bold lg:text-3xl">
+              Need a Site-Specific Water Treatment Plan?
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-slate-200">
+              Share your hard-water challenge and get a clear recommendation for your site.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/get-quote"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 font-semibold text-blue-900 transition-colors hover:bg-slate-100"
+            >
+              Get Free Quote
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <Link
+              href="https://wa.me/916356311101"
+              className="inline-flex items-center justify-center rounded-xl border border-white/40 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              <MessageCircle className="mr-2 h-4 w-4" />
+              WhatsApp Expert
+            </Link>
           </div>
         </div>
+      </div>
 
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
+      <div className="mx-auto max-w-7xl px-4 py-14">
+        <div className="grid gap-10 md:grid-cols-[1.35fr_1fr_1fr_1.3fr]">
           <div className="space-y-4">
             <Image
               src="/logo.svg"
               alt="DIGIGO Technology"
-              width={170}
+              width={172}
               height={48}
               className="h-10 w-auto"
             />
-            <p className="text-sm leading-relaxed text-slate-600">
-              Customer-first hard water treatment solutions for homes, businesses,
-              factories, and farms.
+            <p className="max-w-sm text-sm leading-relaxed text-slate-600">
+              Industrial-grade electronic water conditioning platform for homes,
+              commercial assets, plants, and agriculture.
             </p>
-          </div>
-
-          <div className="space-y-4">
-            <p className="text-base font-semibold text-slate-900">Company</p>
-            <div className="space-y-2 text-sm">
-              <Link href="/about" className="block text-slate-600 transition-colors hover:text-blue-700">
-                About Us
-              </Link>
-              <Link href="/why-not-salt-softener" className="block text-slate-600 transition-colors hover:text-blue-700">
-                Why Choose Us
-              </Link>
-              <Link href="/warranty" className="block text-slate-600 transition-colors hover:text-blue-700">
-                Warranty
-              </Link>
+            <div className="space-y-2 text-sm text-slate-700">
+              <p className="inline-flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-blue-700" />
+                No salt consumables
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-blue-700" />
+                No backwash wastewater
+              </p>
+              <p className="inline-flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-blue-700" />
+                30+ year design-life platform
+              </p>
+            </div>
+            <div className="inline-flex items-center gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">
+              <Image
+                src="/made-in-india-logo.jpg"
+                alt="Made in India"
+                width={78}
+                height={38}
+                className="h-8 w-auto"
+              />
+              <span className="text-xs font-medium text-slate-600">
+                Built for Indian water conditions
+              </span>
             </div>
           </div>
 
           <div className="space-y-4">
-            <p className="text-base font-semibold text-slate-900">Support</p>
+            <p className="text-base font-semibold text-slate-900">Solutions</p>
             <div className="space-y-2 text-sm">
-              <Link href="/installation" className="block text-slate-600 transition-colors hover:text-blue-700">
-                Installation Guide
-              </Link>
-              <Link href="/faq" className="block text-slate-600 transition-colors hover:text-blue-700">
-                FAQ
-              </Link>
-              <Link href="/case-studies" className="block text-slate-600 transition-colors hover:text-blue-700">
-                Customer Stories
-              </Link>
+              {solutionLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-slate-600 transition-colors hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <p className="text-base font-semibold text-slate-900">Resources</p>
+            <div className="space-y-2 text-sm">
+              {resourceLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="block text-slate-600 transition-colors hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
 
