@@ -241,11 +241,11 @@ export function HomePageCustomer() {
               ))}
               <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-slate-700 shadow-sm">
                 <Image
-                  src="/made-in-india-badge.svg"
+                  src="/made-in-india-logo.jpg"
                   alt="Made in India"
-                  width={28}
-                  height={28}
-                  className="h-7 w-7"
+                  width={48}
+                  height={48}
+                  className="h-7 w-7 rounded-full object-cover"
                 />
                 <span className="font-medium">Made in India</span>
               </div>
@@ -267,11 +267,11 @@ export function HomePageCustomer() {
             />
             <div className="relative z-10 mt-5 flex items-center justify-center gap-3 rounded-2xl border border-slate-600 bg-slate-900/70 p-3">
               <Image
-                src="/made-in-india-badge.svg"
+                src="/made-in-india-logo.jpg"
                 alt="Made in India DIGIGO"
-                width={34}
-                height={34}
-                className="h-8 w-8"
+                width={40}
+                height={40}
+                className="h-8 w-8 rounded-full object-cover"
               />
               <p className="text-sm font-medium text-slate-100">
                 Proudly Made in India by DIGIGO Technology
