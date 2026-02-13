@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   recent[ip] = now;
 
   const body = await req.json();
-  const { name, phone, email, city, sector, pipeSize, message } = body || {};
+  const { name, phone, email, city, sector, pipeSize, hardness, usage, message } = body || {};
   if (!name || !phone) {
     return NextResponse.json({ ok: false, error: "Missing fields" }, { status: 400 });
   }
@@ -36,6 +36,8 @@ export async function POST(req: Request) {
       city: city || "",
       sector: sector || "",
       pipeSize: pipeSize || "",
+      hardness: hardness || "",
+      usage: usage || "",
       message: message || "",
       createdAt: serverTimestamp(),
       ip,
@@ -43,7 +45,10 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error("Lead save error", err);
-    // swallow so UI still succeeds
+    return NextResponse.json(
+      { ok: false, error: "Could not save lead" },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ ok: true });

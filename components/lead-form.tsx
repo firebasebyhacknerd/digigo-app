@@ -13,7 +13,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const isOffline = !process.env.NEXT_PUBLIC_LEADS_ENABLED;
+  const isOffline = process.env.NEXT_PUBLIC_LEADS_ENABLED !== "true";
 
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();

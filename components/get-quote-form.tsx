@@ -11,7 +11,7 @@ import Link from "next/link";
 export function GetQuoteForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [error, setError] = useState<string | null>(null);
-  const isOffline = !process.env.NEXT_PUBLIC_LEADS_ENABLED;
+  const isOffline = process.env.NEXT_PUBLIC_LEADS_ENABLED !== "true";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
