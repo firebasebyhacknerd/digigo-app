@@ -14,6 +14,7 @@ import {
   Leaf,
   PhoneCall,
   ShieldCheck,
+  Sparkles,
   Sprout,
   Wrench,
   Zap,
@@ -25,9 +26,9 @@ import { Explainer3D } from "@/components/explainer-3d";
 import { clientLogos } from "@/content/client-logos";
 
 const heroHighlights = [
+  "Luxury water experience",
   "No salt consumables",
   "No backwash wastewater",
-  "No chemicals added",
   "30+ year design-life platform",
 ];
 
@@ -36,6 +37,44 @@ const trustStats = [
   { value: "50+", label: "Government Projects" },
   { value: "150+", label: "Commercial and Industrial Sites" },
   { value: "99%", label: "Customer Retention" },
+];
+
+const luxuryPositioning = [
+  {
+    icon: Sparkles,
+    title: "Luxury Living Signal",
+    text: "Premium properties now treat water quality as part of comfort and lifestyle experience.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Asset Protection Essential",
+    text: "Scale control supports cleaner fixtures, utility lines, and hot-water equipment.",
+  },
+  {
+    icon: Building2,
+    title: "Default for Modern Projects",
+    text: "Many serious developers and operators now treat scale control as a baseline utility layer.",
+  },
+  {
+    icon: HandCoins,
+    title: "Premium Feel, Lower Burden",
+    text: "No salt logistics and no backwash routine support a cleaner operations model.",
+  },
+];
+
+const luxuryVisuals = [
+  {
+    title: "Premium Home Lifestyle",
+    image: "/digigostore-assets/home-lifestyle.jpg",
+  },
+  {
+    title: "Domestic Grade E-SOFT",
+    image: "/digigostore-assets/domestic-grade.jpeg",
+  },
+  {
+    title: "Industrial Grade E-SOFT",
+    image: "/digigostore-assets/industrial-grade.jpeg",
+  },
 ];
 
 const painCards = [
@@ -92,22 +131,22 @@ const explanationFrames = [
   {
     title: "Controller + Coil Assembly",
     text: "Electronic controller and induction coil installed as one system.",
-    image: "/machine-hero.webp",
+    image: "/digigostore-assets/hero-machine.png",
   },
   {
     title: "Signal Coupling on Pipe",
     text: "Signal is coupled externally through the wrapped coil.",
-    image: "/esoft-machine.webp",
+    image: "/digigostore-assets/product-2048.png",
   },
   {
     title: "Minerals Stay in Water",
     text: "E-SOFT conditions scale behavior without removing essential minerals.",
-    image: "/machine-hero.webp",
+    image: "/digigostore-assets/domestic-grade.jpeg",
   },
   {
     title: "Built for Indian Conditions",
     text: "Made in India product with support for local operating conditions.",
-    image: "/esoft-machine.webp",
+    image: "/digigostore-assets/industrial-grade.jpeg",
   },
 ];
 
@@ -180,19 +219,19 @@ const solutionTracks = [
   {
     icon: Building2,
     title: "Homes and Residential",
-    text: "For apartments, villas, and societies targeting lower scale complaints and cleaner fixtures.",
+    text: "For apartments, villas, and societies that want premium water comfort and cleaner fixtures.",
     href: "/for-homes",
   },
   {
     icon: Factory,
     title: "Commercial and Industrial",
-    text: "For hospitality, hospitals, plants, and utilities requiring stable operation.",
+    text: "For hotels, hospitals, plants, and utilities where reliable operations are non-negotiable.",
     href: "/for-factories",
   },
   {
     icon: Sprout,
     title: "Agriculture and Irrigation",
-    text: "For farms and irrigation lines where deposits affect distribution consistency.",
+    text: "For farms and irrigation lines where consistent flow and lower deposit stress matter.",
     href: "/for-farms",
   },
 ];
@@ -272,19 +311,19 @@ export function HomePageCustomer() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="animate-slide-in-left">
             <Badge className="border border-blue-200 bg-white text-blue-700">
-              Industrial-Grade Electronic Water Conditioning
+              Luxury + Industrial-Grade Water Conditioning
             </Badge>
 
             <h1 className="mt-5 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-              Best Water Softener Experience
+              The Luxury Water Standard
               <span className="block bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-500 bg-clip-text text-transparent">
-                Without Salt or Backwash
+                Every Serious Property Needs
               </span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg text-slate-700 lg:text-xl">
-              DIGIGO E-SOFT helps control hard-water scale impact with a modern,
-              low-handling model for homes, businesses, and industry.
+              DIGIGO E-SOFT positions scale control as a premium utility standard for
+              homes, businesses, and industry without salt or backwash.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -302,7 +341,7 @@ export function HomePageCustomer() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg" className="bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
                 <Link href="/get-quote">
-                  Get Free Site Assessment
+                  Book Premium Water Audit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -327,7 +366,7 @@ export function HomePageCustomer() {
             <div className="overflow-hidden rounded-3xl border border-blue-100 bg-white p-4 shadow-xl">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50">
                 <Image
-                  src="/machine-hero.webp"
+                  src="/digigostore-assets/hero-machine.png"
                   alt="DIGIGO E-SOFT controller and induction coil"
                   width={860}
                   height={480}
@@ -338,19 +377,32 @@ export function HomePageCustomer() {
                   DIGIGO E-SOFT
                 </span>
                 <span className="absolute bottom-3 right-3 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
-                  No Salt System
+                  Premium Water Standard
                 </span>
               </div>
-
-              <div className="mt-4 flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3">
-                <p className="text-sm font-semibold text-slate-800">Made in India Engineering</p>
-                <Image
-                  src="/made-in-india-logo.jpg"
-                  alt="Made in India"
-                  width={80}
-                  height={40}
-                  className="h-9 w-auto"
-                />
+              <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
+                <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                  <Image
+                    src="/digigostore-assets/children-water.png"
+                    alt="Healthy water lifestyle"
+                    width={80}
+                    height={80}
+                    className="h-12 w-12 rounded-lg object-cover"
+                  />
+                  <p className="text-sm font-semibold text-slate-800">
+                    Luxury comfort for everyday family use
+                  </p>
+                </div>
+                <div className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-3 py-3">
+                  <p className="text-xs font-semibold text-slate-700">Made in India</p>
+                  <Image
+                    src="/made-in-india-logo.jpg"
+                    alt="Made in India"
+                    width={80}
+                    height={40}
+                    className="h-9 w-auto"
+                  />
+                </div>
               </div>
             </div>
 
@@ -384,10 +436,43 @@ export function HomePageCustomer() {
         </div>
       </section>
 
+      <section className="bg-white py-12">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
+              Luxury Feeling. Essential Infrastructure.
+            </h2>
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
+              E-SOFT is positioned as a default standard for modern properties, not an optional add-on.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {luxuryPositioning.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <item.icon className="mb-3 h-7 w-7 text-blue-700" />
+                <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                <p className="mt-1 text-sm text-slate-600">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {luxuryVisuals.map((item) => (
+              <div key={item.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <div className="relative h-48 bg-slate-100">
+                  <Image src={item.image} alt={item.title} fill className="object-cover" />
+                </div>
+                <p className="px-4 py-3 text-sm font-semibold text-slate-800">{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Why Hard Water Becomes a Cost Problem</h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Why This Is a Non-Negotiable Utility Decision</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
               Procurement and operations teams usually evaluate scale impact through maintenance, efficiency, and recurring costs.
             </p>
@@ -489,7 +574,7 @@ export function HomePageCustomer() {
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white">
                 <Image
-                  src="/esoft-machine.webp"
+                  src="/digigostore-assets/product-2048.png"
                   alt="E-SOFT machine installation visual"
                   width={760}
                   height={420}
@@ -513,9 +598,9 @@ export function HomePageCustomer() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">E-SOFT vs Salt Softener</h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Why E-SOFT Is the New Standard</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Practical comparison for procurement and operations teams.
+              Practical comparison for teams choosing between old maintenance-heavy systems and modern standardization.
             </p>
           </div>
 
@@ -542,9 +627,9 @@ export function HomePageCustomer() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Choose Your Solution Track</h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">One Standard Across Every Segment</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Segment-first pages help buyers choose based on usage profile and line requirement.
+              From premium residences to industrial facilities, the core standard stays the same.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -569,7 +654,7 @@ export function HomePageCustomer() {
             <Badge className="border border-cyan-300/40 bg-cyan-300/10 text-cyan-100">
               Why Teams Choose DIGIGO E-SOFT
             </Badge>
-            <h2 className="mt-4 text-4xl font-bold lg:text-5xl">Operational Trust Pillars</h2>
+            <h2 className="mt-4 text-4xl font-bold lg:text-5xl">Luxury Experience with Utility Discipline</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {trustPillars.map((pillar) => (
@@ -586,9 +671,9 @@ export function HomePageCustomer() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Proof of Work</h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Trusted by Premium and Critical Facilities</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Client logos and case studies for better confidence during evaluation.
+              Social proof that supports category-level trust and default adoption confidence.
             </p>
           </div>
 
@@ -649,9 +734,9 @@ export function HomePageCustomer() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-              <h2 className="text-4xl font-bold lg:text-5xl">Get a Site-Specific Water Treatment Plan</h2>
+              <h2 className="text-4xl font-bold lg:text-5xl">Set E-SOFT as Your Property Standard</h2>
               <p className="mt-4 max-w-2xl text-xl text-white/90">
-                Share your hard-water challenge and line details. Our team will recommend the right E-SOFT setup.
+                Make the move from optional treatment to standard luxury utility protection with E-SOFT.
               </p>
 
               <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/35 bg-white/10 px-4 py-3">
