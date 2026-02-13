@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomePageLiquid } from "@/components/homepage-liquid";
+import { HomePageCustomer } from "@/components/homepage-customer";
 
 export const metadata: Metadata = {
   title: "DIGIGO | Electronic Water Conditioning for Hard Water and Scale Control",
@@ -15,5 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  return <HomePageLiquid />;
+  return <HomePageCustomer />;
 }

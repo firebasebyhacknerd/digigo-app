@@ -2,6 +2,15 @@
 
 const links = [
   "/",
+  "/for-homes",
+  "/for-businesses",
+  "/for-factories",
+  "/for-farms",
+  "/how-it-works",
+  "/why-not-salt-softener",
+  "/installation",
+  "/shop",
+  "/shop/cart",
   "/technology",
   "/applications",
   "/applications/agriculture",

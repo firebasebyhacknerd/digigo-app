@@ -35,42 +35,34 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 text-sm text-steel-300 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 text-sm text-steel-300 md:grid-cols-3">
           <div className="space-y-4">
             <div className="text-base font-semibold text-steel-100">Company</div>
             <div className="space-y-3">
               <Link href="/about" className="block transition-colors hover:text-cyan-burst">About Us</Link>
-              <Link href="/technology" className="block transition-colors hover:text-cyan-burst">Technology</Link>
-              <Link href="/projects" className="block transition-colors hover:text-cyan-burst">Projects</Link>
-              <Link href="/clients" className="block transition-colors hover:text-cyan-burst">Clients</Link>
+              <Link href="/how-it-works" className="block transition-colors hover:text-cyan-burst">How It Works</Link>
+              <Link href="/why-not-salt-softener" className="block transition-colors hover:text-cyan-burst">Why E-SOFT</Link>
+              <Link href="/pricing" className="block transition-colors hover:text-cyan-burst">Pricing</Link>
             </div>
           </div>
           <div className="space-y-4">
-            <div className="text-base font-semibold text-steel-100">Applications</div>
+            <div className="text-base font-semibold text-steel-100">For You</div>
             <div className="space-y-3">
-              <Link href="/applications/agriculture" className="block transition-colors hover:text-cyan-burst">Agriculture</Link>
-              <Link href="/applications/residential" className="block transition-colors hover:text-cyan-burst">Residential</Link>
-              <Link href="/applications/commercial" className="block transition-colors hover:text-cyan-burst">Commercial</Link>
-              <Link href="/applications/industrial" className="block transition-colors hover:text-cyan-burst">Industrial</Link>
-              <Link href="/applications/hospitals" className="block transition-colors hover:text-cyan-burst">Hospitals</Link>
+              <Link href="/for-homes" className="block transition-colors hover:text-cyan-burst">For Homes</Link>
+              <Link href="/for-businesses" className="block transition-colors hover:text-cyan-burst">For Businesses</Link>
+              <Link href="/for-factories" className="block transition-colors hover:text-cyan-burst">For Factories</Link>
+              <Link href="/for-farms" className="block transition-colors hover:text-cyan-burst">For Farms</Link>
             </div>
           </div>
           <div className="space-y-4">
-            <div className="text-base font-semibold text-steel-100">Resources</div>
+            <div className="text-base font-semibold text-steel-100">Support</div>
             <div className="space-y-3">
-              <Link href="/government-projects" className="block transition-colors hover:text-cyan-burst">Government Projects</Link>
-              <Link href="/impact" className="block transition-colors hover:text-cyan-burst">Impact & Savings</Link>
+              <Link href="/installation" className="block transition-colors hover:text-cyan-burst">Installation Guide</Link>
               <Link href="/faq" className="block transition-colors hover:text-cyan-burst">FAQ</Link>
-              <Link href="/knowledge" className="block transition-colors hover:text-cyan-burst">Knowledge Base</Link>
-            </div>
-          </div>
-          <div className="space-y-4">
-            <div className="text-base font-semibold text-steel-100">Legal and Support</div>
-            <div className="space-y-3">
+              <Link href="/case-studies" className="block transition-colors hover:text-cyan-burst">Customer Stories</Link>
+              <Link href="/contact" className="block transition-colors hover:text-cyan-burst">Contact</Link>
               <Link href="/privacy" className="block transition-colors hover:text-cyan-burst">Privacy Policy</Link>
               <Link href="/terms" className="block transition-colors hover:text-cyan-burst">Terms of Service</Link>
-              <Link href="/sitemap" className="block transition-colors hover:text-cyan-burst">Sitemap</Link>
-              <Link href="/contact" className="block transition-colors hover:text-cyan-burst">Contact</Link>
             </div>
           </div>
         </div>
