@@ -5,316 +5,317 @@ import {
   BadgeIndianRupee,
   BatteryCharging,
   Building2,
-  Check,
   CheckCircle2,
   Clock3,
   Coins,
   Droplets,
   Factory,
-  Home,
-  Scale,
+  Hospital,
+  Hotel,
+  Leaf,
   Shield,
-  Sparkles,
   Sprout,
-  Star,
   Wrench,
+  Zap,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { QuickQuoteForm } from "@/components/quick-quote-form";
 import { clientLogos } from "@/content/client-logos";
 
-const segmentCards = [
+const operationAlerts = [
+  "Scale deposition in heat-transfer systems",
+  "Recurring salt and consumable dependency",
+  "Backwash-related water and utility waste",
+  "Maintenance shutdown pressure in critical lines",
+];
+
+const industryImpactCards = [
   {
-    icon: Home,
-    label: "For Homes",
-    desc: "Protect skin, fittings, geysers, and washing machines.",
-    href: "/for-homes",
+    icon: Factory,
+    title: "Manufacturing Plants",
+    impact: "Reduce scale-related fouling pressure in utility lines.",
+  },
+  {
+    icon: Hospital,
+    title: "Hospitals",
+    impact: "Improve reliability for laundry, hot-water, and utility pipelines.",
+  },
+  {
+    icon: Hotel,
+    title: "Hospitality",
+    impact: "Lower hard-water spotting and equipment service frequency.",
   },
   {
     icon: Building2,
-    label: "For Businesses",
-    desc: "Reduce complaints, cleaning effort, and service calls.",
-    href: "/for-businesses",
-  },
-  {
-    icon: Factory,
-    label: "For Factories",
-    desc: "Control scale impact in utilities and process lines.",
-    href: "/for-factories",
+    title: "Commercial Buildings",
+    impact: "Improve operational consistency and maintenance planning.",
   },
   {
     icon: Sprout,
-    label: "For Farms",
-    desc: "Support cleaner irrigation flow and equipment reliability.",
-    href: "/for-farms",
-  },
-];
-
-const brandPillars = [
-  {
-    icon: Shield,
-    title: "Made in India Engineering",
-    desc: "Built by DIGIGO Technology with local support and on-ground service.",
+    title: "Agriculture",
+    impact: "Support cleaner flow behavior in irrigation infrastructure.",
   },
   {
-    icon: Clock3,
-    title: "30+ Year Design Life",
-    desc: "Durable electronics platform designed for long operating cycles.",
-  },
-  {
-    icon: Coins,
-    title: "Zero Consumables",
-    desc: "No salt bags, no resin replacement, no recurring consumable dependency.",
-  },
-  {
-    icon: Sparkles,
-    title: "Visible Scale-Reduction Impact",
-    desc: "Designed to reduce sticking behavior and improve system cleanliness.",
+    icon: Building2,
+    title: "Institutions & Government",
+    impact: "Scale-impact control without monthly consumable logistics.",
   },
 ];
 
 const impactMetrics = [
   {
-    value: "0",
-    unit: "Salt Refills",
-    desc: "No monthly salt handling cycle.",
+    icon: Zap,
+    value: "Up to 20-30%",
+    label: "Heat-Efficiency Penalty",
+    note: "Scaled heat surfaces can increase energy burden significantly.",
+  },
+  {
     icon: Coins,
+    value: "Recurring",
+    label: "Consumable Cost Cycle",
+    note: "Salt systems add monthly OPEX through refills and handling.",
   },
   {
+    icon: Droplets,
     value: "0",
-    unit: "Backwash Waste",
-    desc: "No regular backwash discharge.",
-    icon: Droplets,
+    label: "Backwash Waste",
+    note: "E-SOFT model avoids regular backwash water discharge cycles.",
   },
   {
-    value: "30+",
-    unit: "Year Life",
-    desc: "Long design life for sustained value.",
     icon: Shield,
-  },
-  {
-    value: "~2",
-    unit: "Hour Install",
-    desc: "Typical standard installation window.",
-    icon: Clock3,
+    value: "30+ Years",
+    label: "Design Life",
+    note: "Long-life electronics architecture for sustained deployments.",
   },
 ];
 
-const problemCards = [
+const processFlow = [
   {
-    title: "Scale on Taps, Tiles, and Glass",
-    desc: "Daily cleaning load increases and finish quality drops.",
-    icon: Droplets,
+    step: "01",
+    title: "Coil on Existing Line",
+    desc: "Installed on target line segment without consumable tank dependency.",
   },
   {
-    title: "Higher Appliance Service Cost",
-    desc: "Scale impact can reduce equipment efficiency and life.",
-    icon: Wrench,
+    step: "02",
+    title: "Programmed Signal Control",
+    desc: "Controller applies tuned electronic behavior through the coil assembly.",
   },
   {
-    title: "Salt and Maintenance Dependency",
-    desc: "Recurring purchases and operating overhead keep growing.",
-    icon: BatteryCharging,
-  },
-];
-
-const howSteps = [
-  {
-    step: "1",
-    title: "Coil Around Existing Pipe",
-    desc: "Installed on the line without frequent invasive rework.",
+    step: "03",
+    title: "Lower Adhesion Mineral Behavior",
+    desc: "Designed to reduce sticking tendency and support cleaner downstream operation.",
   },
   {
-    step: "2",
-    title: "Controller Sends Programmed Signals",
-    desc: "Signals interact with mineral behavior in flowing water.",
-  },
-  {
-    step: "3",
-    title: "Less Adhesive Mineral Behavior",
-    desc: "Minerals are less likely to stick and form persistent scale layers.",
+    step: "04",
+    title: "Operations-Focused Impact",
+    desc: "Positioned to reduce maintenance overhead and improve utility consistency.",
   },
 ];
 
 const comparisonRows = [
   {
-    label: "Recurring Consumables",
-    saltSoftener: "Salt and periodic refills required",
-    esoft: "No salt consumables",
+    factor: "Monthly Operating Dependency",
+    saltSoftener: "Recurring salt procurement and refill process",
+    esoft: "No salt consumable cycle",
   },
   {
-    label: "Water Waste",
-    saltSoftener: "Backwash cycle consumes water",
-    esoft: "No backwash waste cycle",
+    factor: "Water Waste Profile",
+    saltSoftener: "Backwash discharge required",
+    esoft: "No regular backwash cycle",
   },
   {
-    label: "Maintenance Effort",
-    saltSoftener: "Ongoing handling and service dependence",
-    esoft: "Low-operating maintenance model",
+    factor: "Maintenance Burden",
+    saltSoftener: "Frequent handling and service activity",
+    esoft: "Lower routine handling model",
   },
   {
-    label: "Lifecycle Positioning",
-    saltSoftener: "Higher recurring ops overhead",
-    esoft: "One-time system-led approach",
+    factor: "Plant-Wide Scalability",
+    saltSoftener: "Higher infra and consumable management complexity",
+    esoft: "Signal-led deployment across multiple segments",
   },
 ];
 
 const proofStats = [
   { value: "10,000+", label: "Installations" },
   { value: "50+", label: "Government Projects" },
-  { value: "150+", label: "Commercial Properties" },
+  { value: "150+", label: "Commercial and Industrial Sites" },
   { value: "99%", label: "Retention" },
 ];
 
-const testimonials = [
+const roiBlocks = [
   {
-    name: "Residential Client",
-    meta: "Ahmedabad",
-    quote:
-      "The hard-water marks reduced and maintenance became easier to manage.",
+    icon: BatteryCharging,
+    title: "Energy",
+    points: [
+      "Lower heat-transfer penalty risk from scale layers",
+      "Better utility performance consistency",
+    ],
   },
   {
-    name: "Hospital Operations Team",
-    meta: "Healthcare Segment",
-    quote:
-      "We saw better stability in water-side equipment operations over time.",
+    icon: Wrench,
+    title: "Maintenance",
+    points: [
+      "Reduced consumable handling overhead",
+      "Lower intervention frequency pressure",
+    ],
   },
   {
-    name: "Manufacturing Unit",
-    meta: "Industrial Segment",
-    quote:
-      "Scale-related interruptions became less frequent and costs were more predictable.",
+    icon: BadgeIndianRupee,
+    title: "Cost Planning",
+    points: [
+      "Shift from recurring salt spend to one-time system model",
+      "More predictable long-horizon operations planning",
+    ],
   },
 ];
 
-const pricing = [
-  {
-    icon: Home,
-    title: "Home",
-    range: "INR 35K - 50K",
-    sub: "2-4 people",
-  },
+const segmentLinks = [
   {
     icon: Building2,
-    title: "Business",
-    range: "INR 1.2L - 2.5L",
-    sub: "50-100 users",
+    title: "For Businesses",
+    href: "/for-businesses",
   },
   {
     icon: Factory,
-    title: "Factory",
-    range: "INR 3L - 10L+",
-    sub: "Industrial sizing",
+    title: "For Factories",
+    href: "/for-factories",
+  },
+  {
+    icon: Hospital,
+    title: "For Hospitals",
+    href: "/applications/hospitals",
   },
   {
     icon: Sprout,
-    title: "Farm",
-    range: "INR 80K - 1.5L",
-    sub: "Per-acre estimation",
+    title: "For Farms",
+    href: "/for-farms",
   },
 ];
 
 export function HomePageCustomer() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="signal-wave-bg relative overflow-hidden py-20 lg:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="relative overflow-hidden bg-slate-950 py-20 text-white lg:py-24">
+        <div className="pointer-events-none absolute -left-24 top-8 h-72 w-72 rounded-full bg-cyan-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-blue-600/25 blur-3xl" />
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
           <div>
-            <Badge className="border border-blue-300 bg-white text-blue-800">
-              DIGIGO E-SOFT Product Branding
+            <Badge className="border border-cyan-400/40 bg-cyan-400/10 text-cyan-200">
+              Water Softener Industry Impact Design
             </Badge>
-            <h1 className="mt-5 text-5xl font-extrabold leading-tight text-slate-900 lg:text-7xl">
-              Stop Hard Water Damage
-              <span className="block bg-gradient-to-r from-blue-700 via-cyan-600 to-orange-500 bg-clip-text text-transparent">
-                Without Salt, Chemicals, or Waste
+            <h1 className="mt-5 text-5xl font-extrabold leading-tight lg:text-7xl">
+              Industrial Hard Water Impact
+              <span className="block bg-gradient-to-r from-cyan-300 via-cyan-200 to-orange-300 bg-clip-text text-transparent">
+                Controlled with DIGIGO E-SOFT
               </span>
             </h1>
-            <p className="mt-5 max-w-2xl text-xl text-slate-700">
-              DIGIGO E-SOFT is a Made in India electronic water conditioning product
-              engineered for scale-impact control across homes, businesses, factories,
-              and farms.
+            <p className="mt-5 max-w-2xl text-xl text-slate-200">
+              Built for plants, hospitals, hotels, and commercial utilities where scale
+              control directly affects reliability, cost, and service quality.
             </p>
+            <div className="mt-6 grid gap-2 sm:grid-cols-2">
+              {operationAlerts.map((alert) => (
+                <p
+                  key={alert}
+                  className="inline-flex items-start gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-sm text-slate-200"
+                >
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 text-green-400" />
+                  {alert}
+                </p>
+              ))}
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
+              <Button asChild size="lg" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">
                 <Link href="/get-quote">
-                  Get Technical Fit
+                  Get Site Impact Assessment
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/how-it-works">View Working Principle</Link>
+              <Button asChild size="lg" variant="outline" className="border-slate-500 text-white hover:bg-slate-900">
+                <Link href="/technology">See Technical Working</Link>
               </Button>
             </div>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
               {[
+                "Made in India",
                 "10,000+ Installations",
                 "30+ Year Design Life",
-                "Zero Consumables",
-              ].map((chip) => (
+                "Zero Backwash Waste",
+              ].map((item) => (
                 <span
-                  key={chip}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
+                  key={item}
+                  className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/70 px-4 py-2 text-slate-100"
                 >
-                  <Check className="h-4 w-4 text-green-600" />
-                  {chip}
+                  {item}
                 </span>
               ))}
-              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-slate-700">
-                <Image
-                  src="/made-in-india-logo.jpg"
-                  alt="Made in India"
-                  width={40}
-                  height={40}
-                  className="h-7 w-7 rounded-full object-cover"
-                />
-                Made in India
-              </span>
             </div>
           </div>
 
-          <div className="brand-ring rounded-3xl border border-blue-200 bg-white/90 p-7">
-            <div className="overflow-hidden rounded-2xl border border-blue-100 bg-slate-50 p-6">
+          <div className="rounded-3xl border border-slate-700 bg-slate-900/80 p-6">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-cyan-300">
+              Impact Console
+            </p>
+            <div className="rounded-2xl border border-slate-700 bg-slate-800/80 p-4">
               <Image
                 src="/machine-hero.webp"
-                alt="DIGIGO E-SOFT machine and controller"
+                alt="DIGIGO E-SOFT product unit"
                 width={900}
                 height={700}
                 priority
-                className="mx-auto h-auto w-full max-w-md object-contain"
+                className="mx-auto h-auto w-full max-w-sm object-contain"
               />
             </div>
-            <div className="mt-4 rounded-2xl border border-blue-100 bg-blue-50 p-4">
-              <p className="text-sm font-semibold text-blue-900">
-                Product Positioning
-              </p>
-              <p className="mt-1 text-sm text-slate-700">
-                Premium, no-consumable, long-life scale-impact control platform.
-              </p>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                { k: "Consumables", v: "None" },
+                { k: "Backwash", v: "None" },
+                { k: "Deployment", v: "Pipe-Side" },
+                { k: "Lifespan", v: "30+ Years" },
+              ].map((item) => (
+                <div
+                  key={item.k}
+                  className="rounded-xl border border-slate-700 bg-slate-950/70 px-3 py-3"
+                >
+                  <p className="text-xs uppercase tracking-wide text-slate-400">{item.k}</p>
+                  <p className="mt-1 text-base font-semibold text-white">{item.v}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1.5 text-sm text-cyan-200">
+              <Image
+                src="/made-in-india-logo.jpg"
+                alt="Made in India logo"
+                width={32}
+                height={32}
+                className="h-7 w-7 rounded-full object-cover"
+              />
+              DIGIGO Technology, India
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-18">
-        <div className="mx-auto max-w-7xl px-4 py-4">
-          <div className="mb-10 text-center">
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Core Brand Pillars
+              Hard Water Impact Across Critical Sectors
             </h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Every page and sales message should reinforce these four product truths.
+              The design focus is operational impact, not generic lifestyle positioning.
             </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {brandPillars.map((pillar) => (
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {industryImpactCards.map((card) => (
               <div
-                key={pillar.title}
-                className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-6"
+                key={card.title}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
               >
-                <pillar.icon className="mb-4 h-9 w-9 text-blue-700" />
-                <h3 className="text-xl font-bold text-slate-900">{pillar.title}</h3>
-                <p className="mt-2 text-slate-600">{pillar.desc}</p>
+                <card.icon className="mb-3 h-8 w-8 text-blue-700" />
+                <h3 className="text-2xl font-bold text-slate-900">{card.title}</h3>
+                <p className="mt-2 text-slate-600">{card.impact}</p>
               </div>
             ))}
           </div>
@@ -325,30 +326,26 @@ export function HomePageCustomer() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 max-w-3xl">
             <Badge className="border border-cyan-400/40 bg-cyan-400/10 text-cyan-200">
-              Product Impact
+              Operational Impact Dashboard
             </Badge>
             <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
-              Clear Value Story for Every Buyer
+              Industry-Relevant Impact Framing
             </h2>
             <p className="mt-3 text-lg text-slate-300">
-              The product promise is operational clarity: no consumables, no backwash waste,
-              and long-term deployment confidence.
+              Present measurable operations language to buyers: energy, maintenance,
+              water waste, and lifecycle.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {impactMetrics.map((metric) => (
               <div
-                key={metric.unit}
-                className="rounded-2xl border border-slate-700 bg-slate-800/70 p-5"
+                key={metric.label}
+                className="rounded-2xl border border-slate-700 bg-slate-800/80 p-5"
               >
                 <metric.icon className="mb-3 h-6 w-6 text-cyan-300" />
-                <p className="text-3xl font-bold text-cyan-300">
-                  {metric.value}
-                  <span className="ml-1 text-base font-semibold text-cyan-100">
-                    {metric.unit}
-                  </span>
-                </p>
-                <p className="mt-1 text-sm text-slate-300">{metric.desc}</p>
+                <p className="text-3xl font-bold text-cyan-200">{metric.value}</p>
+                <p className="mt-1 text-base font-semibold text-white">{metric.label}</p>
+                <p className="mt-1 text-sm text-slate-300">{metric.note}</p>
               </div>
             ))}
           </div>
@@ -359,68 +356,23 @@ export function HomePageCustomer() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
             <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Hard Water Problem Statement
+              Where E-SOFT Sits in the Water Softener Workflow
             </h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Keep the problem visible. Buyers convert faster when the pain is clear.
+              Keep this flow visual on homepage so decision-makers understand placement fast.
             </p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="grid gap-4 md:grid-cols-3">
-              {problemCards.map((problem) => (
-                <div
-                  key={problem.title}
-                  className="rounded-2xl border border-red-100 bg-white p-6"
-                >
-                  <problem.icon className="mb-3 h-7 w-7 text-red-500" />
-                  <h3 className="text-lg font-bold text-slate-900">{problem.title}</h3>
-                  <p className="mt-2 text-sm text-slate-600">{problem.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="rounded-3xl border border-blue-200 bg-white p-7">
-              <h3 className="text-2xl font-bold text-slate-900">
-                DIGIGO E-SOFT Brand Message
-              </h3>
-              <p className="mt-3 text-slate-700">
-                We don&apos;t sell a generic softener. We position E-SOFT as an engineered
-                solution that improves operating consistency without monthly maintenance habits.
-              </p>
-              <ul className="mt-5 space-y-2 text-sm text-slate-700">
-                {[
-                  "One product identity across all customer segments",
-                  "One promise language across hero, ads, and forms",
-                  "One proof model: impact metrics + logo wall + project references",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 text-green-600" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              How the Product Works
-            </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Keep this explanation simple and visual in every channel.
-            </p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-3">
-            {howSteps.map((step) => (
-              <div key={step.step} className="rounded-2xl border border-slate-200 bg-slate-50 p-7 text-center">
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-r from-blue-700 to-cyan-600 text-xl font-bold text-white">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {processFlow.map((step) => (
+              <div
+                key={step.step}
+                className="rounded-2xl border border-blue-100 bg-white p-6"
+              >
+                <span className="inline-flex rounded-full bg-blue-700 px-3 py-1 text-xs font-bold tracking-wide text-white">
                   {step.step}
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
-                <p className="mt-2 text-slate-600">{step.desc}</p>
+                </span>
+                <h3 className="mt-3 text-xl font-bold text-slate-900">{step.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -429,28 +381,58 @@ export function HomePageCustomer() {
 
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-12 text-center">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
+              E-SOFT vs Conventional Salt Softener
+            </h2>
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
+              Show this matrix early to position product category difference clearly.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+            <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-slate-100 px-5 py-4 text-sm font-bold text-slate-700">
+              <p>Impact Factor</p>
+              <p>Salt Softener</p>
+              <p>DIGIGO E-SOFT</p>
+            </div>
+            {comparisonRows.map((row) => (
+              <div
+                key={row.factor}
+                className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-slate-200 px-5 py-4 text-sm text-slate-700"
+              >
+                <p className="font-semibold text-slate-900">{row.factor}</p>
+                <p>{row.saltSoftener}</p>
+                <p className="font-semibold text-blue-800">{row.esoft}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-10 text-center">
             <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
               Proof of Work
             </h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Brand trust grows when numbers and names are visible on the homepage.
+              Buyer confidence in this category depends on live deployments and visible references.
             </p>
           </div>
-          <div className="mb-12 grid gap-4 md:grid-cols-4">
+          <div className="mb-10 grid gap-4 md:grid-cols-4">
             {proofStats.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-6 text-center"
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
               >
                 <p className="text-4xl font-bold text-blue-700">{stat.value}</p>
-                <p className="mt-2 text-slate-600">{stat.label}</p>
+                <p className="mt-2 text-sm text-slate-600">{stat.label}</p>
               </div>
             ))}
           </div>
-          <div className="mb-12">
+          <div className="mb-10">
             <h3 className="mb-4 text-center text-2xl font-bold text-slate-900">
-              Client Logo Wall
+              Client Logos from Live Deployments
             </h3>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
               {clientLogos.map((client) => (
@@ -470,25 +452,6 @@ export function HomePageCustomer() {
               ))}
             </div>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {testimonials.map((item) => (
-              <div
-                key={item.name}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6"
-              >
-                <div className="mb-3 flex gap-1 text-yellow-500">
-                  <Star className="h-4 w-4 fill-current" />
-                  <Star className="h-4 w-4 fill-current" />
-                  <Star className="h-4 w-4 fill-current" />
-                  <Star className="h-4 w-4 fill-current" />
-                  <Star className="h-4 w-4 fill-current" />
-                </div>
-                <p className="italic text-slate-700">&ldquo;{item.quote}&rdquo;</p>
-                <p className="mt-4 font-bold text-slate-900">{item.name}</p>
-                <p className="text-sm text-slate-600">{item.meta}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -496,57 +459,45 @@ export function HomePageCustomer() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 text-center">
             <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              E-SOFT vs Salt Softener
+              ROI Conversation Framework
             </h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Keep this comparison visual and plain-language to speed up buying decisions.
+              Use these three value buckets in calls, proposals, and homepage copy.
             </p>
           </div>
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-            <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-slate-100 px-5 py-4 text-sm font-bold text-slate-700">
-              <p>Decision Factor</p>
-              <p>Salt Softener</p>
-              <p>DIGIGO E-SOFT</p>
-            </div>
-            {comparisonRows.map((row) => (
+          <div className="grid gap-5 md:grid-cols-3">
+            {roiBlocks.map((block) => (
               <div
-                key={row.label}
-                className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-slate-200 px-5 py-4 text-sm text-slate-700"
+                key={block.title}
+                className="rounded-2xl border border-slate-200 bg-white p-6"
               >
-                <p className="font-semibold text-slate-900">{row.label}</p>
-                <p>{row.saltSoftener}</p>
-                <p className="font-semibold text-blue-800">{row.esoft}</p>
+                <block.icon className="mb-3 h-8 w-8 text-blue-700" />
+                <h3 className="text-2xl font-bold text-slate-900">{block.title}</h3>
+                <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                  {block.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 text-green-600" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Pricing Anchors by Segment
-            </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Keep pricing transparent and positioned as one-time system investment.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {pricing.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-slate-200 bg-slate-50 p-6 text-center"
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {segmentLinks.map((segment) => (
+              <Link
+                key={segment.title}
+                href={segment.href}
+                className="rounded-2xl border border-blue-100 bg-blue-50 p-5 text-blue-900 transition hover:-translate-y-0.5 hover:border-blue-300"
               >
-                <item.icon className="mx-auto mb-3 h-9 w-9 text-blue-700" />
-                <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
-                <p className="mt-1 text-sm text-slate-600">{item.sub}</p>
-                <p className="mt-3 text-2xl font-bold text-blue-700">{item.range}</p>
-                <div className="mt-3 inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs text-slate-600">
-                  <BadgeIndianRupee className="h-3.5 w-3.5" />
-                  Indicative range
-                </div>
-              </div>
+                <segment.icon className="mb-2 h-7 w-7" />
+                <p className="text-lg font-bold">{segment.title}</p>
+                <p className="mt-2 inline-flex items-center gap-1 text-sm font-semibold">
+                  Explore
+                  <ArrowRight className="h-4 w-4" />
+                </p>
+              </Link>
             ))}
           </div>
         </div>
@@ -555,74 +506,45 @@ export function HomePageCustomer() {
       <section className="bg-gradient-to-br from-blue-700 to-cyan-600 py-20 text-white">
         <div className="mx-auto max-w-5xl px-4 text-center">
           <h2 className="text-4xl font-bold lg:text-5xl">
-            Ready to Position the Right E-SOFT Model?
+            Need an Industry-Focused Water Softener Impact Plan?
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-xl text-white/90">
-            Share your site details and we will map a technical fit for your water line,
-            usage profile, and application type.
+            Share your line profile, water quality context, and application details. We
+            will map an E-SOFT deployment path aligned to your operations.
           </p>
           <div className="mx-auto mt-8 max-w-3xl rounded-3xl bg-white/10 p-7 backdrop-blur-sm">
             <QuickQuoteForm />
           </div>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-slate-100">
-              <Link href="/technology">
-                Technical Page
+              <Link href="/clients">
+                See More Deployments
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-              <Link href="/contact">Talk to Product Team</Link>
+              <Link href="/contact">Talk to Industry Team</Link>
             </Button>
           </div>
+          <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm text-white/90">
+            <Clock3 className="h-4 w-4" />
+            Typical response window: within 2 business hours
+          </p>
         </div>
       </section>
 
       <section className="border-t-4 border-green-600 bg-green-50 py-12">
         <div className="mx-auto max-w-4xl px-4 text-center">
           <div className="mb-3 flex items-center justify-center gap-3">
-            <Scale className="h-8 w-8 text-green-700" />
+            <Leaf className="h-8 w-8 text-green-700" />
             <h3 className="text-3xl font-bold text-slate-900">
               30-Day Confidence Commitment
             </h3>
           </div>
           <p className="text-lg text-slate-700">
-            If early operation does not align with expected site conditions, our team
-            performs technical review and guided resolution.
+            If field performance does not align with expected impact under reviewed site
+            conditions, our technical team supports guided corrective action.
           </p>
-        </div>
-      </section>
-
-      <section className="bg-white py-14">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-6 text-center">
-            <h3 className="text-2xl font-bold text-slate-900">Choose Your Application</h3>
-          </div>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {segmentCards.map((segment) => (
-              <Link
-                key={segment.label}
-                href={segment.href}
-                className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-6"
-              >
-                <segment.icon className="mb-3 h-8 w-8 text-blue-700" />
-                <h4 className="text-xl font-bold text-slate-900">{segment.label}</h4>
-                <p className="mt-2 text-sm text-slate-600">{segment.desc}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-700">
-                  Explore
-                  <ArrowRight className="h-4 w-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Button asChild variant="ghost" className="text-blue-700 hover:bg-blue-50">
-              <Link href="/clients">
-                View More Client Proof
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </section>
     </main>
