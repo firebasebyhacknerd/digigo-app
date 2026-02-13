@@ -1,28 +1,28 @@
-﻿import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import type { Metadata } from "next";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 
-const display = Sora({
+const display = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const body = Manrope({
+const body = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
   display: "swap",
 });
 
 const title =
-  "DIGIGO Technology | E-SOFT Electro Hydro Enhancer - Industrial-Grade Electronic Water Conditioning";
+  "E-Soft by DIGIGO | Premium Electronic Water Treatment";
 const description =
-  "DIGIGO Technology Pvt. Ltd. (founded 2012, HQ Ahmedabad) builds E-SOFT, a 6th-generation electronic water conditioning system: salt-free, chemical-free, zero water waste, 30+ year design life.";
+  "E-Soft by DIGIGO delivers premium electronic water treatment for luxury residences, estates, hotels, and high-performance facilities.";
 const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {

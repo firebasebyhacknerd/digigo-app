@@ -9,7 +9,7 @@ function Pipe() {
   return (
     <mesh>
       <cylinderGeometry args={[0.78, 0.78, 3.2, 56]} />
-      <meshStandardMaterial color="#4b617e" roughness={0.45} metalness={0.5} />
+      <meshStandardMaterial color="#5c6481" roughness={0.45} metalness={0.52} />
     </mesh>
   );
 }
@@ -36,9 +36,9 @@ function Coil() {
   return (
     <mesh geometry={geometry}>
       <meshStandardMaterial
-        color="#00a7c7"
-        emissive="#1cc6e2"
-        emissiveIntensity={0.75}
+        color="#d4af37"
+        emissive="#f1d985"
+        emissiveIntensity={0.48}
         roughness={0.2}
         metalness={0.7}
       />
@@ -61,7 +61,7 @@ function Pulses() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#8ce7f7" size={0.038} sizeAttenuation depthWrite={false} />
+      <pointsMaterial color="#f6e7b1" size={0.038} sizeAttenuation depthWrite={false} />
     </points>
   );
 }
@@ -79,7 +79,7 @@ function FieldRings() {
       {rings.map((ring) => (
         <mesh key={`${ring.y}-${ring.scale}`} rotation={[Math.PI / 2, 0, 0]} position={[0, ring.y, 0]} scale={ring.scale}>
           <torusGeometry args={[1.06, 0.005, 14, 120]} />
-          <meshBasicMaterial color="#7fd7ec" transparent opacity={0.48} />
+          <meshBasicMaterial color="#d4b260" transparent opacity={0.45} />
         </mesh>
       ))}
     </group>
@@ -88,8 +88,8 @@ function FieldRings() {
 
 export function Explainer3D() {
   return (
-    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-[#f1f8ff] via-[#e5f2ff] to-[#f8fcff] shadow-xl">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(0,167,199,0.18),transparent_40%),radial-gradient(circle_at_80%_85%,rgba(13,77,145,0.18),transparent_42%)]" />
+    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-[#d4af37]/30 bg-gradient-to-br from-[#1a2340] via-[#1f2b4d] to-[#131b32] shadow-xl">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(212,175,55,0.2),transparent_42%),radial-gradient(circle_at_80%_85%,rgba(255,255,255,0.08),transparent_40%)]" />
       <Suspense
         fallback={
           <div className="flex h-full w-full items-center justify-center text-sm font-medium text-blue-700">
@@ -98,11 +98,11 @@ export function Explainer3D() {
         }
       >
         <Canvas dpr={[1, 1.8]}>
-          <color attach="background" args={["#0f2844"]} />
+          <color attach="background" args={["#131b32"]} />
           <ambientLight intensity={0.5} />
-          <pointLight position={[5, 5, 3]} intensity={12} color="#1cc6e2" />
-          <pointLight position={[-4, -3, -3]} intensity={8} color="#7fd7ec" />
-          <pointLight position={[0, 2, -4]} intensity={4} color="#ffcc8a" />
+          <pointLight position={[5, 5, 3]} intensity={10} color="#d4af37" />
+          <pointLight position={[-4, -3, -3]} intensity={8} color="#8f9ac3" />
+          <pointLight position={[0, 2, -4]} intensity={5} color="#f4df95" />
           <PerspectiveCamera makeDefault position={[3.4, 1.1, 3.4]} fov={46} />
           <Float speed={1.35} rotationIntensity={0.22} floatIntensity={0.36}>
             <group>

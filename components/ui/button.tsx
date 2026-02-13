@@ -9,9 +9,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border border-blue-700/30 bg-gradient-to-r from-blue-700 to-cyan-600 text-white shadow-[0_10px_30px_rgba(13,77,145,0.28)] hover:-translate-y-[1px] hover:shadow-[0_16px_36px_rgba(13,77,145,0.32)] focus-visible:ring-blue-300",
+          "border border-[#b89a45]/40 bg-gradient-to-r from-[#1a2340] to-[#2f3c67] text-white shadow-[0_10px_30px_rgba(17,22,37,0.28)] hover:-translate-y-[1px] hover:shadow-[0_16px_36px_rgba(17,22,37,0.34)] focus-visible:ring-[#d4af37]/50",
         outline:
-          "border border-blue-300 bg-white text-blue-800 hover:bg-blue-50 hover:border-blue-400 focus-visible:ring-blue-200",
+          "border border-[#1a2340]/30 bg-white text-[#1a2340] hover:bg-[#f6f3ea] hover:border-[#b89a45]/50 focus-visible:ring-[#d4af37]/35",
         ghost:
           "border border-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100 focus-visible:ring-slate-200",
       },

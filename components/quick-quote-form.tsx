@@ -75,14 +75,14 @@ export function QuickQuoteForm() {
           name="name"
           type="text"
           placeholder="Your Name (Optional)"
-          className="rounded-xl border border-steel-200 bg-white px-4 py-3 text-slate-900 outline-none ring-0 placeholder:text-slate-400 focus:border-blue-500"
+          className="rounded-xl border border-[#1a2340]/20 bg-white px-4 py-3 text-slate-900 outline-none ring-0 placeholder:text-slate-400 focus:border-[#9f7c23]"
         />
         <input
           name="phone"
           type="tel"
           required
           placeholder="Phone Number"
-          className="rounded-xl border border-steel-200 bg-white px-4 py-3 text-slate-900 outline-none ring-0 placeholder:text-slate-400 focus:border-blue-500"
+          className="rounded-xl border border-[#1a2340]/20 bg-white px-4 py-3 text-slate-900 outline-none ring-0 placeholder:text-slate-400 focus:border-[#9f7c23]"
         />
       </div>
 
@@ -90,7 +90,7 @@ export function QuickQuoteForm() {
         <select
           name="sector"
           required
-          className="rounded-xl border border-steel-200 bg-white px-4 py-3 text-slate-900 outline-none ring-0 focus:border-blue-500"
+          className="rounded-xl border border-[#1a2340]/20 bg-white px-4 py-3 text-slate-900 outline-none ring-0 focus:border-[#9f7c23]"
           defaultValue=""
         >
           <option value="" disabled>
@@ -105,7 +105,7 @@ export function QuickQuoteForm() {
         <select
           name="problem"
           required
-          className="rounded-xl border border-steel-200 bg-white px-4 py-3 text-slate-900 outline-none ring-0 focus:border-blue-500"
+          className="rounded-xl border border-[#1a2340]/20 bg-white px-4 py-3 text-slate-900 outline-none ring-0 focus:border-[#9f7c23]"
           defaultValue=""
         >
           <option value="" disabled>
@@ -121,19 +121,19 @@ export function QuickQuoteForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full bg-white text-blue-700 hover:bg-slate-100"
+        className="w-full rounded-full"
         disabled={state === "sending"}
       >
         {state === "sent" ? "Submitted - We Will Call You" : state === "sending" ? "Submitting..." : "Get My Free Quote"}
       </Button>
 
-      {error && <p className="text-sm text-red-200">{error}</p>}
+      {error && <p className="text-sm text-red-600">{error}</p>}
       {state === "sent" && (
-        <p className="text-sm text-green-200">
+        <p className="text-sm text-green-700">
           Thanks. Our team will contact you shortly.
         </p>
       )}
-      <p className="text-xs text-white/80">
+      <p className="text-xs text-slate-500">
         Free consultation. No obligation.
       </p>
     </form>
