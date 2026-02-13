@@ -337,7 +337,7 @@ export function HomePageCustomer() {
                 <span className="absolute left-3 top-3 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700">
                   DIGIGO E-SOFT
                 </span>
-                <span className="absolute bottom-3 right-3 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                <span className="absolute bottom-3 right-3 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
                   No Salt System
                 </span>
               </div>
@@ -405,10 +405,10 @@ export function HomePageCustomer() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-20 text-white">
+      <section className="bg-gradient-to-b from-[#0d223a] to-[#123f66] py-20 text-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
-            <Badge className="border border-cyan-400/40 bg-cyan-500/10 text-cyan-200">
+            <Badge className="border border-cyan-300/40 bg-cyan-300/10 text-cyan-100">
               3D Product Explanation
             </Badge>
             <h2 className="mt-4 text-4xl font-bold lg:text-5xl">How E-SOFT Works in Real Flow</h2>
@@ -416,16 +416,16 @@ export function HomePageCustomer() {
               The 3D model shows coil placement, signal application, and the intended scale-adhesion outcome.
             </p>
 
-            <div className="mt-6 rounded-3xl border border-slate-700 bg-slate-900/80 p-4">
+            <div className="mt-6 rounded-3xl border border-blue-900/50 bg-[#0e2742]/80 p-4">
               <Explainer3D />
             </div>
           </div>
 
           <div className="space-y-4 pt-2">
             {signalFlowSteps.map((step) => (
-              <div key={step.step} className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5">
+              <div key={step.step} className="rounded-2xl border border-blue-900/50 bg-[#0e2742]/75 p-5">
                 <div className="flex items-start gap-4">
-                  <span className="inline-flex rounded-full bg-cyan-500/15 px-3 py-1 text-xs font-bold tracking-wide text-cyan-200">
+                  <span className="inline-flex rounded-full bg-cyan-300/15 px-3 py-1 text-xs font-bold tracking-wide text-cyan-100">
                     {step.step}
                   </span>
                   <div>
@@ -441,8 +441,8 @@ export function HomePageCustomer() {
         <div className="mx-auto mt-10 max-w-7xl px-4">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {explanationFrames.map((frame) => (
-              <div key={frame.title} className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/70">
-                <div className="relative h-40 border-b border-slate-700 bg-gradient-to-br from-slate-900 to-blue-950">
+              <div key={frame.title} className="overflow-hidden rounded-2xl border border-blue-900/50 bg-[#0e2742]/75">
+                <div className="relative h-40 border-b border-blue-900/50 bg-gradient-to-br from-[#0e2742] to-[#154a75]">
                   <Image src={frame.image} alt={frame.title} fill className="object-contain p-3" />
                 </div>
                 <div className="p-4">
@@ -563,18 +563,18 @@ export function HomePageCustomer() {
         </div>
       </section>
 
-      <section className="bg-slate-950 py-20 text-white">
+      <section className="bg-gradient-to-b from-[#102f4f] to-[#0d223a] py-20 text-white">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <Badge className="border border-cyan-400/40 bg-cyan-500/10 text-cyan-200">
+            <Badge className="border border-cyan-300/40 bg-cyan-300/10 text-cyan-100">
               Why Teams Choose DIGIGO E-SOFT
             </Badge>
             <h2 className="mt-4 text-4xl font-bold lg:text-5xl">Operational Trust Pillars</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {trustPillars.map((pillar) => (
-              <div key={pillar.title} className="rounded-2xl border border-slate-700 bg-slate-900/80 p-5">
-                <pillar.icon className="mb-3 h-7 w-7 text-cyan-300" />
+              <div key={pillar.title} className="rounded-2xl border border-blue-900/50 bg-[#0e2742]/75 p-5">
+                <pillar.icon className="mb-3 h-7 w-7 text-cyan-100" />
                 <h3 className="text-lg font-bold text-white">{pillar.title}</h3>
                 <p className="mt-1 text-sm text-slate-300">{pillar.text}</p>
               </div>
@@ -611,7 +611,7 @@ export function HomePageCustomer() {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {caseStudies.map((study) => (
               <div key={study.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <span className="inline-flex rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700">
+                <span className="inline-flex rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
                   {study.tag}
                 </span>
                 <h3 className="mt-3 text-xl font-bold text-slate-900">{study.title}</h3>
@@ -645,7 +645,7 @@ export function HomePageCustomer() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-blue-700 to-cyan-600 py-20 text-white">
+      <section className="bg-gradient-to-br from-[#0d4d91] via-[#1364ab] to-[#00a7c7] py-20 text-white">
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
