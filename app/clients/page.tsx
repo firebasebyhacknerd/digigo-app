@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -20,11 +21,35 @@ export default function Clients() {
     { title: "99%", label: "Retention" },
   ];
 
-  const namedClients = [
-    "Sardardham",
-    "Krishna Group",
-    "Brahma Kumaris",
-    "Vivaan Realty",
+  const clientLogos = [
+    { name: "Sardardham", file: "sardardham.png" },
+    { name: "Krishna Group", file: "krishna-group.png" },
+    { name: "Brahma", file: "brhma.png" },
+    { name: "Arise", file: "arise.png" },
+    { name: "Shanti", file: "shanti-logo.png" },
+    { name: "AIM Plast", file: "aim-plast.jpg" },
+    { name: "Apollo", file: "apollo.png" },
+    { name: "Atmos", file: "atmos.jpg" },
+    { name: "Compocan Industries", file: "compocan-industries.jpg" },
+    { name: "Cotton Concept", file: "cotton-concept.png" },
+    { name: "Decon", file: "decon.png" },
+    { name: "Dhanraj", file: "dhanraj.jpg" },
+    { name: "Duke", file: "duke.png" },
+    { name: "FCG", file: "fcg.png" },
+    { name: "Gujarat Health", file: "Gujarat-Health.jpeg" },
+    { name: "Life Care", file: "life-care.jpg" },
+    { name: "Madhvi", file: "Madhvi.png" },
+    { name: "Mandan Metals", file: "mandan-matels.png" },
+    { name: "Mavjat", file: "mavjat.png" },
+    { name: "Nucleus Formulation", file: "nucleus-formulation-pvt-ltd.png" },
+    { name: "Osho Dynamic", file: "osho-dynamic.jpg" },
+    { name: "Pharmanza", file: "pharmanza.png" },
+    { name: "Sai", file: "sai.png" },
+    { name: "Shikshapatri", file: "shikshapatri.png" },
+    { name: "Stagot", file: "stagot.jpg" },
+    { name: "Sun Resorts", file: "sun-resorts.png" },
+    { name: "Vinitech", file: "vinitech.png" },
+    { name: "Vivaan", file: "vivaan.png" },
   ];
 
   return (
@@ -50,13 +75,23 @@ export default function Clients() {
         <div className="grid gap-6 lg:grid-cols-3">
           <Card className="border-border bg-surface-2/40 lg:col-span-2">
             <CardHeader>
-              <CardTitle className="text-ink">Sectors Served</CardTitle>
-              <p className="text-muted">If you want examples from your segment, we can share a reference list on request.</p>
+              <CardTitle className="text-ink">Client Logos</CardTitle>
+              <p className="text-muted">Live logo set captured from your current website.</p>
             </CardHeader>
-            <CardContent className="grid gap-3 sm:grid-cols-2">
-              {sectors.map((s) => (
-                <div key={s} className="rounded-2xl border border-border bg-surface-3/50 px-4 py-3 text-ink">
-                  {s}
+            <CardContent className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {clientLogos.map((client) => (
+                <div
+                  key={client.file}
+                  className="flex h-24 items-center justify-center rounded-2xl border border-border bg-white px-4 py-3"
+                  title={client.name}
+                >
+                  <Image
+                    src={`/client-logos/${client.file}`}
+                    alt={`${client.name} logo`}
+                    width={180}
+                    height={72}
+                    className="max-h-14 w-auto object-contain"
+                  />
                 </div>
               ))}
             </CardContent>
@@ -64,13 +99,16 @@ export default function Clients() {
 
           <Card className="border-border bg-surface-2/40">
             <CardHeader>
-              <CardTitle className="text-ink">Recognized Names</CardTitle>
-              <p className="text-muted">A few examples seen on your digigostore presence.</p>
+              <CardTitle className="text-ink">Sectors Served</CardTitle>
+              <p className="text-muted">If you want examples from your segment, we can share a reference list on request.</p>
             </CardHeader>
             <CardContent className="space-y-2 text-muted">
-              {namedClients.map((c) => (
-                <div key={c} className="rounded-2xl border border-border bg-surface-3/50 px-4 py-3 text-ink">
-                  {c}
+              {sectors.map((sector) => (
+                <div
+                  key={sector}
+                  className="rounded-2xl border border-border bg-surface-3/50 px-4 py-3 text-ink"
+                >
+                  {sector}
                 </div>
               ))}
               <div className="pt-3 grid gap-3">
