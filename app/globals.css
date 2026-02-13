@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lift;
+  }
+
+  .text-gradient-hydro {
+    @apply bg-gradient-hydro bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply border border-steel-700/50 bg-steel-800/30 shadow-glass backdrop-blur-xl;
+  }
+}
+
 :root {
   color-scheme: light;
   --bg: #fff8f3;
@@ -27,6 +45,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -121,5 +143,20 @@ a {
   h1, h2, h3, h4, h5 {
     font-family: var(--font-display), "Segoe UI", system-ui, -apple-system, sans-serif;
     letter-spacing: -0.01em;
+  }
+}
+
+@media (max-width: 768px) {
+  .animate-gradient-flow {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

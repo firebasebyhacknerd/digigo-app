@@ -1,20 +1,22 @@
 ﻿import type { Metadata } from "next";
-import { Manrope, Sora } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { FloatingCTA } from "@/components/floating-cta";
 
-const display = Sora({
+const display = Outfit({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "600", "800"],
   variable: "--font-display",
+  display: "swap",
 });
 
-const body = Manrope({
+const body = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-body",
+  display: "swap",
 });
 
 const title =
@@ -81,7 +83,7 @@ export default function RootLayout({
               contactPoint: [
                 {
                   "@type": "ContactPoint",
-                  telephone: "+91-99999-99999",
+                  telephone: "+91-63563-11101",
                   contactType: "sales",
                   areaServed: "IN",
                 },
