@@ -9,6 +9,7 @@ import {
   Clock3,
   Droplets,
   Factory,
+  Gauge,
   HandCoins,
   Leaf,
   PhoneCall,
@@ -26,116 +27,173 @@ import { clientLogos } from "@/content/client-logos";
 const heroHighlights = [
   "No salt consumables",
   "No backwash wastewater",
+  "No chemicals added",
   "30+ year design-life platform",
-  "Made in India engineering",
+];
+
+const trustStats = [
+  { value: "10,000+", label: "Installations" },
+  { value: "50+", label: "Government Projects" },
+  { value: "150+", label: "Commercial and Industrial Sites" },
+  { value: "99%", label: "Customer Retention" },
+];
+
+const painCards = [
+  {
+    icon: Zap,
+    title: "Heat Transfer Penalty",
+    value: "Up to 20-30%",
+    text: "Scale formation on hot surfaces can reduce energy efficiency in utilities.",
+  },
+  {
+    icon: Wrench,
+    title: "Service Burden",
+    value: "Recurring",
+    text: "Hard-water deposits can increase maintenance interventions and cleaning cycles.",
+  },
+  {
+    icon: BadgeIndianRupee,
+    title: "Salt OPEX",
+    value: "Monthly",
+    text: "Conventional softeners add recurring salt purchase, handling, and storage cost.",
+  },
+  {
+    icon: Gauge,
+    title: "Operational Stability",
+    value: "Critical",
+    text: "Utility reliability is influenced by scale behavior across water lines and equipment.",
+  },
+];
+
+const signalFlowSteps = [
+  {
+    step: "01",
+    title: "Wrap Coil on Existing Pipe",
+    text: "Non-invasive installation around the line segment. No major plumbing changes.",
+  },
+  {
+    step: "02",
+    title: "Controller Sends Programmed Signal",
+    text: "Low-frequency modulation is applied through the induction coil field.",
+  },
+  {
+    step: "03",
+    title: "Mineral Adhesion Tendency Reduces",
+    text: "Calcium and magnesium crystallization behavior shifts toward lower adhesion.",
+  },
+  {
+    step: "04",
+    title: "Lower Handling Over Time",
+    text: "Teams target cleaner lines, fewer interventions, and better utility performance.",
+  },
+];
+
+const explanationFrames = [
+  {
+    title: "Controller + Coil Assembly",
+    text: "Electronic controller and induction coil installed as one system.",
+    image: "/machine-hero.webp",
+  },
+  {
+    title: "Signal Coupling on Pipe",
+    text: "Signal is coupled externally through the wrapped coil.",
+    image: "/esoft-machine.webp",
+  },
+  {
+    title: "Minerals Stay in Water",
+    text: "E-SOFT conditions scale behavior without removing essential minerals.",
+    image: "/machine-hero.webp",
+  },
+  {
+    title: "Built for Indian Conditions",
+    text: "Made in India product with support for local operating conditions.",
+    image: "/esoft-machine.webp",
+  },
+];
+
+const technologyCards = [
+  {
+    icon: Zap,
+    title: "Controller",
+    text: "Generates programmed low-frequency signal patterns for conditioning.",
+  },
+  {
+    icon: Droplets,
+    title: "Induction Coil",
+    text: "Wraps existing pipe and couples the signal without water contact.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Power and Safety",
+    text: "Requires nearby power point and is designed for safe operation.",
+  },
+  {
+    icon: Wrench,
+    title: "Sizing Inputs",
+    text: "Pipe size, flow profile, hardness/TDS range, and application duty.",
+  },
+];
+
+const technologyBullets = [
+  "Zero salt, zero chemicals, zero wastewater",
+  "Keeps essential minerals in water",
+  "Non-invasive installation on existing line",
+  "Zero consumable maintenance",
+  "Works with existing RO/UV systems",
+  "Safe for drinking and cooking",
+];
+
+const comparisonRows = [
+  {
+    label: "Salt Required",
+    classic: "Yes",
+    esoft: "No",
+  },
+  {
+    label: "Wastewater Generation",
+    classic: "Yes (backwash)",
+    esoft: "No",
+  },
+  {
+    label: "Minerals Removed",
+    classic: "Yes",
+    esoft: "No",
+  },
+  {
+    label: "Maintenance",
+    classic: "Regular refill and service",
+    esoft: "Zero consumables",
+  },
+  {
+    label: "Installation",
+    classic: "Plumbing changes",
+    esoft: "Non-invasive",
+  },
+  {
+    label: "Power Consumption",
+    classic: "Medium",
+    esoft: "Low",
+  },
 ];
 
 const solutionTracks = [
   {
     icon: Building2,
     title: "Homes and Residential",
-    text: "For apartments, villas, and societies that need cleaner fixtures and lower appliance scaling.",
+    text: "For apartments, villas, and societies targeting lower scale complaints and cleaner fixtures.",
     href: "/for-homes",
   },
   {
     icon: Factory,
     title: "Commercial and Industrial",
-    text: "For hotels, hospitals, and plants that need reliable line performance with lower maintenance burden.",
+    text: "For hospitality, hospitals, plants, and utilities requiring stable operation.",
     href: "/for-factories",
   },
   {
     icon: Sprout,
     title: "Agriculture and Irrigation",
-    text: "For farms and irrigation networks where hard-water deposits affect flow consistency.",
+    text: "For farms and irrigation lines where deposits affect distribution consistency.",
     href: "/for-farms",
-  },
-];
-
-const impactCards = [
-  {
-    icon: Zap,
-    value: "Up to 20-30%",
-    label: "Potential Heat-Efficiency Penalty",
-    note: "Scale on hot surfaces can reduce heat-transfer efficiency.",
-  },
-  {
-    icon: Wrench,
-    value: "Recurring",
-    label: "Maintenance Pressure",
-    note: "Hard-water deposits can increase service and cleaning intervals.",
-  },
-  {
-    icon: BadgeIndianRupee,
-    value: "Monthly",
-    label: "Salt OPEX Cycle",
-    note: "Traditional systems typically require recurring consumables.",
-  },
-  {
-    icon: ShieldCheck,
-    value: "30+ Years",
-    label: "Platform Design Life",
-    note: "Long-horizon electronic system approach for operations.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "01",
-    title: "Coil Installed on Existing Pipe",
-    text: "The induction coil is mounted on the target line without heavy civil changes.",
-  },
-  {
-    step: "02",
-    title: "Controller Applies Programmed Signals",
-    text: "Electronic patterns are delivered to influence mineral behavior in flow.",
-  },
-  {
-    step: "03",
-    title: "Lower Adhesion Tendency",
-    text: "Mineral sticking tendency is reduced to support cleaner operating surfaces.",
-  },
-  {
-    step: "04",
-    title: "Improved Operational Profile",
-    text: "Teams target lower handling overhead and more predictable utility maintenance.",
-  },
-];
-
-const expectedOutcomes = [
-  {
-    title: "Weeks 1-4",
-    text: "Teams monitor spotting trend, fixture behavior, and immediate maintenance observations.",
-  },
-  {
-    title: "30-90 Days",
-    text: "Site owners review cleaning frequency, line condition, and recurring intervention patterns.",
-  },
-  {
-    title: "Long Term",
-    text: "Value is driven by reduced recurring management and stable utility operations.",
-  },
-];
-
-const comparisonRows = [
-  {
-    factor: "Consumables",
-    classic: "Salt refill cycle required",
-    esoft: "No salt consumable routine",
-  },
-  {
-    factor: "Water Waste",
-    classic: "Backwash discharge process",
-    esoft: "No regular backwash cycle",
-  },
-  {
-    factor: "Maintenance Rhythm",
-    classic: "Frequent manual handling and servicing",
-    esoft: "Lower routine handling model",
-  },
-  {
-    factor: "Lifecycle Profile",
-    classic: "Recurring OPEX heavy profile",
-    esoft: "One-time platform-led profile",
   },
 ];
 
@@ -143,44 +201,62 @@ const trustPillars = [
   {
     icon: ShieldCheck,
     title: "No Salt Consumables",
-    text: "No recurring salt purchase, storage, and refill cycles.",
+    text: "No recurring salt top-up, handling, and storage cycle.",
   },
   {
     icon: Droplets,
     title: "No Backwash Waste",
-    text: "No regular backwash discharge process in normal operation.",
+    text: "No regular backwash wastewater discharge process.",
   },
   {
     icon: HandCoins,
-    title: "Lower Handling Overhead",
-    text: "Built for low-maintenance operation with fewer routine interventions.",
+    title: "Lower OPEX Pressure",
+    text: "Designed for lower recurring operating overhead.",
   },
   {
     icon: Leaf,
     title: "Made in India",
-    text: "Engineered, manufactured, and supported in India.",
+    text: "Engineered and supported in India for local water conditions.",
   },
 ];
 
-const proofStats = [
-  { value: "10,000+", label: "Installations" },
-  { value: "50+", label: "Government Projects" },
-  { value: "150+", label: "Commercial and Industrial Sites" },
-  { value: "99%", label: "Retention" },
+const caseStudies = [
+  {
+    title: "Civil Hospital Case Study",
+    text: "Healthcare deployment focused on hard-water impact in utility lines.",
+    href: "/case-study-civil-hospital.pdf",
+    tag: "Healthcare",
+  },
+  {
+    title: "Hospitality Case Study",
+    text: "Guest-use and operations-focused deployment in hospitality segment.",
+    href: "/case-study-hospitality.pdf",
+    tag: "Hospitality",
+  },
+  {
+    title: "Raj Bhavan Case Study",
+    text: "Institutional deployment with focus on practical operation outcomes.",
+    href: "/case-study-rajbhavan.pdf",
+    tag: "Institutional",
+  },
 ];
 
 const faqSnippets = [
   {
-    q: "Will this reduce TDS?",
-    a: "No. E-SOFT is positioned for scale-impact control, not TDS reduction.",
+    q: "Does E-SOFT reduce TDS?",
+    a: "No. E-SOFT does not remove minerals. It changes crystallization behavior to reduce scale adhesion.",
   },
   {
-    q: "Is it only for homes?",
-    a: "No. Deployments span residential, commercial, industrial, and agriculture segments.",
+    q: "Is it safe for drinking water?",
+    a: "Yes. No chemicals are added and essential minerals remain in the water.",
   },
   {
-    q: "What is the recurring maintenance model?",
-    a: "The platform is designed around low routine handling without salt refills.",
+    q: "How is it different from a salt softener?",
+    a: "Salt softeners add sodium and discharge backwash. E-SOFT uses signal-based conditioning with no salt and no backwash.",
+  },
+  {
+    q: "How do we size the system?",
+    a: "Sizing is based on pipe size, flow rate, and hardness/TDS range. Share site details for model confirmation.",
   },
 ];
 
@@ -190,8 +266,8 @@ export function HomePageCustomer() {
   return (
     <main className="min-h-screen bg-slate-50">
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-cyan-50 py-16 lg:py-24">
-        <div className="pointer-events-none absolute -left-24 -top-10 h-80 w-80 animate-float rounded-full bg-cyan-200/40 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 top-12 h-96 w-96 animate-float rounded-full bg-blue-200/35 blur-3xl [animation-delay:0.4s]" />
+        <div className="pointer-events-none absolute -left-20 top-8 h-80 w-80 animate-float rounded-full bg-cyan-200/35 blur-3xl" />
+        <div className="pointer-events-none absolute -right-20 top-20 h-96 w-96 animate-float rounded-full bg-blue-200/35 blur-3xl [animation-delay:0.35s]" />
 
         <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="animate-slide-in-left">
@@ -200,15 +276,15 @@ export function HomePageCustomer() {
             </Badge>
 
             <h1 className="mt-5 text-4xl font-extrabold leading-tight text-slate-900 md:text-5xl lg:text-6xl">
-              Stop Hard Water Scale
+              Best Water Softener Experience
               <span className="block bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-500 bg-clip-text text-transparent">
-                Without Salt or Wastewater
+                Without Salt or Backwash
               </span>
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg text-slate-700 lg:text-xl">
-              DIGIGO E-SOFT helps homes, businesses, and industry control hard-water
-              impact with a modern, low-handling operating model.
+              DIGIGO E-SOFT helps control hard-water scale impact with a modern,
+              low-handling model for homes, businesses, and industry.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -231,7 +307,7 @@ export function HomePageCustomer() {
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50">
-                <Link href="/technology">See 3D Working</Link>
+                <Link href="/technology">Explore Technology</Link>
               </Button>
             </div>
 
@@ -252,9 +328,9 @@ export function HomePageCustomer() {
               <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50">
                 <Image
                   src="/machine-hero.webp"
-                  alt="DIGIGO E-SOFT machine"
-                  width={820}
-                  height={460}
+                  alt="DIGIGO E-SOFT controller and induction coil"
+                  width={860}
+                  height={480}
                   className="h-56 w-full object-contain p-4 lg:h-64"
                   priority
                 />
@@ -262,16 +338,17 @@ export function HomePageCustomer() {
                   DIGIGO E-SOFT
                 </span>
                 <span className="absolute bottom-3 right-3 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  Salt-Free System
+                  No Salt System
                 </span>
               </div>
+
               <div className="mt-4 flex items-center justify-between rounded-2xl border border-slate-200 bg-slate-50 p-3">
-                <p className="text-sm font-semibold text-slate-800">Indian Product, Industrial Positioning</p>
+                <p className="text-sm font-semibold text-slate-800">Made in India Engineering</p>
                 <Image
                   src="/made-in-india-logo.jpg"
                   alt="Made in India"
                   width={80}
-                  height={42}
+                  height={40}
                   className="h-9 w-auto"
                 />
               </div>
@@ -280,7 +357,7 @@ export function HomePageCustomer() {
             <div className="rounded-3xl border border-blue-100 bg-white p-4 shadow-xl">
               <Explainer3D />
               <div className="mt-4 flex items-center justify-between rounded-2xl border border-blue-100 bg-blue-50 px-4 py-3">
-                <p className="text-sm font-semibold text-blue-900">3D Signal-Flow Product Explanation</p>
+                <p className="text-sm font-semibold text-blue-900">3D Product Working Explanation</p>
                 <span className="inline-flex items-center gap-1 rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-medium text-blue-700">
                   <Clock3 className="h-3.5 w-3.5" />
                   Animated
@@ -294,7 +371,7 @@ export function HomePageCustomer() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid gap-4 md:grid-cols-4">
-            {proofStats.map((stat) => (
+            {trustStats.map((stat) => (
               <div
                 key={stat.label}
                 className="rounded-2xl border border-blue-100 bg-gradient-to-br from-blue-50 to-cyan-50 p-6 text-center"
@@ -310,23 +387,18 @@ export function HomePageCustomer() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Industry Impact Dashboard
-            </h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Why Hard Water Becomes a Cost Problem</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Water softener decisions are made on maintenance burden, energy impact, and recurring costs.
+              Procurement and operations teams usually evaluate scale impact through maintenance, efficiency, and recurring costs.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {impactCards.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl border border-slate-200 bg-white p-5"
-              >
+            {painCards.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5">
                 <item.icon className="mb-3 h-7 w-7 text-blue-700" />
                 <p className="text-3xl font-bold text-slate-900">{item.value}</p>
-                <p className="mt-1 text-base font-semibold text-slate-800">{item.label}</p>
-                <p className="mt-1 text-sm text-slate-600">{item.note}</p>
+                <p className="mt-1 text-base font-semibold text-slate-800">{item.title}</p>
+                <p className="mt-1 text-sm text-slate-600">{item.text}</p>
               </div>
             ))}
           </div>
@@ -337,14 +409,11 @@ export function HomePageCustomer() {
         <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div>
             <Badge className="border border-cyan-400/40 bg-cyan-500/10 text-cyan-200">
-              Product Explanation
+              3D Product Explanation
             </Badge>
-            <h2 className="mt-4 text-4xl font-bold lg:text-5xl">
-              3D Working with Step-by-Step Logic
-            </h2>
+            <h2 className="mt-4 text-4xl font-bold lg:text-5xl">How E-SOFT Works in Real Flow</h2>
             <p className="mt-3 text-lg text-slate-300">
-              Teams can understand how the system is installed, how signals are applied,
-              and where operations value is expected.
+              The 3D model shows coil placement, signal application, and the intended scale-adhesion outcome.
             </p>
 
             <div className="mt-6 rounded-3xl border border-slate-700 bg-slate-900/80 p-4">
@@ -353,11 +422,8 @@ export function HomePageCustomer() {
           </div>
 
           <div className="space-y-4 pt-2">
-            {processSteps.map((step) => (
-              <div
-                key={step.step}
-                className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5"
-              >
+            {signalFlowSteps.map((step) => (
+              <div key={step.step} className="rounded-2xl border border-slate-700 bg-slate-900/70 p-5">
                 <div className="flex items-start gap-4">
                   <span className="inline-flex rounded-full bg-cyan-500/15 px-3 py-1 text-xs font-bold tracking-wide text-cyan-200">
                     {step.step}
@@ -369,18 +435,22 @@ export function HomePageCustomer() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
 
-            <div className="grid gap-3 sm:grid-cols-3">
-              {expectedOutcomes.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-slate-700 bg-slate-900/70 p-4"
-                >
-                  <p className="text-sm font-semibold text-cyan-200">{item.title}</p>
-                  <p className="mt-1 text-xs text-slate-300">{item.text}</p>
+        <div className="mx-auto mt-10 max-w-7xl px-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {explanationFrames.map((frame) => (
+              <div key={frame.title} className="overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/70">
+                <div className="relative h-40 border-b border-slate-700 bg-gradient-to-br from-slate-900 to-blue-950">
+                  <Image src={frame.image} alt={frame.title} fill className="object-contain p-3" />
                 </div>
-              ))}
-            </div>
+                <div className="p-4">
+                  <h3 className="text-base font-semibold text-white">{frame.title}</h3>
+                  <p className="mt-1 text-sm text-slate-300">{frame.text}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -388,27 +458,54 @@ export function HomePageCustomer() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              DIGIGO E-SOFT vs Traditional Salt Softener
-            </h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Technology Snapshot from E-SOFT</h2>
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
+              Structured summary from the technology page for faster buying and technical review.
+            </p>
           </div>
 
-          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-            <div className="grid grid-cols-[1.05fr_1fr_1fr] bg-slate-100 px-5 py-4 text-sm font-bold text-slate-700">
-              <p>Decision Factor</p>
-              <p>Salt Softener</p>
-              <p>DIGIGO E-SOFT</p>
-            </div>
-            {comparisonRows.map((row) => (
-              <div
-                key={row.factor}
-                className="grid grid-cols-[1.05fr_1fr_1fr] border-t border-slate-200 px-5 py-4 text-sm text-slate-700"
-              >
-                <p className="font-semibold text-slate-900">{row.factor}</p>
-                <p>{row.classic}</p>
-                <p className="font-semibold text-blue-800">{row.esoft}</p>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div>
+              <div className="grid gap-4 md:grid-cols-2">
+                {technologyCards.map((card) => (
+                  <div key={card.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                    <card.icon className="mb-3 h-7 w-7 text-blue-700" />
+                    <h3 className="text-lg font-bold text-slate-900">{card.title}</h3>
+                    <p className="mt-1 text-sm text-slate-600">{card.text}</p>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {technologyBullets.map((item) => (
+                  <div key={item} className="inline-flex items-center gap-2 rounded-xl border border-blue-100 bg-white px-3 py-2 text-sm font-medium text-slate-700">
+                    <CheckCircle2 className="h-4 w-4 text-blue-700" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+              <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <Image
+                  src="/esoft-machine.webp"
+                  alt="E-SOFT machine installation visual"
+                  width={760}
+                  height={420}
+                  className="h-64 w-full object-contain p-4"
+                />
+              </div>
+              <p className="mt-4 text-sm text-slate-600">
+                E-SOFT system: controller + induction coil, designed for non-invasive integration on existing water lines.
+              </p>
+              <Button asChild className="mt-4 w-full bg-gradient-to-r from-blue-700 to-cyan-600 text-white">
+                <Link href="/technology">
+                  See Full Technology Page
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -416,20 +513,43 @@ export function HomePageCustomer() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-12 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Choose Your Solution Track
-            </h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">E-SOFT vs Salt Softener</h2>
             <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Choose the right solution path based on your segment and water usage.
+              Practical comparison for procurement and operations teams.
+            </p>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+            <div className="grid grid-cols-[1.1fr_1fr_1fr] bg-slate-100 px-5 py-4 text-sm font-bold text-slate-700">
+              <p>Parameter</p>
+              <p>Salt Softener</p>
+              <p>DIGIGO E-SOFT</p>
+            </div>
+            {comparisonRows.map((row) => (
+              <div key={row.label} className="grid grid-cols-[1.1fr_1fr_1fr] border-t border-slate-200 px-5 py-4 text-sm text-slate-700">
+                <p className="font-semibold text-slate-900">{row.label}</p>
+                <p>{row.classic}</p>
+                <p className="font-semibold text-blue-800">{row.esoft}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-xs text-slate-500">
+            Exact outcomes depend on water chemistry and operating conditions.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Choose Your Solution Track</h2>
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
+              Segment-first pages help buyers choose based on usage profile and line requirement.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
             {solutionTracks.map((track) => (
-              <Link
-                key={track.title}
-                href={track.href}
-                className="card-hover rounded-2xl border border-slate-200 bg-white p-6"
-              >
+              <Link key={track.title} href={track.href} className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-6">
                 <track.icon className="mb-3 h-8 w-8 text-blue-700" />
                 <h3 className="text-2xl font-bold text-slate-900">{track.title}</h3>
                 <p className="mt-2 text-slate-600">{track.text}</p>
@@ -439,38 +559,6 @@ export function HomePageCustomer() {
                 </p>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="mb-10 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Proof of Deployments
-            </h2>
-            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
-              Customer logos create real proof for operations and procurement teams.
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-4">
-            <div className="flex w-max animate-ticker gap-3">
-              {tickerLogos.map((client, idx) => (
-                <div
-                  key={`${client.file}-${idx}`}
-                  className="flex h-24 w-44 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3"
-                >
-                  <Image
-                    src={`/client-logos/${client.file}`}
-                    alt={`${client.name} logo`}
-                    width={150}
-                    height={60}
-                    className="max-h-14 w-auto object-contain"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -485,10 +573,7 @@ export function HomePageCustomer() {
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {trustPillars.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="rounded-2xl border border-slate-700 bg-slate-900/80 p-5"
-              >
+              <div key={pillar.title} className="rounded-2xl border border-slate-700 bg-slate-900/80 p-5">
                 <pillar.icon className="mb-3 h-7 w-7 text-cyan-300" />
                 <h3 className="text-lg font-bold text-white">{pillar.title}</h3>
                 <p className="mt-1 text-sm text-slate-300">{pillar.text}</p>
@@ -498,19 +583,57 @@ export function HomePageCustomer() {
         </div>
       </section>
 
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4">
+          <div className="mb-10 text-center">
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Proof of Work</h2>
+            <p className="mx-auto mt-3 max-w-3xl text-lg text-slate-600">
+              Client logos and case studies for better confidence during evaluation.
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-4">
+            <div className="flex w-max animate-ticker gap-3">
+              {tickerLogos.map((client, idx) => (
+                <div key={`${client.file}-${idx}`} className="flex h-24 w-44 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 p-3">
+                  <Image
+                    src={`/client-logos/${client.file}`}
+                    alt={`${client.name} logo`}
+                    width={150}
+                    height={60}
+                    className="max-h-14 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {caseStudies.map((study) => (
+              <div key={study.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <span className="inline-flex rounded-full border border-blue-200 bg-white px-3 py-1 text-xs font-semibold text-blue-700">
+                  {study.tag}
+                </span>
+                <h3 className="mt-3 text-xl font-bold text-slate-900">{study.title}</h3>
+                <p className="mt-2 text-sm text-slate-600">{study.text}</p>
+                <Link href={study.href} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-blue-700">
+                  View Case Study PDF
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-7xl px-4">
           <div className="mb-10 text-center">
-            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">
-              Common Buyer Questions
-            </h2>
+            <h2 className="text-4xl font-bold text-slate-900 lg:text-5xl">Frequently Asked Questions</h2>
           </div>
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2">
             {faqSnippets.map((item) => (
-              <div
-                key={item.q}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
-              >
+              <div key={item.q} className="rounded-2xl border border-slate-200 bg-white p-6">
                 <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-100">
                   <CircleHelp className="h-5 w-5 text-blue-700" />
                 </div>
@@ -526,12 +649,11 @@ export function HomePageCustomer() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
-          <h2 className="text-4xl font-bold lg:text-5xl">
-                Get a Site-Specific Water Treatment Plan
-              </h2>
+              <h2 className="text-4xl font-bold lg:text-5xl">Get a Site-Specific Water Treatment Plan</h2>
               <p className="mt-4 max-w-2xl text-xl text-white/90">
-                Share your hard-water challenges and line details. Our team will recommend the right E-SOFT setup for your site.
+                Share your hard-water challenge and line details. Our team will recommend the right E-SOFT setup.
               </p>
+
               <div className="mt-6 inline-flex items-center gap-3 rounded-2xl border border-white/35 bg-white/10 px-4 py-3">
                 <Image
                   src="/made-in-india-logo.jpg"
@@ -540,9 +662,16 @@ export function HomePageCustomer() {
                   height={42}
                   className="h-10 w-auto rounded"
                 />
-                <p className="text-sm text-white/90">
-                  Built in India for Indian water conditions.
-                </p>
+                <p className="text-sm text-white/90">Built in India for Indian water conditions.</p>
+              </div>
+
+              <div className="mt-5 flex flex-wrap gap-3">
+                <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-slate-100">
+                  <Link href="tel:+916356311101">Call Now</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                  <Link href="https://wa.me/916356311101">WhatsApp Expert</Link>
+                </Button>
               </div>
             </div>
 
