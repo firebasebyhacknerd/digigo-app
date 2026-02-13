@@ -144,6 +144,29 @@ const pricing = [
   },
 ];
 
+const impactHighlights = [
+  {
+    value: "0",
+    unit: "Salt Refills",
+    desc: "No monthly salt or resin consumables.",
+  },
+  {
+    value: "0",
+    unit: "Backwash Waste",
+    desc: "No regular backwash discharge cycles.",
+  },
+  {
+    value: "30+",
+    unit: "Year Design Life",
+    desc: "Built for long-term operation and reliability.",
+  },
+  {
+    value: "2",
+    unit: "Hour Install",
+    desc: "Typical retrofit for standard residential lines.",
+  },
+];
+
 export function HomePageCustomer() {
   return (
     <main className="min-h-screen bg-white">
@@ -205,18 +228,89 @@ export function HomePageCustomer() {
               </Button>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 pt-8 text-sm text-slate-600">
+            <div className="flex flex-wrap justify-center gap-4 pt-8 text-sm text-slate-600">
               {[
                 "10,000+ Happy Customers",
                 "15+ Years Experience",
                 "30-Year Design Life",
-                "Made in India",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <Check className="h-4 w-4 text-green-600" />
                   {item}
                 </div>
               ))}
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-3 py-1 text-slate-700 shadow-sm">
+                <Image
+                  src="/made-in-india-badge.svg"
+                  alt="Made in India"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7"
+                />
+                <span className="font-medium">Made in India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-900 py-20 text-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-2 lg:items-center">
+          <div className="relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-800/70 p-8">
+            <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl" />
+            <Image
+              src="/machine-hero.webp"
+              alt="DIGIGO E-SOFT machine"
+              width={900}
+              height={700}
+              className="relative z-10 mx-auto h-auto w-full max-w-lg object-contain"
+            />
+            <div className="relative z-10 mt-5 flex items-center justify-center gap-3 rounded-2xl border border-slate-600 bg-slate-900/70 p-3">
+              <Image
+                src="/made-in-india-badge.svg"
+                alt="Made in India DIGIGO"
+                width={34}
+                height={34}
+                className="h-8 w-8"
+              />
+              <p className="text-sm font-medium text-slate-100">
+                Proudly Made in India by DIGIGO Technology
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <Badge className="border border-cyan-400/30 bg-cyan-400/10 text-cyan-200">
+              Product Impact
+            </Badge>
+            <h2 className="mt-4 text-4xl font-bold leading-tight lg:text-5xl">
+              Built to Create Visible Results, Not Extra Maintenance
+            </h2>
+            <p className="mt-4 text-lg text-slate-300">
+              E-SOFT is designed to reduce scale impact while keeping operations simple.
+              No salt handling, no backwash, and no frequent consumable replacement.
+            </p>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {impactHighlights.map((item) => (
+                <div
+                  key={item.unit}
+                  className="rounded-2xl border border-slate-700 bg-slate-800/80 p-5"
+                >
+                  <p className="text-3xl font-bold text-cyan-300">
+                    {item.value}
+                    <span className="ml-1 text-base text-cyan-100">{item.unit}</span>
+                  </p>
+                  <p className="mt-1 text-sm text-slate-300">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" className="bg-cyan-500 text-slate-900 hover:bg-cyan-400">
+                <Link href="/technology">See Technical Working</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-slate-500 text-white hover:bg-slate-800">
+                <Link href="/get-quote">Get My Project Fit</Link>
+              </Button>
             </div>
           </div>
         </div>
