@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CheckCircle2 } from "lucide-react";
+import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Pricing | DIGIGO E-SOFT",
@@ -12,23 +13,15 @@ export const metadata: Metadata = {
 export default function PricingPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16">
-        <div className="mx-auto max-w-6xl px-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
-            Pricing
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-slate-900 lg:text-6xl">
-            Simple and Transparent Pricing
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-xl text-slate-600">
-            Pricing is based on pipe size, water conditions, and usage profile.
-            The ranges below are practical starting points.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        kicker="Pricing"
+        title="Premium Water Standard, Transparent Investment"
+        subtitle="Pricing depends on line size, water profile, and duty. These are practical starting ranges for evaluation."
+        imageSrc="/digigostore-assets/domestic-grade.jpeg"
+      />
 
       <section className="py-16">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="section-shell grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               title: "Home",
@@ -51,10 +44,7 @@ export default function PricingPage() {
               note: "Depends on acreage and irrigation network",
             },
           ].map((plan) => (
-            <div
-              key={plan.title}
-              className="rounded-2xl border-2 border-slate-200 bg-slate-50 p-7 text-center transition-all hover:border-blue-500 hover:shadow-lg"
-            >
+            <div key={plan.title} className="luxury-panel p-7 text-center">
               <h2 className="text-2xl font-bold text-slate-900">{plan.title}</h2>
               <p className="mt-3 text-2xl font-bold text-blue-700">{plan.range}</p>
               <p className="mt-2 text-sm text-slate-600">{plan.note}</p>
@@ -64,10 +54,8 @@ export default function PricingPage() {
       </section>
 
       <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-center text-3xl font-bold text-slate-900 lg:text-4xl">
-            What Is Included
-          </h2>
+        <div className="section-shell max-w-5xl">
+          <h2 className="text-center text-3xl font-bold text-slate-900 lg:text-4xl">What Is Included</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             {[
               "Controller and coil package",
@@ -77,11 +65,8 @@ export default function PricingPage() {
               "Warranty-backed hardware",
               "Technical support access",
             ].map((item) => (
-              <div
-                key={item}
-                className="flex items-start gap-3 rounded-xl border border-blue-100 bg-white p-4"
-              >
-                <Check className="mt-0.5 h-5 w-5 text-green-600" />
+              <div key={item} className="flex items-start gap-3 rounded-xl border border-blue-100 bg-white p-4">
+                <CheckCircle2 className="mt-0.5 h-5 w-5 text-blue-700" />
                 <p className="text-slate-700">{item}</p>
               </div>
             ))}
@@ -90,12 +75,11 @@ export default function PricingPage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="rounded-2xl bg-gradient-to-r from-blue-700 to-cyan-600 p-8 text-white">
+        <div className="section-shell max-w-5xl">
+          <div className="luxury-band rounded-3xl p-8 text-white">
             <h2 className="text-3xl font-bold">Get Your Exact Quote</h2>
             <p className="mt-3 text-lg text-white/90">
-              Share your property type, pipe details, and current issue. We will
-              provide the right model and exact quote.
+              Share line details and water profile. We will recommend the right model and precise quote.
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-slate-100">

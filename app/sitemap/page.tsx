@@ -1,4 +1,6 @@
-"use client";
+'use client';
+
+import { PageHero } from "@/components/page-hero";
 
 const links = [
   "/",
@@ -33,15 +35,29 @@ const links = [
 
 export default function Sitemap() {
   return (
-    <main className="mx-auto max-w-4xl space-y-4 px-4 py-12">
-      <h1 className="text-3xl font-semibold text-slate-900">Sitemap</h1>
-      <ul className="grid gap-2 sm:grid-cols-2 text-sm text-slate-600">
-        {links.map((href) => (
-          <li key={href}>
-            <a className="text-neon" href={href}>{href}</a>
-          </li>
-        ))}
-      </ul>
+    <main className="min-h-screen bg-white">
+      <PageHero
+        kicker="Utility"
+        title="Sitemap"
+        subtitle="Quick route index for customer pages, applications, and utility links."
+        imageSrc="/digigostore-assets/hero-machine.png"
+      />
+
+      <section className="py-14">
+        <div className="section-shell max-w-4xl">
+          <div className="luxury-panel p-6">
+            <ul className="grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+              {links.map((href) => (
+                <li key={href}>
+                  <a className="font-medium text-blue-700 hover:underline" href={href}>
+                    {href}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Bolt, CircleDot, Waves } from "lucide-react";
+import { Explainer3D } from "@/components/explainer-3d";
+import { PageHero } from "@/components/page-hero";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "How It Works | DIGIGO E-SOFT",
@@ -12,66 +14,59 @@ export const metadata: Metadata = {
 export default function HowItWorksPage() {
   return (
     <main className="min-h-screen bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16">
-        <div className="mx-auto max-w-6xl px-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
-            How It Works
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-slate-900 lg:text-6xl">
-            Simple Science, Practical Result
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-xl text-slate-600">
-            E-SOFT conditions water electronically so minerals are less likely to
-            form hard deposits on surfaces.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        kicker="How It Works"
+        title="Simple Science, Premium Utility Outcome"
+        subtitle="E-SOFT conditions mineral behavior electronically so scale adhesion tendency reduces without salt, chemicals, or backwash."
+        imageSrc="/digigostore-assets/product-2048.png"
+      />
 
       <section className="py-16">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 lg:grid-cols-3">
-          {[
-            {
-              icon: Waves,
-              title: "Step 1: Hard Water Enters",
-              desc: "Water carries calcium and magnesium that can create scale.",
-            },
-            {
-              icon: Bolt,
-              title: "Step 2: Signal Conditioning",
-              desc: "The controller sends programmed signals via an external coil.",
-            },
-            {
-              icon: CircleDot,
-              title: "Step 3: Reduced Adhesion",
-              desc: "Mineral behavior changes so adhesion tendency can be reduced.",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-6"
-            >
-              <item.icon className="mb-3 h-8 w-8 text-blue-700" />
-              <h2 className="text-xl font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 text-slate-600">{item.desc}</p>
-            </div>
-          ))}
+        <div className="section-shell grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div className="luxury-panel p-4">
+            <Explainer3D />
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-1">
+            {[
+              {
+                icon: Waves,
+                title: "Step 1: Hard Water Enters",
+                desc: "Water carries calcium and magnesium that can build deposits on surfaces.",
+              },
+              {
+                icon: Bolt,
+                title: "Step 2: Signal Conditioning",
+                desc: "Controller sends programmed electronic patterns through the external induction coil.",
+              },
+              {
+                icon: CircleDot,
+                title: "Step 3: Lower Adhesion Tendency",
+                desc: "Mineral behavior shifts so sticking tendency can reduce under operating conditions.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="luxury-panel p-6">
+                <item.icon className="mb-3 h-8 w-8 text-blue-700" />
+                <h2 className="text-xl font-bold text-slate-900">{item.title}</h2>
+                <p className="mt-2 text-slate-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="bg-slate-50 py-16">
-        <div className="mx-auto max-w-5xl px-4">
-          <h2 className="text-center text-3xl font-bold text-slate-900 lg:text-4xl">
-            Common Questions
-          </h2>
-          <div className="mt-8 space-y-4">
+        <div className="section-shell">
+          <h2 className="text-center text-3xl font-bold text-slate-900 lg:text-4xl">Common Questions</h2>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
             {[
               {
                 q: "Will water taste change?",
-                a: "No major taste change is expected. Minerals are retained.",
+                a: "No major taste change is expected because minerals remain in water.",
               },
               {
-                q: "Is this safe for drinking water lines?",
-                a: "Yes, it is a non-chemical approach and retains minerals.",
+                q: "Is it safe for drinking lines?",
+                a: "Yes. It is a non-chemical external signal-based conditioning approach.",
               },
               {
                 q: "Does it need electricity?",
@@ -79,13 +74,10 @@ export default function HowItWorksPage() {
               },
               {
                 q: "How long does installation take?",
-                a: "Typical on-site installation is short and usually non-invasive.",
+                a: "Typical onsite installation is short and usually non-invasive.",
               },
             ].map((item) => (
-              <div
-                key={item.q}
-                className="rounded-xl border border-blue-100 bg-white p-5"
-              >
+              <div key={item.q} className="rounded-xl border border-blue-100 bg-white p-5">
                 <h3 className="text-lg font-semibold text-slate-900">{item.q}</h3>
                 <p className="mt-2 text-slate-600">{item.a}</p>
               </div>
@@ -95,12 +87,11 @@ export default function HowItWorksPage() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="rounded-2xl bg-gradient-to-r from-blue-700 to-cyan-600 p-8 text-white">
+        <div className="section-shell">
+          <div className="luxury-band rounded-3xl p-8 text-white">
             <h2 className="text-3xl font-bold">Need a Site-Specific Explanation?</h2>
             <p className="mt-3 text-lg text-white/90">
-              Share your pipe size, flow profile, and water challenge. We will
-              explain expected behavior for your exact setup.
+              Share your line details and we will explain expected behavior for your specific setup.
             </p>
             <div className="mt-6 flex flex-col gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-slate-100">

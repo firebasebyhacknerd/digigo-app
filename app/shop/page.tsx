@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight, Building2, Factory, Home, Sprout } from "lucide-react";
+import { PageHero } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
-import { Home, Building2, Factory, Sprout, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Shop Products | DIGIGO E-SOFT",
@@ -18,6 +20,7 @@ export default function ShopPage() {
       cta: "Buy Now",
       href: "/get-quote",
       icon: Home,
+      image: "/digigostore-assets/domestic-grade.jpeg",
     },
     {
       title: "Business Standard",
@@ -26,6 +29,7 @@ export default function ShopPage() {
       cta: "Request Quote",
       href: "/for-businesses",
       icon: Building2,
+      image: "/digigostore-assets/home-lifestyle.jpg",
     },
     {
       title: "Industrial System",
@@ -34,6 +38,7 @@ export default function ShopPage() {
       cta: "Request Technical Call",
       href: "/for-factories",
       icon: Factory,
+      image: "/digigostore-assets/industrial-grade.jpeg",
     },
     {
       title: "Farm System",
@@ -42,43 +47,38 @@ export default function ShopPage() {
       cta: "Request Farm Quote",
       href: "/for-farms",
       icon: Sprout,
+      image: "/digigostore-assets/children-water.png",
     },
   ];
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-16">
-        <div className="mx-auto max-w-6xl px-4 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-blue-700">
-            Shop
-          </p>
-          <h1 className="mt-3 text-4xl font-bold text-slate-900 lg:text-6xl">
-            Browse E-SOFT Product Options
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-xl text-slate-600">
-            Residential units can be started directly, while commercial and
-            industrial setups are consultation-based for correct sizing.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        kicker="Shop"
+        title="Choose the Right E-SOFT Configuration"
+        subtitle="Residential purchases can start directly. Commercial and industrial setups are consultation-led for correct sizing."
+        imageSrc="/digigostore-assets/product-2048.png"
+      />
 
       <section className="py-16">
-        <div className="mx-auto grid max-w-6xl gap-6 px-4 md:grid-cols-2">
+        <div className="section-shell grid gap-6 md:grid-cols-2">
           {products.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-slate-200 bg-slate-50 p-7"
-            >
-              <item.icon className="mb-4 h-10 w-10 text-blue-700" />
-              <h2 className="text-2xl font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-1 text-slate-600">{item.subtitle}</p>
-              <p className="mt-3 text-2xl font-bold text-blue-700">{item.price}</p>
-              <Button asChild className="mt-5">
-                <Link href={item.href}>
-                  {item.cta}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+            <div key={item.title} className="luxury-panel overflow-hidden">
+              <div className="relative h-44 border-b border-slate-200 bg-slate-100">
+                <Image src={item.image} alt={item.title} fill className="object-cover" />
+              </div>
+              <div className="p-7">
+                <item.icon className="mb-4 h-10 w-10 text-blue-700" />
+                <h2 className="text-2xl font-bold text-slate-900">{item.title}</h2>
+                <p className="mt-1 text-slate-600">{item.subtitle}</p>
+                <p className="mt-3 text-2xl font-bold text-blue-700">{item.price}</p>
+                <Button asChild className="mt-5">
+                  <Link href={item.href}>
+                    {item.cta}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           ))}
         </div>

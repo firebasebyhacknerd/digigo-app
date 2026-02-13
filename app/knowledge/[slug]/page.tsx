@@ -1,3 +1,4 @@
+import { PageHero } from "@/components/page-hero";
 import { posts } from "@/content/knowledge/posts";
 import { notFound } from "next/navigation";
 
@@ -19,14 +20,24 @@ export function generateMetadata({ params }: Props) {
 export default function KnowledgeArticle({ params }: Props) {
   const post = posts.find((p) => p.slug === params.slug);
   if (!post) return notFound();
+
   return (
-    <main className="mx-auto max-w-4xl space-y-6 px-4 py-12">
-      <h1 className="text-3xl font-semibold text-slate-900">{post.title}</h1>
-      <p className="text-slate-600">{post.summary}</p>
-      <article
-        className="space-y-4 text-slate-700 text-base leading-7"
-        dangerouslySetInnerHTML={{ __html: post.body }}
+    <main className="min-h-screen bg-white">
+      <PageHero
+        kicker="Knowledge"
+        title={post.title}
+        subtitle={post.summary}
+        imageSrc="/digigostore-assets/hero-machine.png"
       />
+
+      <section className="py-14">
+        <div className="section-shell max-w-4xl">
+          <article
+            className="luxury-panel space-y-4 p-7 text-base leading-7 text-slate-700"
+            dangerouslySetInnerHTML={{ __html: post.body }}
+          />
+        </div>
+      </section>
     </main>
   );
 }
