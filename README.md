@@ -1,19 +1,20 @@
 # DIGIGO E-SOFT Website
 
-Marketing website for DIGIGO E-SOFT Electro Hydro Enhancer. Built with Next.js App Router, TailwindCSS, and shadcn/ui. Includes lead capture via Firebase Firestore, chatbot, and a video hero banner.
+Marketing website for DIGIGO E-SOFT Electro Hydro Enhancer. Built with Next.js App Router, TailwindCSS, and shadcn/ui. Lead and order data can be pushed directly to Odoo.
 
 ## Features
 - Full marketing site with structured homepage content
-- Applications, Projects, Government Projects, Clients, Impact & Savings
-- Lead capture API at /api/lead (Firestore)
+- Applications, Projects, Government Projects, Clients, Impact and Savings
+- Lead capture API at `/api/lead` (Odoo CRM)
+- Sales order API at `/api/order` (Odoo Sales)
 - Video banner (YouTube embed) on homepage
-- Responsive, neon-industrial visual theme
+- Responsive visual theme
 
 ## Stack
 - Next.js App Router (TypeScript)
 - TailwindCSS 3.4
 - shadcn/ui (Radix primitives)
-- Firebase Firestore for lead capture
+- Odoo JSON-RPC for CRM and Sales integration
 
 ## Local Development
 Windows (PowerShell):
@@ -28,24 +29,25 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open `http://localhost:3000`
 
 ## Environment
-Create .env.local from .env.example and add Firebase keys:
+Create `.env.local` from `.env.example` and add Odoo credentials:
 ```bash
-FIREBASE_API_KEY=
-FIREBASE_AUTH_DOMAIN=
-FIREBASE_PROJECT_ID=
-FIREBASE_STORAGE_BUCKET=
-FIREBASE_MESSAGING_SENDER_ID=
-FIREBASE_APP_ID=
+ODOO_URL=https://digigo.odoo.com
+ODOO_DB=
+ODOO_USERNAME=
+ODOO_PASSWORD=
+ODOO_SALES_TEAM_ID=
+ODOO_SALESPERSON_ID=
 LEADS_ENABLED=false
 NEXT_PUBLIC_LEADS_ENABLED=false
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
-Lead capture is stored in Firestore collection: leads
-Endpoint: /api/lead
+Odoo endpoints used:
+- `/api/lead` creates `crm.lead` and related `res.partner`
+- `/api/order` creates `sale.order` and related `res.partner`
 
 ## Scripts
 ```bash
@@ -61,34 +63,33 @@ docker compose up --build
 ```
 
 Notes:
-- Uses .env.local if present
+- Uses `.env.local` if present
 - Requires Docker Desktop to be running
 
 ## Content and Routes
 Key pages:
-- / (Homepage)
-- /technology
-- /applications
-- /applications/agriculture
-- /applications/residential
-- /applications/commercial
-- /applications/industrial
-- /applications/hospitals
-- /projects
-- /government-projects
-- /clients
-- /impact
-- /impact-savings
-- /faq
-- /contact
-- /get-quote
-- /privacy-policy
-- /terms-of-service
-- /sitemap
+- `/` (Homepage)
+- `/technology`
+- `/applications`
+- `/applications/agriculture`
+- `/applications/residential`
+- `/applications/commercial`
+- `/applications/industrial`
+- `/applications/hospitals`
+- `/projects`
+- `/government-projects`
+- `/clients`
+- `/impact`
+- `/impact-savings`
+- `/faq`
+- `/contact`
+- `/get-quote`
+- `/privacy-policy`
+- `/terms-of-service`
+- `/sitemap`
 
 ## Video Banner
-Video hero is defined in:
-- app/page.tsx
+Video hero is defined in `app/page.tsx`.
 
 Current embed:
 ```txt
@@ -101,15 +102,15 @@ To replace with another YouTube video, change the video id and keep the loop par
 ```
 
 To use a local MP4 instead:
-1) Place video at public/hero.mp4
-2) Replace the iframe with a <video> tag and set src="/hero.mp4"
+1. Place video at `public/hero.mp4`
+2. Replace the iframe with a `<video>` tag and set `src="/hero.mp4"`
 
 ## Structure
-- app/            Next.js routes and layout
-- components/     UI components and forms
-- content/        MDX knowledge content
-- lib/            Firebase and helpers
-- public/         Static assets
+- `app/` Next.js routes and layout
+- `components/` UI components and forms
+- `content/` MDX knowledge content
+- `lib/` Odoo integration and helpers
+- `public/` Static assets
 
 ## Deploy (Hostinger Business via Git)
 Prerequisites:
@@ -123,12 +124,12 @@ Build and run configuration in Hostinger:
 - Start command: `npm run start`
 
 Environment variables to set in Hostinger:
-- `FIREBASE_API_KEY`
-- `FIREBASE_AUTH_DOMAIN`
-- `FIREBASE_PROJECT_ID`
-- `FIREBASE_STORAGE_BUCKET`
-- `FIREBASE_MESSAGING_SENDER_ID`
-- `FIREBASE_APP_ID`
+- `ODOO_URL=https://digigo.odoo.com`
+- `ODOO_DB`
+- `ODOO_USERNAME`
+- `ODOO_PASSWORD`
+- `ODOO_SALES_TEAM_ID` (optional)
+- `ODOO_SALESPERSON_ID` (optional)
 - `LEADS_ENABLED=true`
 - `NEXT_PUBLIC_LEADS_ENABLED=true`
 - `NEXT_PUBLIC_SITE_URL=https://your-domain.com`
@@ -136,8 +137,8 @@ Environment variables to set in Hostinger:
 Git-based release flow:
 1. Push changes to your GitHub branch.
 2. Trigger redeploy from Hostinger hPanel for that branch.
-3. Verify `/`, `/contact`, `/pricing`, and a lead form submission.
+3. Verify `/`, `/contact`, `/pricing`, a lead submission, and an order API call.
 
 ## Notes
-- Analytics placeholder script lives in app/layout.tsx
-- Replace placeholder PDFs in public/ if needed
+- Analytics placeholder script lives in `app/layout.tsx`
+- Replace placeholder PDFs in `public/` if needed

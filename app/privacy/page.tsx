@@ -9,7 +9,7 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-semibold text-slate-900">Privacy Policy</h1>
       <p className="text-slate-600">
         We collect contact details (name, phone, email, city, sector, pipe size, message) solely to respond to your enquiry and
-        provide sizing / quotations. Data is stored in Firebase in a preferred region. We do not sell or share personal data with
+        provide sizing / quotations. Data is stored in Odoo CRM for sales and support follow-up. We do not sell or share personal data with
         third parties.
       </p>
       <p className="text-slate-600">

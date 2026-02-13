@@ -123,7 +123,7 @@ export function LeadForm({ compact = false }: { compact?: boolean }) {
       {error && <p className="text-xs text-red-600">{error}</p>}
       <p className="text-[11px] text-muted">
         By submitting, you agree to be contacted by DIGIGO Technology. Data is
-        stored in Firebase (India / preferred region) for lead response only when enabled.
+        stored in Odoo CRM for lead response only when enabled.
       </p>
     </form>
   );

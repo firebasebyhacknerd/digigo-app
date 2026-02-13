@@ -118,7 +118,7 @@ export function GetQuoteForm() {
             {status === "sent" && <p className="text-sm text-neon">Submitted. Our technical desk will contact you soon.</p>}
 
             <p className="text-[11px] text-muted">
-              By submitting, you agree to be contacted by DIGIGO Technology. Data is stored in Firebase for lead response only when enabled.
+              By submitting, you agree to be contacted by DIGIGO Technology. Data is stored in Odoo CRM for lead response only when enabled.
             </p>
           </form>
         </CardContent>
