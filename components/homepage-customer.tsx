@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Building2,
@@ -17,6 +18,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { QuickQuoteForm } from "@/components/quick-quote-form";
+import { clientLogos } from "@/content/client-logos";
 
 const customerTypes = [
   {
@@ -389,6 +391,29 @@ export function HomePageCustomer() {
                 <p className="mt-2 text-slate-600">{item.label}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mb-14">
+            <h3 className="mb-5 text-center text-2xl font-bold text-slate-900">
+              Client Logos from Live Installations
+            </h3>
+            <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+              {clientLogos.map((client) => (
+                <div
+                  key={client.file}
+                  className="flex h-24 items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2"
+                  title={client.name}
+                >
+                  <Image
+                    src={`/client-logos/${client.file}`}
+                    alt={`${client.name} logo`}
+                    width={160}
+                    height={64}
+                    className="max-h-14 w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
