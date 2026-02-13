@@ -2,6 +2,17 @@ import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 import animate from "tailwindcss-animate";
 
+const deprecatedColorAliases = new Set([
+  "lightBlue",
+  "warmGray",
+  "trueGray",
+  "coolGray",
+  "blueGray",
+]);
+const tailwindColors = Object.fromEntries(
+  Object.entries(colors).filter(([colorName]) => !deprecatedColorAliases.has(colorName))
+) as typeof colors;
+
 const brandBlue = {
   50: "#F6F4FF",
   100: "#E9E5FF",
@@ -53,7 +64,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      ...colors,
+      ...tailwindColors,
       blue: brandBlue,
       cyan: brandCyan,
       slate: brandSlate,
