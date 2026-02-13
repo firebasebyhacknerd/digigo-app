@@ -11,6 +11,7 @@ const links = [
   "/installation",
   "/shop",
   "/shop/cart",
+  "/warranty",
   "/technology",
   "/applications",
   "/applications/agriculture",
